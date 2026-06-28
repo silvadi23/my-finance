@@ -1,0 +1,39 @@
+symbol,displayName,sector,industry,rating,rating_reason,zone,peg,rel_strength_6m,structure_trend,last_break
+INOD,Innodata,Technology,Information Technology Services,buy,"good entry: equilibrium, fresh BOS 10b",equilibrium,,0.855,bullish,bullish_BOS
+ZTO,ZTO Express (Cayman),Industrials,Integrated Freight & Logistics,buy,"good entry: OB retest, fresh BOS 1b",premium,1.23,0.005,bullish,bullish_CHoCH
+OKE,ONEOK,Energy,Oil & Gas Midstream,hold,valuation rich PEG=2.19,discount,2.19,0.128,bullish,bullish_BOS
+RAMP,LiveRamp,Technology,Software - Infrastructure,hold,near 52w high; premium zone (extended),premium,,0.138,bullish,bullish_BOS
+EBAY,eBay,Consumer Cyclical,Internet Retail,hold,premium zone (extended),premium,1.69,0.212,bullish,bullish_BOS
+SCCO,Southern Copper,Basic Materials,Copper,hold,premium zone (extended),premium,,0.248,bullish,bullish_CHoCH
+TSM,Taiwan Semiconductor Manufacturing Company,Technology,Semiconductors,hold,near 52w high; premium zone (extended),premium,1.32,0.347,bullish,bullish_BOS
+CAT,Caterpillar Inc.,,,hold,near 52w high; premium zone (extended),premium,,0.396,bullish,bullish_BOS
+VCYT,Veracyte,Healthcare,Diagnostics & Research,hold,premium zone (extended),premium,,0.058,bullish,bullish_BOS
+ROST,Ross Stores,Consumer Cyclical,Apparel Retail,hold,valuation rich PEG=2.84; near 52w high; premium zone (extended),premium,2.84,0.193,bullish,bullish_BOS
+EXEL,Exelixis,Healthcare,Biotechnology,hold,near 52w high,premium,,0.174,bullish,bullish_BOS
+CPRX,Catalyst Pharmaceuticals,Healthcare,Biotechnology,hold,premium zone (extended),premium,,0.263,bullish,bullish_BOS
+JCI,Johnson Controls,Industrials,Building Products & Equipment,hold,near 52w high; premium zone (extended),premium,1.96,0.15,bullish,bullish_CHoCH
+CCEP,Coca-Cola Europacific Partners PLC,,,hold,premium zone (extended),premium,,0.024,bullish,bullish_CHoCH
+UDR,UDR,Real Estate,REIT - Residential,hold,near 52w high; premium zone (extended),premium,,0.028,bullish,bullish_CHoCH
+HWM,Howmet Aerospace,Industrials,Aerospace & Defense,hold,premium zone (extended),premium,,0.286,bullish,bullish_CHoCH
+KIM,Kimco Realty,Real Estate,REIT - Retail,hold,near 52w high; premium zone (extended),premium,,0.2,bullish,bullish_BOS
+RYCEY,Rolls-Royce Holdings plc,Industrials,Aerospace & Defense,hold,valuation rich PEG=2.28; premium zone (extended),premium,2.28,0.135,bullish,bullish_BOS
+MNST,Monster Beverage,Consumer Defensive,Beverages - Non-Alcoholic,hold,valuation rich PEG=2.7; near 52w high; premium zone (extended),premium,2.7,0.175,bullish,bullish_BOS
+HST,Host Hotels & Resorts,Real Estate,REIT - Hotel & Motel,hold,near 52w high; premium zone (extended),premium,,0.311,bullish,bullish_BOS
+IMAX,IMAX,Communication Services,Entertainment,hold,near 52w high; premium zone (extended),premium,,0.005,bullish,bullish_BOS
+SN,SharkNinja,Consumer Cyclical,"Furnishings, Fixtures & Appliances",hold,valuation rich PEG=2.17; premium zone (extended),premium,2.17,0.071,bullish,bullish_BOS
+HESM,Hess Midstream LP,Energy,Oil & Gas Midstream,discard,high leverage D/E=10.06,discount,,0.036,bullish,bullish_CHoCH
+NBIX,Neurocrine Biosciences,Healthcare,Drug Manufacturers - Specialty & Generic,discard,lags market RS=-0.083,discount,0.45,-0.083,bullish,bullish_BOS
+PCG,PG&E,Utilities,Utilities - Regulated Electric,discard,negative FCF,discount,0.73,0.021,bullish,bullish_CHoCH
+ENB,Enbridge Inc.,Energy,Oil & Gas Midstream,discard,negative FCF; valuation egregious PEG=5.27,equilibrium,5.27,0.103,bullish,bullish_BOS
+KO,Coca-Cola,Consumer Defensive,Beverages - Non-Alcoholic,discard,valuation egregious PEG=4.23,premium,4.23,0.067,bullish,bullish_BOS
+EIX,Edison,Utilities,Utilities - Regulated Electric,discard,high leverage D/E=2.26; negative FCF; valuation egregious PEG=3.45,premium,3.45,0.173,bullish,bullish_CHoCH
+CDNS,Cadence Design Systems,Technology,Software - Application,discard,valuation egregious PEG=3.65,premium,3.65,0.077,bullish,bullish_BOS
+FTNT,Fortinet,Technology,Software - Infrastructure,discard,valuation egregious PEG=3.3,premium,3.3,0.687,bullish,bullish_BOS
+CART,Maplebear Inc.,Consumer Cyclical,Internet Retail,discard,lags market RS=-0.153,premium,2.27,-0.153,bullish,bullish_BOS
+RTX,RTX,Industrials,Aerospace & Defense,discard,lags market RS=-0.053,premium,2.52,-0.053,bullish,bullish_BOS
+TJX,The TJX Companies,Consumer Cyclical,Apparel Retail,discard,valuation egregious PEG=3.6; lags market RS=-0.033,premium,3.6,-0.033,bullish,bullish_CHoCH
+INCY,Incyte,Healthcare,Biotechnology,discard,lags market RS=-0.034,premium,0.36,-0.034,bullish,bullish_CHoCH
+SPG,Simon Property,Real Estate,REIT - Retail,discard,high leverage D/E=4.57,premium,,0.117,bullish,bullish_BOS
+TROW,T. Rowe Price,Financial Services,Asset Management,discard,valuation egregious PEG=13.93; lags market RS=-0.022,premium,13.93,-0.022,bullish,bullish_BOS
+VIK,Viking,Consumer Cyclical,Travel Services,discard,high leverage D/E=5.46,premium,,0.233,bullish,bullish_BOS
+TGTX,TG Therapeutics,Healthcare,Biotechnology,discard,negative FCF,premium,,0.472,bullish,bullish_CHoCH
