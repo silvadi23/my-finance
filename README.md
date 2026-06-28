@@ -11,6 +11,20 @@ companies**, and **visualize** it.
 
 The company drill-down's basic-strength filter spec is documented in this file (see below).
 
+## Run it
+
+Collect data:
+
+```bash
+python screener_strength.py
+```
+
+Open dashboard:
+
+```bash
+python -m streamlit run strength_dashboard.py
+```
+
 ## Data source
 
 [yfinance](https://github.com/ranaroussi/yfinance):
