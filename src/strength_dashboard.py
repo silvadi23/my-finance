@@ -62,7 +62,7 @@ st.set_page_config(page_title="Relative Strength", layout="wide")
 
 
 @st.cache_data
-def load_results(_mtime):
+def load_results(mtime):
     df = pd.read_csv(RESULTS_CSV)
     for c in NUMERIC_COLS:
         if c in df.columns:
@@ -70,8 +70,10 @@ def load_results(_mtime):
     return df
 
 
+# NOTE: `mtime` (the CSV's st_mtime) is part of the cache key on purpose — it must NOT be
+# underscore-prefixed, or st.cache_data would drop it from the hash and never see file changes.
 @st.cache_data
-def load_history(_mtime):
+def load_history(mtime):
     h = pd.read_csv(HISTORY_CSV)
     h['rs_2w'] = pd.to_numeric(h['rs_2w'], errors='coerce')
     return h
@@ -105,7 +107,7 @@ def spark_png(values):
 
 
 @st.cache_data
-def load_companies(_mtime):
+def load_companies(mtime):
     df = pd.read_csv(COMPANIES_CSV)
     for c in ['rank', 'weight', 'rs_score', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'ret_1y',
               'chg_1w', 'chg_1m', 'chg_3m']:
@@ -115,7 +117,7 @@ def load_companies(_mtime):
 
 
 @st.cache_data
-def load_companies_history(_mtime):
+def load_companies_history(mtime):
     h = pd.read_csv(COMPANIES_HISTORY_CSV)
     h['rs_2w'] = pd.to_numeric(h['rs_2w'], errors='coerce')
     return h
@@ -163,33 +165,26 @@ def _zscore_rows(frame):
     return frame.sub(mean, axis=0).div(std, axis=0)
 
 
-@st.cache_data
-def rrg_frame(_mtime, ids):
-    """Relative-rotation coordinates per id, from the bi-weekly rs_2w history,
-    normalised cross-sectionally within the cohort `ids` (a tuple).
+_RRG_COLS = ['rs_ratio', 'rs_momentum', 'state', 'confirmed', 'tail']
 
-    rs_2w is a 2-week *excess return*, so its cumulative sum is the relative
-    line; we smooth that into the RS-Ratio (level) and take its rate of change
-    as RS-Momentum (direction). Both are z-scored per date so the quadrant origin
-    is the cohort average (the RRG '100' centre).
 
-    Returns a DataFrame indexed by id with columns:
+def _rrg_from_wide(wide):
+    """Core relative-rotation computation from a date x id wide matrix of rs_2w.
+
+    rs_2w is a 2-week *excess return*, so its cumulative sum is the relative line;
+    we smooth that into the RS-Ratio (level) and take its rate of change as
+    RS-Momentum (direction). Both are z-scored per date so the quadrant origin is
+    the cohort average (the RRG '100' centre).
+
+    Returns a DataFrame indexed by the columns of `wide` with:
       rs_ratio     latest RS-Ratio  (z; >0 = above cohort average)
       rs_momentum  latest RS-Momentum (z; >0 = strengthening, leads the level)
       state        Improving / Leading / Weakening / Lagging
       confirmed    momentum held its sign for >= CONFIRM_BUCKETS buckets
       tail         [(rs_ratio, rs_momentum)] for the last TAIL_POINTS dates
-    """
-    empty = pd.DataFrame(columns=['rs_ratio', 'rs_momentum', 'state', 'confirmed', 'tail'])
-    h = load_history(_mtime)
-    ids = [i for i in ids if i in set(h['id'])]
-    if not ids:
-        return empty
-    wide = (h[h['id'].isin(ids)]
-            .pivot_table(index='date', columns='id', values='rs_2w', aggfunc='last')
-            .sort_index())
+    Empty if fewer than 2 dates or 2 ids (a cross-sectional z-score needs both)."""
     if wide.shape[0] < 2 or wide.shape[1] < 2:
-        return empty   # need >=2 dates and >=2 ids for a cross-sectional z-score
+        return pd.DataFrame(columns=_RRG_COLS)
 
     line = wide.fillna(0).cumsum()
     ratio = line.rolling(RATIO_SMOOTH, min_periods=1).mean()
@@ -198,7 +193,7 @@ def rrg_frame(_mtime, ids):
     mom_z = _zscore_rows(momentum)
 
     out = {}
-    for cid in ids:
+    for cid in wide.columns:
         rz = ratio_z[cid].dropna()
         mz = mom_z[cid].dropna()
         if rz.empty or mz.empty:
@@ -220,7 +215,45 @@ def rrg_frame(_mtime, ids):
                 for d in common]
         out[cid] = {'rs_ratio': round(r_last, 2), 'rs_momentum': round(m_last, 2),
                     'state': state, 'confirmed': run >= CONFIRM_BUCKETS, 'tail': tail}
-    return pd.DataFrame.from_dict(out, orient='index') if out else empty
+    return pd.DataFrame.from_dict(out, orient='index') if out else pd.DataFrame(columns=_RRG_COLS)
+
+
+@st.cache_data
+def rrg_frame(mtime, ids):
+    """Relative-rotation coordinates per sector/industry id, normalised
+    cross-sectionally within the cohort `ids` (a tuple). See `_rrg_from_wide`."""
+    h = load_history(mtime)
+    ids = [i for i in ids if i in set(h['id'])]
+    if not ids:
+        return pd.DataFrame(columns=_RRG_COLS)
+    wide = (h[h['id'].isin(ids)]
+            .pivot_table(index='date', columns='id', values='rs_2w', aggfunc='last')
+            .sort_index())
+    return _rrg_from_wide(wide)
+
+
+@st.cache_data
+def company_rrg_frame(mtime):
+    """Per-company RRG state, z-scored across the WHOLE company universe (every
+    company in companies_hist), so a company's state reflects its RS trajectory
+    versus the market-wide screened set. Returns a flat DataFrame:
+    industry_id, symbol, rs_ratio, rs_momentum, state, confirmed."""
+    cols = ['industry_id', 'symbol', 'rs_ratio', 'rs_momentum', 'state', 'confirmed']
+    h = load_companies_history(mtime)
+    if h.empty:
+        return pd.DataFrame(columns=cols)
+    # Composite key so a symbol listed under two industries stays distinct.
+    sep = '\x1f'
+    keyed = h.assign(_k=h['industry_id'].astype(str) + sep + h['symbol'].astype(str))
+    wide = (keyed.pivot_table(index='date', columns='_k', values='rs_2w', aggfunc='last')
+            .sort_index())
+    r = _rrg_from_wide(wide)
+    if r.empty:
+        return pd.DataFrame(columns=cols)
+    parts = r.index.to_series().str.split(sep, n=1, expand=True)
+    r['industry_id'] = parts[0].values
+    r['symbol'] = parts[1].values
+    return r[cols].reset_index(drop=True)
 
 
 # --- load ------------------------------------------------------------------
@@ -273,6 +306,18 @@ if not companies.empty:
     companies['industry'] = companies['industry_id'].map(_id_name).fillna(companies['industry_id'])
     companies['sector'] = companies['industry_id'].map(_id_sector)
 
+# Relative-rotation state per company, normalised across the whole company universe
+# (mirrors the per-level sector/industry block above).
+if not companies.empty and not companies_hist.empty:
+    _crrg = company_rrg_frame(COMPANIES_HISTORY_CSV.stat().st_mtime)
+    companies = companies.merge(_crrg[['industry_id', 'symbol', 'rs_momentum', 'state', 'confirmed']],
+                                on=['industry_id', 'symbol'], how='left')
+    companies['state'] = [f"{s} ✓" if (isinstance(s, str) and c) else s
+                          for s, c in zip(companies['state'], companies['confirmed'])]
+elif not companies.empty:
+    for _c in ('rs_momentum', 'state', 'confirmed'):
+        companies[_c] = None
+
 
 def company_table(cdf, show_industry=False, height=None, sort_by=None):
     """Render a company table (RS-window heatmap, colored rs_score, green/red
@@ -292,7 +337,7 @@ def company_table(cdf, show_industry=False, height=None, sort_by=None):
         cdf = cdf.sort_values(list(scols), ascending=list(sasc), kind='stable')
     cdf = cdf.reset_index(drop=True)
     cols = (['rank', 'symbol', 'name'] + (['industry'] if show_industry else [])
-            + ['trend', 'chg_1w', 'chg_1m', 'chg_3m',
+            + ['trend', 'state', 'rs_momentum', 'chg_1w', 'chg_1m', 'chg_3m',
                'rs_score', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'ret_1y'])
     cfg = {
         'rank':     st.column_config.NumberColumn("#", format="%d"),
@@ -300,6 +345,11 @@ def company_table(cdf, show_industry=False, height=None, sort_by=None):
         'name':     st.column_config.TextColumn("Name", width="medium"),
         'industry': st.column_config.TextColumn("Industry", width="medium"),
         'trend':    st.column_config.ImageColumn("RS trend (6m)", width="medium"),
+        'state':    st.column_config.TextColumn("State",
+                                                help="RRG rotation vs the whole company universe: "
+                                                     "Improving/Leading/Weakening/Lagging (✓ = momentum confirmed)"),
+        'rs_momentum': st.column_config.NumberColumn("RS mom", format="%.2f",
+                                                     help="RS-Momentum (z): >0 strengthening, <0 weakening — leads the level"),
         'chg_1w':   st.column_config.NumberColumn("Chg 1w", format="%.1f", help="Price change %, last 1 week"),
         'chg_1m':   st.column_config.NumberColumn("Chg 1m", format="%.1f", help="Price change %, last 1 month"),
         'chg_3m':   st.column_config.NumberColumn("Chg 3m", format="%.1f", help="Price change %, last 3 months"),
@@ -310,10 +360,12 @@ def company_table(cdf, show_industry=False, height=None, sort_by=None):
         'rs_1y':    st.column_config.NumberColumn("RS 1y", format="%.1f"),
         'ret_1y':   st.column_config.NumberColumn("Ret 1y", format="%.1f"),
     }
+    styler = rs_styler(cdf, ('rs_score', 'rs_momentum', 'chg_1w', 'chg_1m', 'chg_3m'),
+                       ('rs_1m', 'rs_3m', 'rs_6m', 'rs_1y'))
+    if 'state' in cdf.columns:
+        styler = styler.map(_state_bg, subset=['state'])
     st.dataframe(
-        rs_styler(cdf, ('rs_score', 'chg_1w', 'chg_1m', 'chg_3m'),
-                  ('rs_1m', 'rs_3m', 'rs_6m', 'rs_1y')),
-        hide_index=True, use_container_width=True, height=height,
+        styler, hide_index=True, use_container_width=True, height=height,
         column_order=[c for c in cols if c in cdf.columns], column_config=cfg,
     )
 
@@ -387,7 +439,10 @@ def render_sectors_industries():
         st.info("No rows match the current filters.")
         return
     rows = event.selection.rows
-    sel_id = df.iloc[rows[0]]['id'] if rows else df.iloc[0]['id']
+    # A selection index can outlive the rows it pointed at if the filters shrink the table
+    # on a later rerun; fall back to the first row when it's now out of range.
+    sel_pos = rows[0] if (rows and rows[0] < len(df)) else 0
+    sel_id = df.iloc[sel_pos]['id']
     row = results[results['id'] == sel_id].iloc[0]
     st.caption(f"Selected: **{sel_id}** — click a row above to change.")
 
@@ -428,14 +483,15 @@ def render_companies():
     if hi <= lo:
         hi = lo + 1.0
     score_min = st.sidebar.slider("Min RS score", lo, hi, value=lo)
+    pick_states = st.sidebar.multiselect("State (RRG)", STATE_ORDER)
     top_n = st.sidebar.number_input("Top N by RS (0 = all)", min_value=0, value=0, step=25)
 
     # Multi-column sort (priority = selection order). Streamlit's header-click sort
     # is single-column, so this pre-sorts the frame. Text cols A->Z, numeric high->low.
-    sort_opts = ['rs_score', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'ret_1y',
+    sort_opts = ['rs_score', 'rs_momentum', 'state', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'ret_1y',
                  'chg_1w', 'chg_1m', 'chg_3m', 'industry', 'sector', 'symbol', 'name']
     sort_cols = st.sidebar.multiselect("Sort by (priority order)", sort_opts, default=['rs_score'])
-    text_cols = {'industry', 'sector', 'symbol', 'name'}
+    text_cols = {'industry', 'sector', 'symbol', 'name', 'state'}
     sort_by = [(c, c in text_cols) for c in sort_cols] or [('rs_score', False)]
 
     cdf = companies.copy()
@@ -444,6 +500,8 @@ def render_companies():
     if search:
         cdf = cdf[cdf['symbol'].str.contains(search, case=False, na=False)
                   | cdf['name'].str.contains(search, case=False, na=False)]
+    if pick_states and 'state' in cdf.columns:
+        cdf = cdf[cdf['state'].fillna('').str.replace(' ✓', '', regex=False).isin(pick_states)]
     cdf = cdf[cdf['rs_score'].fillna(-1e9) >= score_min]
     if top_n:  # pick the strongest N by RS, then apply the display sort
         cdf = cdf.sort_values('rs_score', ascending=False).head(int(top_n))
@@ -562,16 +620,16 @@ def render_rrg():
     })
 
 
-# --- sidebar + view dispatch -----------------------------------------------
-st.sidebar.header("Filters")
+# --- header navigation + view dispatch -------------------------------------
+# Views live as tabs in the top header (st.navigation position="top"); the sidebar
+# is left for each page's own filters. The reload control is shared across pages.
 if st.sidebar.button("🔄 Reload data"):
     st.cache_data.clear()
     st.rerun()
-view = st.sidebar.radio("View", ["Sectors & Industries", "All companies", "Rotation (RRG)"])
 
-if view == "Sectors & Industries":
-    render_sectors_industries()
-elif view == "All companies":
-    render_companies()
-else:
-    render_rrg()
+pages = [
+    st.Page(render_sectors_industries, title="Sectors & Industries", icon="📊", default=True),
+    st.Page(render_companies,          title="All companies",        icon="🏢"),
+    st.Page(render_rrg,                title="Rotation (RRG)",        icon="🔄"),
+]
+st.navigation(pages, position="top").run()

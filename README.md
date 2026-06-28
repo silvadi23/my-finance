@@ -1,4 +1,4 @@
-# Streng and Price Dashboards
+# Strength and Price Dashboards
 
 ## Purpose
 

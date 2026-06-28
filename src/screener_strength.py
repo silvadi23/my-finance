@@ -328,7 +328,9 @@ def rs_median_biweekly(constituents, series_by_ticker, spy_series, step=10):
     series = []
     for i in range(1, len(bounds)):
         a, b = bounds[i - 1], bounds[i]
-        if not spy[a]:
+        # Skip a bucket if SPY's endpoints are zero/missing -- `not spy[a]` misses NaN
+        # (bool(nan) is True), so test for NaN explicitly to avoid poisoning the median.
+        if not spy[a] or spy[a] != spy[a] or spy[b] != spy[b]:
             continue
         spy_ret = spy[b] / spy[a] - 1
         vals = []
