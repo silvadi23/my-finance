@@ -29,7 +29,7 @@ COMPANIES_HISTORY_CSV = DATA / "strength_companies_history.csv"
 
 # Field ordering for the table (left -> right). Detail columns are hidden unless
 # the sidebar toggle is on.
-BASE_COLUMNS = ['rank', 'name', 'sector', 'level', 'trend', 'state', 'rs_momentum',
+BASE_COLUMNS = ['rank', 'name', 'sector', 'level', 'trend', 'state', 'rot', 'rs_momentum',
                 'rs_score', 'rs_median', 'breadth_gap', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'ret_1y']
 DETAIL_COLUMNS = ['n_constituents', 'clipped', 'coverage', 'id']
 
@@ -48,6 +48,8 @@ MOM_LOOKBACK = 3       # buckets over which momentum (rate of change) is measure
 MOM_SMOOTH = 2         # extra smoothing on momentum so the y-axis stops zig-zagging
 CONFIRM_BUCKETS = 2    # consecutive same-sign momentum buckets to mark "confirmed"
 TAIL_POINTS = 8        # max trajectory length retained (the scatter has a length slider)
+ROT_LOOKBACK = 2       # buckets (~4 weeks) over which the rotation arrow measures momentum change
+ROT_EPS = 0.1          # |mom_delta| below this shows flat (->), not up/down
 
 # Fixed display color per state (used in both the table and the scatter).
 STATE_ORDER = ['Improving', 'Leading', 'Weakening', 'Lagging']
@@ -157,6 +159,18 @@ def _state_bg(v):
     return f'background-color: {c}; color: white' if c else ''
 
 
+def _rot_arrow(d):
+    """Rotation arrow from the recent change in RS-Momentum: rising / falling / flat."""
+    if d is None or d != d:   # None or NaN
+        return ''
+    return '↑' if d > ROT_EPS else '↓' if d < -ROT_EPS else '→'
+
+
+def _rot_style(v):
+    """Green for ↑, red for ↓, grey for flat — text colour only."""
+    return {'↑': 'color: #2ca02c', '↓': 'color: #d62728'}.get(v, 'color: #999999')
+
+
 def _zscore_rows(frame):
     """Cross-sectional z-score per date (row): (x - row mean) / row std. A 0 std
     row (or fewer than 2 values) yields NaN, which callers drop."""
@@ -165,7 +179,7 @@ def _zscore_rows(frame):
     return frame.sub(mean, axis=0).div(std, axis=0)
 
 
-_RRG_COLS = ['rs_ratio', 'rs_momentum', 'state', 'confirmed', 'tail']
+_RRG_COLS = ['rs_ratio', 'rs_momentum', 'mom_delta', 'state', 'confirmed', 'tail']
 
 
 def _rrg_from_wide(wide):
@@ -210,11 +224,15 @@ def _rrg_from_wide(wide):
                 run += 1
             else:
                 break
+        # Rotation direction: change in RS-Momentum over the last ~ROT_LOOKBACK buckets.
+        # Negative while Leading = rolling over (the on-chart tail heading down).
+        mom_delta = float(m_last - mz.iloc[-1 - min(ROT_LOOKBACK, len(mz) - 1)])
         common = rz.index.intersection(mz.index)[-TAIL_POINTS:]
         tail = [(round(float(ratio_z[cid][d]), 3), round(float(mom_z[cid][d]), 3))
                 for d in common]
         out[cid] = {'rs_ratio': round(r_last, 2), 'rs_momentum': round(m_last, 2),
-                    'state': state, 'confirmed': run >= CONFIRM_BUCKETS, 'tail': tail}
+                    'mom_delta': round(mom_delta, 2), 'state': state,
+                    'confirmed': run >= CONFIRM_BUCKETS, 'tail': tail}
     return pd.DataFrame.from_dict(out, orient='index') if out else pd.DataFrame(columns=_RRG_COLS)
 
 
@@ -237,8 +255,8 @@ def company_rrg_frame(mtime):
     """Per-company RRG state, z-scored across the WHOLE company universe (every
     company in companies_hist), so a company's state reflects its RS trajectory
     versus the market-wide screened set. Returns a flat DataFrame:
-    industry_id, symbol, rs_ratio, rs_momentum, state, confirmed."""
-    cols = ['industry_id', 'symbol', 'rs_ratio', 'rs_momentum', 'state', 'confirmed']
+    industry_id, symbol, rs_ratio, rs_momentum, mom_delta, state, confirmed."""
+    cols = ['industry_id', 'symbol', 'rs_ratio', 'rs_momentum', 'mom_delta', 'state', 'confirmed']
     h = load_companies_history(mtime)
     if h.empty:
         return pd.DataFrame(columns=cols)
@@ -278,13 +296,14 @@ _hist_mtime = HISTORY_CSV.stat().st_mtime if HISTORY_CSV.exists() else 0
 if not history.empty:
     _rrg = pd.concat([rrg_frame(_hist_mtime, tuple(results[results['level'] == lv]['id']))
                       for lv in ('sector', 'industry')])
-    results = results.merge(_rrg[['rs_ratio', 'rs_momentum', 'state', 'confirmed']],
+    results = results.merge(_rrg[['rs_ratio', 'rs_momentum', 'mom_delta', 'state', 'confirmed']],
                             left_on='id', right_index=True, how='left')
     # Tag confirmed turns with a check so the table shows tentative vs confirmed.
     results['state'] = [f"{s} ✓" if (isinstance(s, str) and c) else s
                         for s, c in zip(results['state'], results['confirmed'])]
+    results['rot'] = results['mom_delta'].map(_rot_arrow)
 else:
-    for c in ('rs_ratio', 'rs_momentum', 'state', 'confirmed'):
+    for c in ('rs_ratio', 'rs_momentum', 'mom_delta', 'state', 'confirmed', 'rot'):
         results[c] = None
 
 # Company drill-down data (optional; produced by screener_strength.py).
@@ -310,12 +329,13 @@ if not companies.empty:
 # (mirrors the per-level sector/industry block above).
 if not companies.empty and not companies_hist.empty:
     _crrg = company_rrg_frame(COMPANIES_HISTORY_CSV.stat().st_mtime)
-    companies = companies.merge(_crrg[['industry_id', 'symbol', 'rs_momentum', 'state', 'confirmed']],
+    companies = companies.merge(_crrg[['industry_id', 'symbol', 'rs_momentum', 'mom_delta', 'state', 'confirmed']],
                                 on=['industry_id', 'symbol'], how='left')
     companies['state'] = [f"{s} ✓" if (isinstance(s, str) and c) else s
                           for s, c in zip(companies['state'], companies['confirmed'])]
+    companies['rot'] = companies['mom_delta'].map(_rot_arrow)
 elif not companies.empty:
-    for _c in ('rs_momentum', 'state', 'confirmed'):
+    for _c in ('rs_momentum', 'mom_delta', 'state', 'confirmed', 'rot'):
         companies[_c] = None
 
 
@@ -337,7 +357,7 @@ def company_table(cdf, show_industry=False, height=None, sort_by=None):
         cdf = cdf.sort_values(list(scols), ascending=list(sasc), kind='stable')
     cdf = cdf.reset_index(drop=True)
     cols = (['rank', 'symbol', 'name'] + (['industry'] if show_industry else [])
-            + ['trend', 'state', 'rs_momentum', 'chg_1w', 'chg_1m', 'chg_3m',
+            + ['trend', 'state', 'rot', 'rs_momentum', 'chg_1w', 'chg_1m', 'chg_3m',
                'rs_score', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'ret_1y'])
     cfg = {
         'rank':     st.column_config.NumberColumn("#", format="%d"),
@@ -348,6 +368,8 @@ def company_table(cdf, show_industry=False, height=None, sort_by=None):
         'state':    st.column_config.TextColumn("State",
                                                 help="RRG rotation vs the whole company universe: "
                                                      "Improving/Leading/Weakening/Lagging (✓ = momentum confirmed)"),
+        'rot':      st.column_config.TextColumn("Rot", help="RS-Momentum rising ↑ / falling ↓ over "
+                                                            "~4 weeks; ↓ while Leading = rolling over"),
         'rs_momentum': st.column_config.NumberColumn("RS mom", format="%.2f",
                                                      help="RS-Momentum (z): >0 strengthening, <0 weakening — leads the level"),
         'chg_1w':   st.column_config.NumberColumn("Chg 1w", format="%.1f", help="Price change %, last 1 week"),
@@ -364,6 +386,8 @@ def company_table(cdf, show_industry=False, height=None, sort_by=None):
                        ('rs_1m', 'rs_3m', 'rs_6m', 'rs_1y'))
     if 'state' in cdf.columns:
         styler = styler.map(_state_bg, subset=['state'])
+    if 'rot' in cdf.columns:
+        styler = styler.map(_rot_style, subset=['rot'])
     # Pass height only when set: Streamlit >=1.58 rejects height=None (must be a positive
     # int / 'stretch' / 'content'), and omitting it uses the auto default on all versions.
     extra = {'height': height} if height is not None else {}
@@ -413,6 +437,8 @@ def render_sectors_industries():
         'state':          st.column_config.TextColumn("State",
                                                       help="RRG rotation: Improving/Leading/Weakening/Lagging "
                                                            "(✓ = momentum confirmed). Improving/Weakening are early turns."),
+        'rot':            st.column_config.TextColumn("Rot", help="RS-Momentum rising ↑ / falling ↓ over "
+                                                                  "~4 weeks; ↓ while Leading = rolling over"),
         'rs_momentum':    st.column_config.NumberColumn("RS mom", format="%.2f",
                                                         help="RS-Momentum (z): >0 strengthening, <0 weakening — leads the level"),
         'rs_score':       st.column_config.NumberColumn("RS score", format="%.1f"),
@@ -432,6 +458,8 @@ def render_sectors_industries():
     styler = rs_styler(df, ('rs_score', 'rs_median', 'rs_momentum'), ('rs_1m', 'rs_3m', 'rs_6m', 'rs_1y'))
     if 'state' in df.columns:
         styler = styler.map(_state_bg, subset=['state'])
+    if 'rot' in df.columns:
+        styler = styler.map(_rot_style, subset=['rot'])
     event = st.dataframe(
         styler, hide_index=True, width='stretch',
         column_order=column_order, column_config=column_config,
@@ -494,8 +522,8 @@ def render_companies():
 
     # Multi-column sort (priority = selection order). Streamlit's header-click sort
     # is single-column, so this pre-sorts the frame. Text cols A->Z, numeric high->low.
-    sort_opts = ['rs_score', 'rs_momentum', 'state', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'ret_1y',
-                 'chg_1w', 'chg_1m', 'chg_3m', 'industry', 'sector', 'symbol', 'name']
+    sort_opts = ['rs_score', 'rs_momentum', 'mom_delta', 'state', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y',
+                 'ret_1y', 'chg_1w', 'chg_1m', 'chg_3m', 'industry', 'sector', 'symbol', 'name']
     sort_cols = st.sidebar.multiselect("Sort by (priority order)", sort_opts, default=['rs_score'])
     text_cols = {'industry', 'sector', 'symbol', 'name', 'state'}
     sort_by = [(c, c in text_cols) for c in sort_cols] or [('rs_score', False)]
