@@ -50,6 +50,8 @@ CONFIRM_BUCKETS = 2    # consecutive same-sign momentum buckets to mark "confirm
 TAIL_POINTS = 8        # max trajectory length retained (the scatter has a length slider)
 ROT_LOOKBACK = 2       # buckets (~4 weeks) over which the rotation arrow measures momentum change
 ROT_EPS = 0.1          # |mom_delta| below this shows flat (->), not up/down
+# Sidebar Rotation filter: label -> arrow glyph in the `rot` column.
+ROT_FILTER = {'Rising ↑': '↑', 'Falling ↓': '↓', 'Flat →': '→'}
 
 # Cache-key token for the RRG functions. st.cache_data only invalidates on the decorated
 # function's own source, NOT its callees — so when _rrg_from_wide's output shape/logic
@@ -426,6 +428,7 @@ def render_sectors_industries():
         hi = lo + 1.0
     score_min = st.sidebar.slider("Min RS score", lo, hi, value=lo)
     pick_states = st.sidebar.multiselect("State (RRG)", STATE_ORDER)
+    pick_rot = st.sidebar.multiselect("Rotation", list(ROT_FILTER))
     top_n = st.sidebar.number_input("Top N (0 = all)", min_value=0, value=0, step=10)
     show_detail = st.sidebar.checkbox("Show detail columns (n, clip, cov, id)", value=False)
 
@@ -438,6 +441,8 @@ def render_sectors_industries():
         df = df[df['name'].str.contains(search, case=False, na=False)]
     if pick_states and 'state' in df.columns:
         df = df[df['state'].fillna('').str.replace(' ✓', '', regex=False).isin(pick_states)]
+    if pick_rot and 'rot' in df.columns:
+        df = df[df['rot'].isin([ROT_FILTER[x] for x in pick_rot])]
     df = df[df['rs_score'].fillna(-1e9) >= score_min]
     df = df.sort_values('rs_score', ascending=False, na_position='last').reset_index(drop=True)
     if top_n:
@@ -535,6 +540,7 @@ def render_companies():
         hi = lo + 1.0
     score_min = st.sidebar.slider("Min RS score", lo, hi, value=lo)
     pick_states = st.sidebar.multiselect("State (RRG)", STATE_ORDER)
+    pick_rot = st.sidebar.multiselect("Rotation", list(ROT_FILTER))
     top_n = st.sidebar.number_input("Top N by RS (0 = all)", min_value=0, value=0, step=25)
 
     # Multi-column sort (priority = selection order). Streamlit's header-click sort
@@ -555,6 +561,8 @@ def render_companies():
                   | cdf['name'].str.contains(search, case=False, na=False)]
     if pick_states and 'state' in cdf.columns:
         cdf = cdf[cdf['state'].fillna('').str.replace(' ✓', '', regex=False).isin(pick_states)]
+    if pick_rot and 'rot' in cdf.columns:
+        cdf = cdf[cdf['rot'].isin([ROT_FILTER[x] for x in pick_rot])]
     cdf = cdf[cdf['rs_score'].fillna(-1e9) >= score_min]
     if top_n:  # pick the strongest N by RS, then apply the display sort
         cdf = cdf.sort_values('rs_score', ascending=False).head(int(top_n))
