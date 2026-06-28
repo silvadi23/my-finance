@@ -479,6 +479,9 @@ def render_companies():
         st.info("No company data. Re-run screener_strength.py to generate strength_companies.csv.")
         return
     pick_sectors = st.sidebar.multiselect("Sector", sorted(companies['sector'].dropna().unique()))
+    # Scope the industry list to the picked sector(s) so it stays short (~145 otherwise).
+    _ind_pool = companies[companies['sector'].isin(pick_sectors)] if pick_sectors else companies
+    pick_industries = st.sidebar.multiselect("Industry", sorted(_ind_pool['industry'].dropna().unique()))
     search = st.sidebar.text_input("Search symbol / name")
     valid = companies['rs_score'].dropna()
     lo = float(valid.min()) if not valid.empty else -100.0
@@ -500,6 +503,8 @@ def render_companies():
     cdf = companies.copy()
     if pick_sectors:
         cdf = cdf[cdf['sector'].isin(pick_sectors)]
+    if pick_industries:
+        cdf = cdf[cdf['industry'].isin(pick_industries)]
     if search:
         cdf = cdf[cdf['symbol'].str.contains(search, case=False, na=False)
                   | cdf['name'].str.contains(search, case=False, na=False)]
