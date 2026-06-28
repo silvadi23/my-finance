@@ -2,7 +2,7 @@
 """
 Streamlit dashboard for sector/industry relative strength.
 
-Reads the CSVs produced by screener_strength.py (in this same folder):
+Reads the CSVs produced by screener_strength.py (written to ./data_results/):
   - strength_results.csv           : snapshot ranking (one row per sector/industry)
   - strength_history.csv           : tidy bi-weekly rs_2w series (joins on `id`)
   - strength_companies.csv         : per-industry top companies (drill-down)
@@ -21,15 +21,16 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 HERE = Path(__file__).parent
-RESULTS_CSV = HERE / "strength_results.csv"
-HISTORY_CSV = HERE / "strength_history.csv"
-COMPANIES_CSV = HERE / "strength_companies.csv"
-COMPANIES_HISTORY_CSV = HERE / "strength_companies_history.csv"
+DATA = HERE / "data_results"
+RESULTS_CSV = DATA / "strength_results.csv"
+HISTORY_CSV = DATA / "strength_history.csv"
+COMPANIES_CSV = DATA / "strength_companies.csv"
+COMPANIES_HISTORY_CSV = DATA / "strength_companies_history.csv"
 
 # Field ordering for the table (left -> right). Detail columns are hidden unless
 # the sidebar toggle is on.
-BASE_COLUMNS = ['rank', 'name', 'sector', 'level', 'trend', 'rs_score', 'rs_median',
-                'breadth_gap', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'ret_1y']
+BASE_COLUMNS = ['rank', 'name', 'sector', 'level', 'trend', 'state', 'rs_momentum',
+                'rs_score', 'rs_median', 'breadth_gap', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'ret_1y']
 DETAIL_COLUMNS = ['n_constituents', 'clipped', 'coverage', 'id']
 
 NUMERIC_COLS = ['rank', 'rs_score', 'rs_median', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y',
@@ -37,6 +38,25 @@ NUMERIC_COLS = ['rank', 'rs_score', 'rs_median', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_
 
 # In-table sparkline shows only the most recent ~6 months of bi-weekly points.
 TREND_POINTS = 13
+
+# --- relative rotation (RRG) knobs -----------------------------------------
+# The RS-Ratio is the strength *level* (where it is); the RS-Momentum is its rate
+# of change (which way it is moving). A turn shows up in momentum before the level
+# crosses over, so these are the early/confirmation dial.
+RATIO_SMOOTH = 3       # buckets to smooth the cumulative RS line (the RS-Ratio)
+MOM_LOOKBACK = 3       # buckets over which momentum (rate of change) is measured
+MOM_SMOOTH = 2         # extra smoothing on momentum so the y-axis stops zig-zagging
+CONFIRM_BUCKETS = 2    # consecutive same-sign momentum buckets to mark "confirmed"
+TAIL_POINTS = 8        # max trajectory length retained (the scatter has a length slider)
+
+# Fixed display color per state (used in both the table and the scatter).
+STATE_ORDER = ['Improving', 'Leading', 'Weakening', 'Lagging']
+STATE_COLORS = {
+    'Leading':   '#2ca02c',   # confirmed strong
+    'Improving': '#1f77b4',   # early bullish turn (still lagging on level)
+    'Weakening': '#ff7f0e',   # early topping
+    'Lagging':   '#d62728',   # confirmed weak
+}
 
 st.set_page_config(page_title="Relative Strength", layout="wide")
 
@@ -127,9 +147,85 @@ def rs_styler(d, score_cols, window_cols):
     return sty
 
 
+def _state_bg(v):
+    """Background color for a state cell (handles the trailing ' ✓' marker)."""
+    if not isinstance(v, str) or not v:
+        return ''
+    c = STATE_COLORS.get(v.replace(' ✓', ''))
+    return f'background-color: {c}; color: white' if c else ''
+
+
+def _zscore_rows(frame):
+    """Cross-sectional z-score per date (row): (x - row mean) / row std. A 0 std
+    row (or fewer than 2 values) yields NaN, which callers drop."""
+    mean = frame.mean(axis=1)
+    std = frame.std(axis=1).replace(0, float('nan'))
+    return frame.sub(mean, axis=0).div(std, axis=0)
+
+
+@st.cache_data
+def rrg_frame(_mtime, ids):
+    """Relative-rotation coordinates per id, from the bi-weekly rs_2w history,
+    normalised cross-sectionally within the cohort `ids` (a tuple).
+
+    rs_2w is a 2-week *excess return*, so its cumulative sum is the relative
+    line; we smooth that into the RS-Ratio (level) and take its rate of change
+    as RS-Momentum (direction). Both are z-scored per date so the quadrant origin
+    is the cohort average (the RRG '100' centre).
+
+    Returns a DataFrame indexed by id with columns:
+      rs_ratio     latest RS-Ratio  (z; >0 = above cohort average)
+      rs_momentum  latest RS-Momentum (z; >0 = strengthening, leads the level)
+      state        Improving / Leading / Weakening / Lagging
+      confirmed    momentum held its sign for >= CONFIRM_BUCKETS buckets
+      tail         [(rs_ratio, rs_momentum)] for the last TAIL_POINTS dates
+    """
+    empty = pd.DataFrame(columns=['rs_ratio', 'rs_momentum', 'state', 'confirmed', 'tail'])
+    h = load_history(_mtime)
+    ids = [i for i in ids if i in set(h['id'])]
+    if not ids:
+        return empty
+    wide = (h[h['id'].isin(ids)]
+            .pivot_table(index='date', columns='id', values='rs_2w', aggfunc='last')
+            .sort_index())
+    if wide.shape[0] < 2 or wide.shape[1] < 2:
+        return empty   # need >=2 dates and >=2 ids for a cross-sectional z-score
+
+    line = wide.fillna(0).cumsum()
+    ratio = line.rolling(RATIO_SMOOTH, min_periods=1).mean()
+    momentum = ratio.diff(MOM_LOOKBACK).rolling(MOM_SMOOTH, min_periods=1).mean()
+    ratio_z = _zscore_rows(ratio)
+    mom_z = _zscore_rows(momentum)
+
+    out = {}
+    for cid in ids:
+        rz = ratio_z[cid].dropna()
+        mz = mom_z[cid].dropna()
+        if rz.empty or mz.empty:
+            continue
+        r_last, m_last = float(rz.iloc[-1]), float(mz.iloc[-1])
+        if m_last >= 0:
+            state = 'Leading' if r_last >= 0 else 'Improving'
+        else:
+            state = 'Weakening' if r_last >= 0 else 'Lagging'
+        sign = m_last >= 0
+        run = 0
+        for v in reversed(mz.tolist()):
+            if (v >= 0) == sign:
+                run += 1
+            else:
+                break
+        common = rz.index.intersection(mz.index)[-TAIL_POINTS:]
+        tail = [(round(float(ratio_z[cid][d]), 3), round(float(mom_z[cid][d]), 3))
+                for d in common]
+        out[cid] = {'rs_ratio': round(r_last, 2), 'rs_momentum': round(m_last, 2),
+                    'state': state, 'confirmed': run >= CONFIRM_BUCKETS, 'tail': tail}
+    return pd.DataFrame.from_dict(out, orient='index') if out else empty
+
+
 # --- load ------------------------------------------------------------------
 if not RESULTS_CSV.exists():
-    st.error(f"Missing `{RESULTS_CSV.name}` in {HERE}.\n\nGenerate it first:\n\n"
+    st.error(f"Missing `{RESULTS_CSV.name}` in {DATA}.\n\nGenerate it first:\n\n"
              "```\npython screener_strength.py\n```")
     st.stop()
 
@@ -142,6 +238,21 @@ results['trend'] = results['id'].map(
 # Breadth gap: a big positive gap means the cap-weighted score is driven by a few
 # names rather than broad strength (score high, median low).
 results['breadth_gap'] = results['rs_score'] - results['rs_median']
+
+# Relative-rotation state. Normalised per level so sectors are ranked among sectors
+# and industries among industries (a stable signal independent of the table filters).
+_hist_mtime = HISTORY_CSV.stat().st_mtime if HISTORY_CSV.exists() else 0
+if not history.empty:
+    _rrg = pd.concat([rrg_frame(_hist_mtime, tuple(results[results['level'] == lv]['id']))
+                      for lv in ('sector', 'industry')])
+    results = results.merge(_rrg[['rs_ratio', 'rs_momentum', 'state', 'confirmed']],
+                            left_on='id', right_index=True, how='left')
+    # Tag confirmed turns with a check so the table shows tentative vs confirmed.
+    results['state'] = [f"{s} ✓" if (isinstance(s, str) and c) else s
+                        for s, c in zip(results['state'], results['confirmed'])]
+else:
+    for c in ('rs_ratio', 'rs_momentum', 'state', 'confirmed'):
+        results[c] = None
 
 # Company drill-down data (optional; produced by screener_strength.py).
 companies = (load_companies(COMPANIES_CSV.stat().st_mtime) if COMPANIES_CSV.exists()
@@ -218,6 +329,7 @@ def render_sectors_industries():
     if hi <= lo:
         hi = lo + 1.0
     score_min = st.sidebar.slider("Min RS score", lo, hi, value=lo)
+    pick_states = st.sidebar.multiselect("State (RRG)", STATE_ORDER)
     top_n = st.sidebar.number_input("Top N (0 = all)", min_value=0, value=0, step=10)
     show_detail = st.sidebar.checkbox("Show detail columns (n, clip, cov, id)", value=False)
 
@@ -228,6 +340,8 @@ def render_sectors_industries():
         df = df[df['sector'].isin(pick_sectors)]
     if search:
         df = df[df['name'].str.contains(search, case=False, na=False)]
+    if pick_states and 'state' in df.columns:
+        df = df[df['state'].fillna('').str.replace(' ✓', '', regex=False).isin(pick_states)]
     df = df[df['rs_score'].fillna(-1e9) >= score_min]
     df = df.sort_values('rs_score', ascending=False, na_position='last').reset_index(drop=True)
     if top_n:
@@ -241,6 +355,11 @@ def render_sectors_industries():
         'rank':           st.column_config.NumberColumn("#", format="%d"),
         'name':           st.column_config.TextColumn("Name", width="medium"),
         'trend':          st.column_config.ImageColumn("RS trend (6m)", width="medium"),
+        'state':          st.column_config.TextColumn("State",
+                                                      help="RRG rotation: Improving/Leading/Weakening/Lagging "
+                                                           "(✓ = momentum confirmed). Improving/Weakening are early turns."),
+        'rs_momentum':    st.column_config.NumberColumn("RS mom", format="%.2f",
+                                                        help="RS-Momentum (z): >0 strengthening, <0 weakening — leads the level"),
         'rs_score':       st.column_config.NumberColumn("RS score", format="%.1f"),
         'rs_median':      st.column_config.NumberColumn("RS median", format="%.1f"),
         'breadth_gap':    st.column_config.NumberColumn("Gap", format="%.1f",
@@ -255,7 +374,9 @@ def render_sectors_industries():
         'coverage':       st.column_config.NumberColumn("cov", format="%.2f"),
         'id':             st.column_config.TextColumn("id"),
     }
-    styler = rs_styler(df, ('rs_score', 'rs_median'), ('rs_1m', 'rs_3m', 'rs_6m', 'rs_1y'))
+    styler = rs_styler(df, ('rs_score', 'rs_median', 'rs_momentum'), ('rs_1m', 'rs_3m', 'rs_6m', 'rs_1y'))
+    if 'state' in df.columns:
+        styler = styler.map(_state_bg, subset=['state'])
     event = st.dataframe(
         styler, hide_index=True, use_container_width=True,
         column_order=column_order, column_config=column_config,
@@ -332,14 +453,125 @@ def render_companies():
     company_table(cdf, show_industry=True, height=820, sort_by=sort_by)
 
 
+def render_rrg():
+    """View 3: relative-rotation scatter — RS-Ratio (level) vs RS-Momentum
+    (direction) — with trajectory tails, so turns are visible before the level
+    crosses over. Improving (top-left) and Weakening (bottom-right) are the early
+    quadrants; Leading/Lagging are the confirmed ones."""
+    st.markdown("#### Relative Rotation")
+    st.caption("RS-Ratio (strength level, x) vs RS-Momentum (rate of change, y), z-scored "
+               "within the cohort. The dot is the current position; the grey trail fades "
+               "from older to now and the arrow points the way it's rotating. Use the "
+               "sidebar to shorten tails or highlight names. "
+               "Window: bi-weekly relative strength over ~1y (snapshot from the last "
+               "screener run) — the level (x) reflects the full year, momentum (y) ~the "
+               "last 6–10 weeks, and each tail point is ~2 weeks.")
+    if history.empty:
+        st.info("No bi-weekly history available. Re-run screener_strength.py.")
+        return
+
+    cohort = st.sidebar.radio("Cohort", ["Sectors", "Industries in a sector"])
+    if cohort == "Sectors":
+        sub = results[results['level'] == 'sector']
+        title = "Sectors"
+    else:
+        sec = st.sidebar.selectbox("Sector", sorted(results['sector'].dropna().unique()))
+        sub = results[(results['level'] == 'industry') & (results['sector'] == sec)]
+        title = f"{sec} industries"
+
+    rrg = rrg_frame(_hist_mtime, tuple(sub['id']))
+    if rrg.empty:
+        st.info("Not enough history to compute rotation for this cohort (need ≥2 members).")
+        return
+    names = dict(zip(results['id'], results['name']))
+
+    tail_len = st.sidebar.slider("Tail length", 0, TAIL_POINTS, min(5, TAIL_POINTS),
+                                 help="0 = current positions only (declutters the chart)")
+    focus = st.sidebar.multiselect("Highlight", [names.get(i, i) for i in rrg.index],
+                                   help="Draw tails only for these (others show as dots)")
+    focus_ids = {i for i in rrg.index if names.get(i, i) in focus}
+
+    fig, ax = plt.subplots(figsize=(9, 7))
+    lim = 0.0
+    for cid, r in rrg.iterrows():
+        color = STATE_COLORS.get(r['state'], '#888888')
+        show_tail = tail_len and (not focus_ids or cid in focus_ids)
+        tail = (r['tail'] or [])[-(tail_len + 1):] if show_tail else []
+        xs = [p[0] for p in tail]
+        ys = [p[1] for p in tail]
+        lim = max([lim] + [abs(v) for v in xs + ys if v == v]
+                  + [abs(r['rs_ratio']), abs(r['rs_momentum'])])
+        # Fading neutral-gray comet trail (old = faint/thin -> now = solid) so trails
+        # don't tangle by colour; an arrowhead at the current point shows direction.
+        n = len(tail)
+        for i in range(1, n):
+            f = i / n
+            ax.plot(xs[i - 1:i + 1], ys[i - 1:i + 1], '-', color='#9e9e9e',
+                    alpha=0.10 + 0.45 * f, linewidth=0.6 + 1.4 * f,
+                    solid_capstyle='round', zorder=1)
+        if n >= 2:
+            ax.annotate('', xy=(xs[-1], ys[-1]), xytext=(xs[-2], ys[-2]),
+                        arrowprops=dict(arrowstyle='-|>', color=color, lw=1.4, alpha=0.9),
+                        zorder=2)
+        dim = bool(focus_ids) and cid not in focus_ids
+        ax.scatter([r['rs_ratio']], [r['rs_momentum']], color=color,
+                   s=70 if dim else 120, zorder=3, edgecolors='white', linewidths=0.8,
+                   alpha=0.35 if dim else 1.0)
+        if not dim:
+            ax.annotate(names.get(cid, cid), (r['rs_ratio'], r['rs_momentum']),
+                        fontsize=8, xytext=(6, 4), textcoords='offset points', zorder=4,
+                        bbox=dict(boxstyle='round,pad=0.12', fc='white', ec='none', alpha=0.6))
+    lim = (lim or 1.0) * 1.15
+    ax.set_xlim(-lim, lim)
+    ax.set_ylim(-lim, lim)
+    ax.axhline(0, color='#999', linewidth=0.8)
+    ax.axvline(0, color='#999', linewidth=0.8)
+    # Faint quadrant tints + corner labels.
+    ax.axhspan(0, lim, xmin=0.5, xmax=1.0, color=STATE_COLORS['Leading'], alpha=0.05)
+    ax.axhspan(-lim, 0, xmin=0.5, xmax=1.0, color=STATE_COLORS['Weakening'], alpha=0.05)
+    ax.axhspan(-lim, 0, xmin=0.0, xmax=0.5, color=STATE_COLORS['Lagging'], alpha=0.05)
+    ax.axhspan(0, lim, xmin=0.0, xmax=0.5, color=STATE_COLORS['Improving'], alpha=0.05)
+    for qx, qy, txt in [(0.98, 0.98, 'Leading'), (0.98, 0.02, 'Weakening'),
+                        (0.02, 0.02, 'Lagging'), (0.02, 0.98, 'Improving')]:
+        ax.text(qx, qy, txt, transform=ax.transAxes, color=STATE_COLORS[txt], fontsize=10,
+                ha='right' if qx > 0.5 else 'left', va='top' if qy > 0.5 else 'bottom',
+                alpha=0.75, fontweight='bold')
+    ax.set_xlabel("RS-Ratio  (relative strength level, z)")
+    ax.set_ylabel("RS-Momentum  (rate of change, z)")
+    ax.set_title(f"Relative rotation — {title}")
+    st.pyplot(fig)
+    plt.close(fig)
+
+    # Actionable list: early turns (Improving/Weakening) first.
+    tbl = rrg.copy()
+    tbl['name'] = [names.get(i, i) for i in tbl.index]
+    rank = {s: i for i, s in enumerate(STATE_ORDER)}
+    tbl['_o'] = tbl['state'].map(rank)
+    tbl['state'] = [f"{s} ✓" if c else s for s, c in zip(tbl['state'], tbl['confirmed'])]
+    tbl = tbl.sort_values(['_o', 'rs_momentum'], ascending=[True, False])
+    show = tbl[['name', 'state', 'rs_ratio', 'rs_momentum']]
+    sty = show.style.map(_state_bg, subset=['state'])
+    mm = float(show['rs_momentum'].abs().max() or 0)
+    if mm > 0:
+        sty = sty.background_gradient(cmap='RdYlGn', subset=['rs_momentum'], vmin=-mm, vmax=mm)
+    st.dataframe(sty, hide_index=True, use_container_width=True, column_config={
+        'name':        st.column_config.TextColumn("Name", width="medium"),
+        'state':       st.column_config.TextColumn("State"),
+        'rs_ratio':    st.column_config.NumberColumn("RS-Ratio", format="%.2f"),
+        'rs_momentum': st.column_config.NumberColumn("RS-Momentum", format="%.2f"),
+    })
+
+
 # --- sidebar + view dispatch -----------------------------------------------
 st.sidebar.header("Filters")
 if st.sidebar.button("🔄 Reload data"):
     st.cache_data.clear()
     st.rerun()
-view = st.sidebar.radio("View", ["Sectors & Industries", "All companies"])
+view = st.sidebar.radio("View", ["Sectors & Industries", "All companies", "Rotation (RRG)"])
 
 if view == "Sectors & Industries":
     render_sectors_industries()
-else:
+elif view == "All companies":
     render_companies()
+else:
+    render_rrg()

@@ -31,6 +31,7 @@ import csv
 import json
 import sys
 import time
+from pathlib import Path
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -554,7 +555,7 @@ def main():
     rank = {'buy': 0, 'hold': 1, 'discard': 2}
     matches.sort(key=lambda x: (rank.get(x['rating'], 3), x['range_position'], x['sma50_pct_chg']))
 
-    output_path = 'screener_results.csv'
+    output_path = Path(__file__).resolve().parent / 'screener_results.csv'
     fields = ['symbol', 'displayName', 'sector', 'industry', 'rating', 'rating_reason',
               'zone', 'peg', 'rel_strength_6m', 'structure_trend', 'last_break']
     with open(output_path, 'w', newline='', encoding='utf-8') as f:

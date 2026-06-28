@@ -1,0 +1,156 @@
+rank,id,level,name,sector,proxy,n_constituents,coverage,clipped,ret_1m,ret_3m,ret_6m,ret_1y,rs_1m,rs_3m,rs_6m,rs_1y,rs_score,rs_median
+1,technology,sector,Technology,Technology,XLK,,,,-1.7,36.8,24.4,45.2,0.9,23.6,17.9,25.3,17.68,
+2,industrials,sector,Industrials,Industrials,XLI,,,,4.2,12.6,16.0,25.0,6.8,-0.7,9.5,5.2,5.05,
+3,real-estate,sector,Real Estate,Real Estate,XLRE,,,,2.3,13.3,14.3,13.8,4.9,-0.0,7.8,-6.1,2.1,
+4,healthcare,sector,Healthcare,Healthcare,XLV,,,,8.2,10.5,4.3,21.8,10.8,-2.8,-2.2,1.9,1.06,
+5,basic-materials,sector,Basic Materials,Basic Materials,XLB,,,,1.2,5.5,13.7,19.6,3.8,-7.8,7.2,-0.3,0.52,
+6,energy,sector,Energy,Energy,XLE,,,,-4.8,-11.9,22.7,30.2,-2.2,-25.1,16.1,10.3,-1.09,
+7,utilities,sector,Utilities,Utilities,XLU,,,,3.0,2.6,9.9,16.8,5.6,-10.7,3.3,-3.1,-1.71,
+8,consumer-defensive,sector,Consumer Defensive,Consumer Defensive,XLP,,,,0.8,5.1,10.7,8.1,3.5,-8.2,4.1,-11.8,-2.88,
+9,financial-services,sector,Financial Services,Financial Services,XLF,,,,4.5,9.6,-2.5,4.7,7.2,-3.7,-9.0,-15.1,-5.42,
+10,consumer-cyclical,sector,Consumer Cyclical,Consumer Cyclical,XLY,,,,-5.7,5.3,-6.0,5.5,-3.1,-8.0,-12.5,-14.4,-9.66,
+11,communication-services,sector,Communication Services,Communication Services,XLC,,,,-8.4,-2.2,-9.0,-0.2,-5.8,-15.5,-15.6,-20.0,-14.47,
+1,computer-hardware,industry,Computer Hardware,Technology,22 cons,22,1.0,7,7.2,101.9,126.9,144.4,9.9,88.6,120.4,124.5,89.57,24.71
+2,semiconductor-equipment-materials,industry,Semiconductor Equipment & Materials,Technology,29 cons,29,1.0,17,17.5,63.7,112.7,193.7,20.1,50.4,106.1,173.8,85.72,82.66
+3,semiconductors,industry,Semiconductors,Technology,49 cons,49,1.0,12,0.5,105.1,100.8,128.9,3.1,91.8,94.3,109.1,78.26,50.28
+4,electronic-components,industry,Electronic Components,Technology,32 cons,32,1.0,7,3.0,53.3,73.4,120.6,5.6,40.0,66.9,100.7,53.33,51.49
+5,electrical-equipment-parts,industry,Electrical Equipment & Parts,Industrials,29 cons,29,1.0,5,-0.4,40.4,71.1,125.2,2.2,27.1,64.6,105.3,49.03,13.96
+6,other-industrial-metals-mining,industry,Other Industrial Metals & Mining,Basic Materials,14 cons,14,1.0,2,-4.1,31.8,49.7,134.1,-1.5,18.5,43.2,114.2,41.04,22.32
+7,engineering-construction,industry,Engineering & Construction,Industrials,35 cons,35,1.0,5,0.2,31.0,56.8,104.1,2.8,17.7,50.3,84.2,37.78,23.04
+8,communication-equipment,industry,Communication Equipment,Technology,32 cons,32,1.0,8,-7.3,22.1,60.8,118.5,-4.7,8.8,54.3,98.6,37.73,25.01
+9,luxury-goods,industry,Luxury Goods,Consumer Cyclical,6 cons,6,1.0,1,10.7,29.7,31.8,108.7,13.3,16.4,25.2,88.8,32.93,20.16
+10,reit-hotel-motel,industry,REIT - Hotel & Motel,Real Estate,11 cons,11,1.0,0,15.6,42.0,47.5,60.1,18.2,28.7,41.0,40.3,32.6,33.11
+11,copper,industry,Copper,Basic Materials,4 cons,4,1.0,1,21.4,37.1,38.3,74.8,24.1,23.8,31.8,54.9,32.46,10.81
+12,scientific-technical-instruments,industry,Scientific & Technical Instruments,Technology,23 cons,23,1.0,4,1.4,24.0,51.3,86.2,4.0,10.7,44.8,66.3,30.71,12.87
+13,healthcare-plans,industry,Healthcare Plans,Healthcare,11 cons,11,1.0,0,13.5,64.5,36.9,29.3,16.1,51.3,30.3,9.4,29.57,29.97
+14,electronics-computer-distribution,industry,Electronics & Computer Distribution,Technology,8 cons,8,1.0,0,5.4,44.1,50.2,43.3,8.0,30.8,43.7,23.4,28.64,22.3
+15,trucking,industry,Trucking,Industrials,13 cons,13,1.0,0,0.9,35.4,50.1,58.4,3.5,22.1,43.6,38.5,28.09,27.55
+16,aluminum,industry,Aluminum,Basic Materials,4 cons,4,1.0,0,-17.5,15.9,33.6,130.1,-14.9,2.6,27.1,110.3,27.99,33.43
+17,conglomerates,industry,Conglomerates,Industrials,20 cons,20,1.0,0,17.3,30.7,37.1,65.4,19.9,17.4,30.5,45.6,27.47,1.85
+18,publishing,industry,Publishing,Communication Services,6 cons,6,1.0,1,3.1,9.4,49.1,92.4,5.7,-3.9,42.6,72.6,27.27,36.82
+19,biotechnology,industry,Biotechnology,Healthcare,50 cons,50,1.0,9,13.1,23.7,30.9,83.2,15.7,10.4,24.4,63.3,26.24,35.66
+20,textile-manufacturing,industry,Textile Manufacturing,Consumer Cyclical,2 cons,2,1.0,0,19.7,50.8,46.1,11.9,22.3,37.5,39.6,-8.0,25.98,29.29
+21,steel,industry,Steel,Basic Materials,10 cons,10,1.0,2,0.9,39.7,31.8,67.3,3.5,26.4,25.2,47.5,25.67,22.84
+22,airlines,industry,Airlines,Industrials,12 cons,12,1.0,0,17.0,41.7,22.5,60.0,19.7,28.4,15.9,40.1,25.24,24.92
+23,department-stores,industry,Department Stores,Consumer Cyclical,4 cons,4,1.0,0,16.2,22.2,-1.9,99.1,18.8,8.9,-8.4,79.3,19.76,19.33
+24,metal-fabrication,industry,Metal Fabrication,Industrials,15 cons,15,1.0,0,8.7,23.8,25.0,58.1,11.3,10.5,18.5,38.2,18.61,7.82
+25,rental-leasing-services,industry,Rental & Leasing Services,Industrials,16 cons,16,1.0,0,8.4,31.5,28.6,34.9,11.0,18.2,22.1,15.0,17.28,22.9
+26,food-distribution,industry,Food Distribution,Consumer Defensive,11 cons,11,1.0,0,9.2,15.6,30.0,52.1,11.8,2.3,23.5,32.3,16.56,10.32
+27,oil-gas-refining-marketing,industry,Oil & Gas Refining & Marketing,Energy,16 cons,16,1.0,0,1.9,0.8,43.0,60.6,4.6,-12.5,36.5,40.8,16.25,13.93
+28,electronic-gaming-multimedia,industry,Electronic Gaming & Multimedia,Communication Services,6 cons,6,1.0,2,2.0,62.6,17.3,4.3,4.6,49.3,10.8,-15.5,15.84,-2.22
+29,tools-accessories,industry,Tools & Accessories,Industrials,12 cons,12,1.0,0,8.4,16.7,27.9,49.8,11.0,3.4,21.4,30.0,15.63,8.21
+30,health-information-services,industry,Health Information Services,Healthcare,32 cons,32,1.0,0,16.5,31.2,16.1,35.3,19.1,17.9,9.6,15.4,15.15,7.71
+31,integrated-freight-logistics,industry,Integrated Freight & Logistics,Industrials,16 cons,16,1.0,1,1.8,18.4,22.3,59.1,4.4,5.1,15.8,39.2,14.98,9.29
+32,lodging,industry,Lodging,Consumer Cyclical,7 cons,7,1.0,1,2.1,18.7,26.8,45.1,4.7,5.4,20.2,25.2,13.67,9.0
+33,farm-heavy-construction-machinery,industry,Farm & Heavy Construction Machinery,Industrials,20 cons,20,1.0,0,10.9,13.8,27.1,42.6,13.5,0.5,20.6,22.7,13.59,5.32
+34,drug-manufacturers-specialty-generic,industry,Drug Manufacturers - Specialty & Generic,Healthcare,37 cons,37,1.0,3,7.2,18.1,16.6,55.1,9.8,4.8,10.0,35.2,13.46,11.61
+35,oil-gas-equipment-services,industry,Oil & Gas Equipment & Services,Energy,41 cons,41,1.0,2,-7.6,-3.5,36.0,69.1,-5.0,-16.8,29.4,49.2,12.63,3.85
+36,specialty-industrial-machinery,industry,Specialty Industrial Machinery,Industrials,50 cons,50,1.0,1,4.4,14.1,22.5,42.3,7.0,0.8,15.9,22.4,10.92,1.9
+37,banks-diversified,industry,Banks - Diversified,Financial Services,10 cons,10,1.0,0,9.3,20.9,11.8,43.1,11.9,7.6,5.3,23.2,10.9,14.43
+38,marine-shipping,industry,Marine Shipping,Industrials,23 cons,23,1.0,0,-2.9,5.0,29.4,52.3,-0.3,-8.3,22.9,32.5,10.8,9.9
+39,internet-content-information,industry,Internet Content & Information,Communication Services,32 cons,32,1.0,1,-1.5,30.4,12.6,35.6,1.1,17.1,6.0,15.7,10.31,-10.19
+40,capital-markets,industry,Capital Markets,Financial Services,48 cons,48,1.0,4,4.5,23.3,10.3,41.4,7.1,10.0,3.8,21.5,9.86,5.07
+41,reit-healthcare-facilities,industry,REIT - Healthcare Facilities,Real Estate,17 cons,17,1.0,0,2.6,14.2,20.5,41.6,5.2,0.9,13.9,21.8,9.85,5.23
+42,reit-retail,industry,REIT - Retail,Real Estate,25 cons,25,1.0,0,5.9,16.3,23.2,30.2,8.5,3.0,16.6,10.3,9.65,10.15
+43,staffing-employment-services,industry,Staffing & Employment Services,Industrials,12 cons,12,1.0,0,17.8,37.1,19.3,-8.3,20.4,23.8,12.8,-28.1,9.42,10.68
+44,railroads,industry,Railroads,Industrials,8 cons,8,1.0,0,3.9,15.2,21.9,33.4,6.5,1.9,15.4,13.6,9.19,6.89
+45,apparel-manufacturing,industry,Apparel Manufacturing,Consumer Cyclical,18 cons,18,1.0,1,1.5,19.6,16.1,36.9,4.1,6.3,9.6,17.1,8.98,4.7
+46,reit-office,industry,REIT - Office,Real Estate,17 cons,17,1.0,0,11.3,34.0,16.5,2.6,14.0,20.7,10.0,-17.3,8.55,11.21
+47,drug-manufacturers-general,industry,Drug Manufacturers - General,Healthcare,11 cons,11,1.0,0,7.1,9.9,14.1,46.1,9.7,-3.4,7.6,26.3,8.46,15.75
+48,medical-care-facilities,industry,Medical Care Facilities,Healthcare,43 cons,43,1.0,3,6.6,12.6,17.4,33.8,9.2,-0.7,10.8,14.0,7.68,18.36
+49,utilities-renewable,industry,Utilities - Renewable,Utilities,10 cons,10,1.0,0,-7.6,13.4,12.5,54.0,-5.0,0.1,6.0,34.1,7.65,-0.01
+50,building-products-equipment,industry,Building Products & Equipment,Industrials,31 cons,31,1.0,1,6.9,21.3,20.8,14.5,9.5,8.0,14.3,-5.3,7.52,4.88
+51,oil-gas-drilling,industry,Oil & Gas Drilling,Energy,8 cons,8,1.0,0,-17.9,-20.0,35.5,79.3,-15.3,-33.3,29.0,59.4,7.51,9.7
+52,solar,industry,Solar,Technology,9 cons,9,1.0,0,-22.2,11.5,9.7,73.5,-19.6,-1.8,3.2,53.6,7.24,4.72
+53,leisure,industry,Leisure,Consumer Cyclical,22 cons,22,1.0,0,8.4,20.2,16.0,20.4,11.0,6.9,9.4,0.5,7.19,13.43
+54,banks-regional,industry,Banks - Regional,Financial Services,50 cons,50,1.0,0,8.7,16.7,11.7,31.0,11.3,3.4,5.2,11.2,7.06,8.67
+55,furnishings-fixtures-appliances,industry,"Furnishings, Fixtures & Appliances",Consumer Cyclical,24 cons,24,1.0,2,12.6,22.2,9.1,19.6,15.2,8.9,2.6,-0.3,6.44,7.04
+56,industrial-distribution,industry,Industrial Distribution,Industrials,20 cons,20,1.0,0,4.8,16.6,15.9,24.7,7.4,3.3,9.3,4.8,6.24,1.19
+57,residential-construction,industry,Residential Construction,Consumer Cyclical,20 cons,20,1.0,0,13.8,17.4,10.7,20.2,16.4,4.1,4.2,0.4,5.84,11.69
+58,diagnostics-research,industry,Diagnostics & Research,Healthcare,36 cons,36,1.0,1,15.8,18.4,0.6,30.3,18.4,5.2,-5.9,10.5,5.55,8.83
+59,beverages-non-alcoholic,industry,Beverages - Non-Alcoholic,Consumer Defensive,11 cons,11,1.0,0,2.6,15.5,16.6,23.8,5.2,2.2,10.0,3.9,5.52,4.5
+60,reit-industrial,industry,REIT - Industrial,Real Estate,17 cons,17,1.0,0,2.0,16.6,18.8,18.8,4.7,3.3,12.3,-1.0,5.41,5.48
+61,business-equipment-supplies,industry,Business Equipment & Supplies,Industrials,1 cons,1,1.0,0,6.7,3.3,24.2,26.0,9.3,-10.0,17.6,6.1,5.37,5.37
+62,travel-services,industry,Travel Services,Consumer Cyclical,14 cons,14,1.0,0,11.5,19.7,4.9,24.7,14.1,6.4,-1.7,4.8,5.21,4.57
+63,reit-specialty,industry,REIT - Specialty,Real Estate,20 cons,20,1.0,0,0.5,14.8,23.5,13.3,3.1,1.5,17.0,-6.6,4.85,1.72
+64,resorts-casinos,industry,Resorts & Casinos,Consumer Cyclical,15 cons,15,1.0,0,7.1,16.1,10.9,20.3,9.7,2.8,4.4,0.4,4.18,7.91
+65,real-estate-diversified,industry,Real Estate - Diversified,Real Estate,3 cons,3,1.0,0,2.4,6.1,12.2,37.1,5.1,-7.2,5.7,17.2,4.01,4.92
+66,reit-diversified,industry,REIT - Diversified,Real Estate,14 cons,14,1.0,0,2.0,13.4,17.2,17.5,4.6,0.1,10.7,-2.4,3.7,6.64
+67,oil-gas-midstream,industry,Oil & Gas Midstream,Energy,40 cons,40,1.0,1,0.8,-2.1,27.5,24.9,3.4,-15.4,21.0,5.1,3.37,5.03
+68,auto-parts,industry,Auto Parts,Consumer Cyclical,39 cons,39,1.0,2,-0.0,10.0,13.5,27.0,2.6,-3.3,7.0,7.2,3.05,1.58
+69,advertising-agencies,industry,Advertising Agencies,Communication Services,20 cons,20,1.0,3,-1.0,15.0,-3.1,43.6,1.6,1.7,-9.6,23.8,2.69,2.05
+70,building-materials,industry,Building Materials,Basic Materials,12 cons,12,1.0,0,10.9,17.1,6.7,13.4,13.6,3.8,0.2,-6.5,2.61,5.35
+71,insurance-life,industry,Insurance - Life,Financial Services,18 cons,18,1.0,0,6.5,16.6,7.3,17.6,9.1,3.3,0.8,-2.2,2.61,0.38
+72,aerospace-defense,industry,Aerospace & Defense,Industrials,50 cons,50,1.0,1,2.8,7.7,8.5,32.4,5.4,-5.6,2.0,12.5,2.51,-2.32
+73,security-protection-services,industry,Security & Protection Services,Industrials,13 cons,13,1.0,0,7.1,14.1,11.8,12.8,9.8,0.8,5.2,-7.1,2.36,-6.52
+74,gold,industry,Gold,Basic Materials,10 cons,10,1.0,1,-12.8,-5.5,-7.6,91.2,-10.2,-18.8,-14.2,71.3,2.34,-1.12
+75,utilities-regulated-electric,industry,Utilities - Regulated Electric,Utilities,32 cons,32,1.0,0,4.0,4.3,15.8,24.2,6.6,-9.0,9.2,4.3,2.25,1.4
+76,packaging-containers,industry,Packaging & Containers,Consumer Cyclical,18 cons,18,1.0,1,13.5,11.7,12.1,8.5,16.1,-1.6,5.6,-11.4,2.13,7.07
+77,specialty-chemicals,industry,Specialty Chemicals,Basic Materials,45 cons,45,1.0,2,2.7,5.9,18.2,18.2,5.3,-7.4,11.7,-1.7,2.03,4.27
+78,specialty-retail,industry,Specialty Retail,Consumer Cyclical,28 cons,28,1.0,1,6.3,9.7,10.0,21.4,8.9,-3.6,3.5,1.5,2.03,3.44
+79,lumber-wood-production,industry,Lumber & Wood Production,Basic Materials,3 cons,3,1.0,0,12.6,11.5,13.4,7.0,15.2,-1.8,6.9,-12.9,2.0,-1.55
+80,other-precious-metals-mining,industry,Other Precious Metals & Mining,Basic Materials,4 cons,4,1.0,0,-6.0,-4.4,-12.3,87.7,-3.3,-17.7,-18.8,67.8,1.92,2.35
+81,financial-conglomerates,industry,Financial Conglomerates,Financial Services,6 cons,6,1.0,0,-3.0,5.0,10.9,32.7,-0.4,-8.3,4.4,12.8,1.29,-3.71
+82,discount-stores,industry,Discount Stores,Consumer Defensive,9 cons,9,1.0,0,8.7,5.6,11.7,17.7,11.3,-7.7,5.2,-2.2,1.09,-6.01
+83,software-infrastructure,industry,Software - Infrastructure,Technology,50 cons,50,1.0,1,-1.8,26.9,6.5,4.1,0.8,13.6,-0.0,-15.7,1.07,-6.14
+84,insurance-property-casualty,industry,Insurance - Property & Casualty,Financial Services,45 cons,45,1.0,0,10.2,10.9,6.8,14.5,12.8,-2.3,0.3,-5.4,0.88,-2.94
+85,real-estate-development,industry,Real Estate - Development,Real Estate,9 cons,9,1.0,0,11.3,11.3,6.9,10.9,13.9,-2.0,0.4,-8.9,0.53,-3.78
+86,auto-truck-dealerships,industry,Auto & Truck Dealerships,Consumer Cyclical,19 cons,19,1.0,1,2.2,19.6,4.4,7.4,4.8,6.3,-2.1,-12.4,-0.27,-8.08
+87,insurance-diversified,industry,Insurance - Diversified,Financial Services,8 cons,8,1.0,0,7.3,10.9,2.5,17.9,9.9,-2.4,-4.0,-1.9,-0.31,-5.95
+88,pollution-treatment-controls,industry,Pollution & Treatment Controls,Industrials,5 cons,5,1.0,0,-5.4,19.9,-2.4,23.9,-2.8,6.6,-8.9,4.1,-0.43,-12.79
+89,reit-residential,industry,REIT - Residential,Real Estate,19 cons,19,1.0,0,4.1,16.0,9.6,2.1,6.8,2.7,3.1,-17.7,-0.45,0.7
+90,insurance-reinsurance,industry,Insurance - Reinsurance,Financial Services,7 cons,7,1.0,0,4.3,6.1,10.1,16.1,6.9,-7.2,3.5,-3.8,-0.47,-2.03
+91,utilities-diversified,industry,Utilities - Diversified,Utilities,4 cons,4,1.0,0,2.9,2.8,10.4,21.4,5.5,-10.5,3.9,1.6,-0.56,-0.66
+92,apparel-retail,industry,Apparel Retail,Consumer Cyclical,22 cons,22,1.0,1,0.4,5.6,-0.6,34.9,3.0,-7.7,-7.1,15.1,-0.85,-2.94
+93,utilities-regulated-gas,industry,Utilities - Regulated Gas,Utilities,14 cons,14,1.0,0,0.6,1.8,9.9,22.7,3.2,-11.5,3.3,2.9,-1.24,-0.82
+94,education-training-services,industry,Education & Training Services,Consumer Defensive,18 cons,18,1.0,0,2.6,2.3,13.2,10.9,5.2,-11.0,6.7,-8.9,-2.04,-4.28
+95,recreational-vehicles,industry,Recreational Vehicles,Consumer Cyclical,10 cons,10,1.0,0,1.4,7.7,-1.3,25.3,4.0,-5.6,-7.8,5.5,-2.14,-6.14
+96,entertainment,industry,Entertainment,Communication Services,30 cons,30,1.0,2,-2.8,7.7,1.0,25.7,-0.2,-5.6,-5.6,5.8,-2.21,9.24
+97,silver,industry,Silver,Basic Materials,1 cons,1,1.0,0,-10.6,-2.7,-16.0,72.8,-8.0,-16.0,-22.6,53.0,-2.57,-2.57
+98,tobacco,industry,Tobacco,Consumer Defensive,6 cons,6,1.0,0,0.3,12.3,3.8,9.5,2.9,-1.0,-2.7,-10.4,-2.61,-4.3
+99,footwear-accessories,industry,Footwear & Accessories,Consumer Cyclical,11 cons,11,1.0,0,-2.4,19.0,0.9,6.1,0.2,5.7,-5.6,-13.7,-2.69,-1.62
+100,utilities-regulated-water,industry,Utilities - Regulated Water,Utilities,11 cons,11,1.0,0,6.1,3.7,8.9,7.7,8.7,-9.6,2.4,-12.2,-2.86,-3.89
+101,reit-mortgage,industry,REIT - Mortgage,Real Estate,30 cons,30,1.0,0,1.6,7.4,2.2,15.0,4.2,-5.9,-4.3,-4.9,-3.19,-2.74
+102,gambling,industry,Gambling,Consumer Cyclical,11 cons,11,1.0,1,7.2,16.8,-3.7,3.9,9.8,3.5,-10.2,-16.0,-3.24,3.95
+103,specialty-business-services,industry,Specialty Business Services,Industrials,33 cons,33,1.0,1,-1.1,10.2,6.1,6.9,1.5,-3.1,-0.5,-13.0,-3.36,2.3
+104,household-personal-products,industry,Household & Personal Products,Consumer Defensive,20 cons,20,1.0,0,3.6,10.6,7.9,-2.0,6.3,-2.7,1.3,-21.9,-3.53,-0.37
+105,chemicals,industry,Chemicals,Basic Materials,14 cons,14,1.0,0,-11.9,-14.3,24.6,25.1,-9.2,-27.6,18.0,5.2,-3.68,-5.18
+106,credit-services,industry,Credit Services,Financial Services,38 cons,38,1.0,0,7.2,17.8,-7.1,3.8,9.8,4.5,-13.6,-16.1,-4.0,1.91
+107,telecom-services,industry,Telecom Services,Communication Services,30 cons,30,1.0,5,-8.1,-9.4,2.6,42.9,-5.5,-22.7,-3.9,23.1,-4.47,-0.23
+108,medical-distribution,industry,Medical Distribution,Healthcare,5 cons,5,1.0,0,8.2,0.8,-0.1,15.4,10.8,-12.5,-6.7,-4.5,-4.49,-6.78
+109,beverages-wineries-distilleries,industry,Beverages - Wineries & Distilleries,Consumer Defensive,3 cons,3,1.0,0,2.3,5.3,6.5,0.4,4.9,-8.0,-0.1,-19.5,-5.35,-0.87
+110,insurance-specialty,industry,Insurance - Specialty,Financial Services,18 cons,18,1.0,0,7.3,9.6,-2.1,1.1,9.9,-3.7,-8.7,-18.7,-5.45,-3.45
+111,oil-gas-e-p,industry,Oil & Gas E&P,Energy,50 cons,50,1.0,0,-5.3,-15.9,19.4,18.2,-2.6,-29.2,12.9,-1.6,-5.75,-3.66
+112,internet-retail,industry,Internet Retail,Consumer Cyclical,17 cons,17,1.0,1,5.1,13.6,-4.9,-1.1,7.7,0.3,-11.5,-21.0,-5.99,3.51
+113,restaurants,industry,Restaurants,Consumer Cyclical,36 cons,36,1.0,1,3.6,6.0,4.6,-4.7,6.2,-7.3,-1.9,-24.6,-6.44,-3.46
+114,medical-instruments-supplies,industry,Medical Instruments & Supplies,Healthcare,38 cons,38,1.0,0,7.3,6.1,-3.8,3.1,9.9,-7.2,-10.3,-16.7,-6.61,-0.67
+115,waste-management,industry,Waste Management,Industrials,11 cons,11,1.0,0,9.0,4.3,-0.1,-1.6,11.6,-9.0,-6.6,-21.4,-6.65,-8.48
+116,real-estate-services,industry,Real Estate Services,Real Estate,29 cons,29,1.0,0,8.9,6.9,-12.1,10.4,11.5,-6.4,-18.7,-9.5,-7.1,-4.06
+117,farm-products,industry,Farm Products,Consumer Defensive,12 cons,12,1.0,1,-5.7,-8.0,7.0,11.9,-3.1,-21.3,0.5,-8.0,-8.46,-10.75
+118,coking-coal,industry,Coking Coal,Basic Materials,4 cons,4,1.0,0,-15.9,-10.6,-11.0,52.4,-13.3,-23.9,-17.5,32.6,-8.6,-8.53
+119,confectioners,industry,Confectioners,Consumer Defensive,3 cons,3,1.0,0,-4.9,-4.5,6.7,4.1,-2.3,-17.8,0.2,-15.8,-8.91,-6.38
+120,auto-manufacturers,industry,Auto Manufacturers,Consumer Cyclical,7 cons,7,1.0,0,-8.4,1.6,-10.2,22.9,-5.8,-11.7,-16.8,3.0,-9.09,-9.4
+121,utilities-independent-power-producers,industry,Utilities - Independent Power Producers,Utilities,8 cons,8,1.0,0,-4.4,5.6,-8.3,9.7,-1.8,-7.7,-14.8,-10.1,-9.15,-9.67
+122,grocery-stores,industry,Grocery Stores,Consumer Defensive,9 cons,9,1.0,0,-2.5,3.0,6.5,-10.5,0.1,-10.3,-0.1,-30.3,-9.16,-2.06
+123,asset-management,industry,Asset Management,Financial Services,50 cons,50,1.0,1,-2.9,8.9,-7.3,1.0,-0.3,-4.4,-13.8,-18.9,-9.29,-7.7
+124,airports-air-services,industry,Airports & Air Services,Industrials,6 cons,6,1.0,0,-1.8,4.2,-2.6,-0.2,0.8,-9.1,-9.2,-20.1,-9.33,-11.61
+125,oil-gas-integrated,industry,Oil & Gas Integrated,Energy,5 cons,5,1.0,0,-5.2,-16.0,7.4,18.4,-2.6,-29.3,0.8,-1.5,-9.35,-6.18
+126,pharmaceutical-retailers,industry,Pharmaceutical Retailers,Healthcare,1 cons,1,1.0,0,0.0,0.0,0.0,0.0,2.6,-13.3,-6.5,-19.9,-9.4,-9.4
+127,personal-services,industry,Personal Services,Consumer Cyclical,9 cons,9,1.0,0,0.9,7.9,0.3,-14.1,3.6,-5.4,-6.2,-34.0,-9.56,-13.55
+128,agricultural-inputs,industry,Agricultural Inputs,Basic Materials,8 cons,8,1.0,0,-4.1,-10.5,14.6,-4.0,-1.5,-23.8,8.1,-23.8,-9.77,-7.34
+129,packaged-foods,industry,Packaged Foods,Consumer Defensive,41 cons,41,1.0,0,3.7,1.3,-1.5,-7.5,6.3,-12.0,-8.0,-27.4,-10.23,-7.38
+130,broadcasting,industry,Broadcasting,Communication Services,10 cons,10,1.0,2,27.5,10.8,-19.5,-20.0,30.1,-2.5,-26.0,-39.9,-10.5,-24.74
+131,thermal-coal,industry,Thermal Coal,Energy,5 cons,5,1.0,0,-4.4,-18.2,-3.7,30.4,-1.8,-31.5,-10.2,10.5,-10.76,-12.37
+132,shell-companies,industry,Shell Companies,Financial Services,50 cons,50,1.0,0,1.5,3.0,-0.2,-14.4,4.2,-10.3,-6.7,-34.2,-11.11,-6.05
+133,home-improvement-retail,industry,Home Improvement Retail,Consumer Cyclical,5 cons,5,1.0,0,7.4,1.6,-7.3,-8.1,10.0,-11.7,-13.8,-27.9,-11.25,-7.09
+134,beverages-brewers,industry,Beverages - Brewers,Consumer Defensive,3 cons,3,1.0,0,1.6,-3.5,-0.8,-6.5,4.2,-16.8,-7.3,-26.4,-11.68,-13.42
+135,mortgage-finance,industry,Mortgage Finance,Financial Services,10 cons,10,1.0,0,0.4,14.7,-24.5,-5.6,3.0,1.4,-31.0,-25.5,-13.38,-12.89
+136,medical-devices,industry,Medical Devices,Healthcare,50 cons,50,1.0,2,5.9,-2.5,-12.3,-8.5,8.5,-15.8,-18.8,-28.4,-14.34,-1.53
+137,uranium,industry,Uranium,Energy,3 cons,3,1.0,0,-12.1,-6.1,-24.7,29.5,-9.5,-19.4,-31.2,9.7,-15.14,-10.37
+138,software-application,industry,Software - Application,Technology,50 cons,50,1.0,0,0.9,8.5,-17.4,-17.7,3.5,-4.8,-24.0,-37.6,-15.45,-23.19
+139,insurance-brokers,industry,Insurance Brokers,Financial Services,16 cons,16,1.0,0,7.5,3.1,-12.7,-23.6,10.2,-10.2,-19.2,-43.5,-15.49,-13.4
+140,information-technology-services,industry,Information Technology Services,Technology,42 cons,42,1.0,10,-7.6,-0.0,-17.5,-5.9,-5.0,-13.3,-24.0,-25.8,-17.36,-23.66
+141,paper-paper-products,industry,Paper & Paper Products,Basic Materials,2 cons,2,1.0,0,1.7,1.5,-16.1,-22.4,4.3,-11.8,-22.6,-42.2,-17.92,-15.7
+142,consulting-services,industry,Consulting Services,Industrials,12 cons,12,1.0,1,-3.2,-7.0,-13.3,-18.1,-0.6,-20.3,-19.8,-38.0,-19.76,-16.12
+143,financial-data-stock-exchanges,industry,Financial Data & Stock Exchanges,Financial Services,14 cons,14,1.0,0,-11.1,-8.1,-18.4,-19.4,-8.5,-21.4,-24.9,-39.2,-23.45,-19.37
+144,consumer-electronics,industry,Consumer Electronics,Technology,5 cons,5,1.0,0,-15.7,-13.8,-27.2,-10.5,-13.1,-27.1,-33.7,-30.3,-26.91,-12.53

@@ -1,4 +1,4 @@
-# Sector & Industry Relative-Strength Screener + Dashboard
+# Streng and Price Dashboards
 
 ## Purpose
 

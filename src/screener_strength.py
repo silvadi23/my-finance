@@ -28,7 +28,12 @@ import json
 import sys
 import statistics
 import pandas as pd
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+# CSV outputs live in src/data_results/ (alongside, not in, the scripts), anchored to
+# this file so the script works regardless of the current working directory.
+DATA_DIR = Path(__file__).resolve().parent / 'data_results'
 
 BENCHMARK = 'SPY'
 
@@ -443,10 +448,11 @@ def main():
         r['rank'] = rank
 
     # 6) Output.
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     fields = ['rank', 'id', 'level', 'name', 'sector', 'proxy', 'n_constituents', 'coverage', 'clipped',
               'ret_1m', 'ret_3m', 'ret_6m', 'ret_1y',
               'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'rs_score', 'rs_median']
-    output_path = 'strength_results.csv'
+    output_path = DATA_DIR / 'strength_results.csv'
     with open(output_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(fields)
@@ -455,7 +461,7 @@ def main():
     print(f"Saved {len(sectors)} sectors + {len(industry_rows)} industries to {output_path}", file=sys.stderr)
 
     # Tidy (long-format) bi-weekly RS history for charting: one row per period.
-    history_path = 'strength_history.csv'
+    history_path = DATA_DIR / 'strength_history.csv'
     n_points = 0
     with open(history_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -467,7 +473,7 @@ def main():
     print(f"Saved bi-weekly RS history ({n_points} points) to {history_path}", file=sys.stderr)
 
     # Per-industry top-company drill-down (snapshot + bi-weekly history).
-    companies_path = 'strength_companies.csv'
+    companies_path = DATA_DIR / 'strength_companies.csv'
     cfields = ['industry_id', 'rank', 'symbol', 'name', 'weight', 'rs_score',
                'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y', 'ret_1y', 'chg_1w', 'chg_1m', 'chg_3m']
     with open(companies_path, 'w', newline='', encoding='utf-8') as f:
@@ -477,7 +483,7 @@ def main():
             writer.writerow([r.get(k, '') for k in cfields])
     print(f"Saved {len(company_rows)} company rows to {companies_path}", file=sys.stderr)
 
-    chist_path = 'strength_companies_history.csv'
+    chist_path = DATA_DIR / 'strength_companies_history.csv'
     cpoints = 0
     with open(chist_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -488,16 +494,16 @@ def main():
                 cpoints += 1
     print(f"Saved company bi-weekly history ({cpoints} points) to {chist_path}", file=sys.stderr)
 
-    print("\n=== SECTORS by relative strength (ETF excess vs SPY, %) ===", file=sys.stderr)
-    print(f"{'#':>2} {'sector':22} {'etf':5} {'1m':>6} {'3m':>6} {'6m':>6} {'1y':>6}  {'score':>6}", file=sys.stderr)
-    for r in sectors:
-        print(f"{r['rank']:>2} {r['name']:22} {r['proxy']:5} {str(r['rs_1m']):>6} {str(r['rs_3m']):>6} {str(r['rs_6m']):>6} {str(r['rs_1y']):>6}  {str(r['rs_score']):>6}", file=sys.stderr)
-    print("\n=== TOP 15 INDUSTRIES by relative strength (cap-weighted <=15%, winsorised) ===", file=sys.stderr)
-    print(f"{'#':>2} {'industry':32} {'sector':12}  {'n':>2} {'clip':>4} {'score':>6} {'median':>6}", file=sys.stderr)
-    for r in industry_rows[:15]:
-        print(f"{r['rank']:>2} {r['name'][:32]:32} {r['sector'][:12]:12}  {r['n_constituents']:>2} {r['clipped']:>4} {str(r['rs_score']):>6} {str(r['rs_median']):>6}", file=sys.stderr)
+    # print("\n=== SECTORS by relative strength (ETF excess vs SPY, %) ===", file=sys.stderr)
+    # print(f"{'#':>2} {'sector':22} {'etf':5} {'1m':>6} {'3m':>6} {'6m':>6} {'1y':>6}  {'score':>6}", file=sys.stderr)
+    # for r in sectors:
+    #     print(f"{r['rank']:>2} {r['name']:22} {r['proxy']:5} {str(r['rs_1m']):>6} {str(r['rs_3m']):>6} {str(r['rs_6m']):>6} {str(r['rs_1y']):>6}  {str(r['rs_score']):>6}", file=sys.stderr)
+    # print("\n=== TOP 15 INDUSTRIES by relative strength (cap-weighted <=15%, winsorised) ===", file=sys.stderr)
+    # print(f"{'#':>2} {'industry':32} {'sector':12}  {'n':>2} {'clip':>4} {'score':>6} {'median':>6}", file=sys.stderr)
+    # for r in industry_rows[:15]:
+    #     print(f"{r['rank']:>2} {r['name'][:32]:32} {r['sector'][:12]:12}  {r['n_constituents']:>2} {r['clipped']:>4} {str(r['rs_score']):>6} {str(r['rs_median']):>6}", file=sys.stderr)
 
-    print(json.dumps({'sectors': sectors, 'industries': industry_rows}, indent=2))
+    # print(json.dumps({'sectors': sectors, 'industries': industry_rows}, indent=2))
 
 
 if __name__ == '__main__':

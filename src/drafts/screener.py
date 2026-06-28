@@ -23,6 +23,7 @@ import yfinance as yf
 import csv
 import json
 import sys
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
@@ -233,7 +234,7 @@ def main():
     print(f"\nPassed all filters: {len(matches)} stocks", file=sys.stderr)
     matches.sort(key=lambda x: x['sma50_pct_chg'])
 
-    output_path = 'screener_results.csv'
+    output_path = Path(__file__).resolve().parent / 'screener_results.csv'
     fields = ['symbol', 'displayName', 'sector', 'industry']
     with open(output_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
