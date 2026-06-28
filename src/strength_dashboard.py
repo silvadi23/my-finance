@@ -179,6 +179,14 @@ def _rot_style(v):
     return {'↑': 'color: #2ca02c', '↓': 'color: #d62728'}.get(v, 'color: #999999')
 
 
+def _leading_up(df):
+    """Rows that are Leading or Improving AND rising (rot ↑) — the bullish shortlist."""
+    if 'state' not in df.columns or 'rot' not in df.columns:
+        return df.iloc[0:0]
+    s = df['state'].fillna('').str.replace(' ✓', '', regex=False)
+    return df[s.isin(['Leading', 'Improving']) & (df['rot'] == '↑')]
+
+
 def _zscore_rows(frame):
     """Cross-sectional z-score per date (row): (x - row mean) / row std. A 0 std
     row (or fewer than 2 values) yields NaN, which callers drop."""
@@ -681,6 +689,65 @@ def render_rrg():
     })
 
 
+def _industry_quick_table(df):
+    """Compact styled industry table for the quick view (no row selection)."""
+    if df.empty:
+        st.info("No industries currently Leading/Improving and rising.")
+        return
+    df = df.copy().sort_values('rs_score', ascending=False).reset_index(drop=True)
+    df['rank'] = range(1, len(df) + 1)
+    cols = ['rank', 'name', 'sector', 'trend', 'state', 'rot', 'rs_momentum',
+            'rs_score', 'rs_1m', 'rs_3m', 'rs_6m', 'rs_1y']
+    cfg = {
+        'rank':        st.column_config.NumberColumn("#", format="%d"),
+        'name':        st.column_config.TextColumn("Industry", width="medium"),
+        'sector':      st.column_config.TextColumn("Sector", width="medium"),
+        'trend':       st.column_config.ImageColumn("RS trend (6m)", width="medium"),
+        'state':       st.column_config.TextColumn("State"),
+        'rot':         st.column_config.TextColumn("Rot", help="RS-Momentum rising ↑ / falling ↓"),
+        'rs_momentum': st.column_config.NumberColumn("RS mom", format="%.2f"),
+        'rs_score':    st.column_config.NumberColumn("RS score", format="%.1f"),
+        'rs_1m':       st.column_config.NumberColumn("RS 1m", format="%.1f"),
+        'rs_3m':       st.column_config.NumberColumn("RS 3m", format="%.1f"),
+        'rs_6m':       st.column_config.NumberColumn("RS 6m", format="%.1f"),
+        'rs_1y':       st.column_config.NumberColumn("RS 1y", format="%.1f"),
+    }
+    styler = rs_styler(df, ('rs_score', 'rs_momentum'), ('rs_1m', 'rs_3m', 'rs_6m', 'rs_1y'))
+    if 'state' in df.columns:
+        styler = styler.map(_state_bg, subset=['state'])
+    if 'rot' in df.columns:
+        styler = styler.map(_rot_style, subset=['rot'])
+    st.dataframe(styler, hide_index=True, width='stretch',
+                 column_order=[c for c in cols if c in df.columns], column_config=cfg)
+
+
+def render_quickview():
+    """Quick view: industries then companies that are Leading/Improving and rising (↑)."""
+    st.markdown("#### Leaders ↑ — Leading or Improving, momentum rising")
+    st.caption("The bullish shortlist: State is Leading or Improving and the rotation arrow is ↑ "
+               "(momentum still accelerating, not rolling over).")
+
+    pick_sectors = st.sidebar.multiselect("Sector", sorted(results['sector'].dropna().unique()))
+
+    ind = _leading_up(results[results['level'] == 'industry'])
+    comp = _leading_up(companies) if not companies.empty else companies
+    if pick_sectors:
+        ind = ind[ind['sector'].isin(pick_sectors)]
+        if not comp.empty:
+            comp = comp[comp['sector'].isin(pick_sectors)]
+
+    st.markdown(f"##### Industries ({len(ind)})")
+    _industry_quick_table(ind)
+
+    st.markdown(f"##### Companies ({len(comp)})")
+    if companies.empty:
+        st.info("No company data. Re-run screener_strength.py to generate strength_companies.csv.")
+    elif comp.empty:
+        st.info("No companies currently Leading/Improving and rising.")
+    else:
+        company_table(comp, show_industry=True, sort_by=[('rs_score', False)])
+
+
 # --- header navigation + view dispatch -------------------------------------
 # Views live as tabs in the top header (st.navigation position="top"); the sidebar
 # is left for each page's own filters. The reload control is shared across pages.
@@ -689,7 +756,8 @@ if st.sidebar.button("🔄 Reload data"):
     st.rerun()
 
 pages = [
-    st.Page(render_sectors_industries, title="Sectors & Industries", icon="📊", default=True),
+    st.Page(render_quickview,          title="Leaders ↑",            icon="🚀", default=True),
+    st.Page(render_sectors_industries, title="Sectors & Industries", icon="📊"),
     st.Page(render_companies,          title="All companies",        icon="🏢"),
     st.Page(render_rrg,                title="Rotation (RRG)",        icon="🔄"),
 ]
