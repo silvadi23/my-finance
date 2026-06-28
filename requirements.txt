@@ -1,0 +1,8 @@
+# Runtime dependencies for the Streamlit dashboard (src/strength_dashboard.py).
+streamlit
+pandas
+matplotlib
+
+# yfinance is NOT needed on Streamlit Cloud — it's only used by the offline
+# data-generation script src/screener_strength.py, which writes the CSVs in
+# src/data_results/ that the dashboard reads. Install it locally to regenerate data.
