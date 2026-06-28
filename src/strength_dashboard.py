@@ -364,9 +364,12 @@ def company_table(cdf, show_industry=False, height=None, sort_by=None):
                        ('rs_1m', 'rs_3m', 'rs_6m', 'rs_1y'))
     if 'state' in cdf.columns:
         styler = styler.map(_state_bg, subset=['state'])
+    # Pass height only when set: Streamlit >=1.58 rejects height=None (must be a positive
+    # int / 'stretch' / 'content'), and omitting it uses the auto default on all versions.
+    extra = {'height': height} if height is not None else {}
     st.dataframe(
-        styler, hide_index=True, use_container_width=True, height=height,
-        column_order=[c for c in cols if c in cdf.columns], column_config=cfg,
+        styler, hide_index=True, use_container_width=True,
+        column_order=[c for c in cols if c in cdf.columns], column_config=cfg, **extra,
     )
 
 
