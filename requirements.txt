@@ -1,5 +1,7 @@
 # Runtime dependencies for the Streamlit dashboard (src/strength_dashboard.py).
-streamlit
+# streamlit is pinned so the cloud matches the local dev version (API drift between
+# 1.46 and 1.58 caused a deploy crash); bump this in lockstep with the local install.
+streamlit==1.58.0
 pandas
 matplotlib
 

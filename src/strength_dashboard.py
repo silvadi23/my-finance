@@ -368,7 +368,7 @@ def company_table(cdf, show_industry=False, height=None, sort_by=None):
     # int / 'stretch' / 'content'), and omitting it uses the auto default on all versions.
     extra = {'height': height} if height is not None else {}
     st.dataframe(
-        styler, hide_index=True, use_container_width=True,
+        styler, hide_index=True, width='stretch',
         column_order=[c for c in cols if c in cdf.columns], column_config=cfg, **extra,
     )
 
@@ -433,7 +433,7 @@ def render_sectors_industries():
     if 'state' in df.columns:
         styler = styler.map(_state_bg, subset=['state'])
     event = st.dataframe(
-        styler, hide_index=True, use_container_width=True,
+        styler, hide_index=True, width='stretch',
         column_order=column_order, column_config=column_config,
         on_select="rerun", selection_mode="single-row", key="rs_table",
     )
@@ -615,7 +615,7 @@ def render_rrg():
     mm = float(show['rs_momentum'].abs().max() or 0)
     if mm > 0:
         sty = sty.background_gradient(cmap='RdYlGn', subset=['rs_momentum'], vmin=-mm, vmax=mm)
-    st.dataframe(sty, hide_index=True, use_container_width=True, column_config={
+    st.dataframe(sty, hide_index=True, width='stretch', column_config={
         'name':        st.column_config.TextColumn("Name", width="medium"),
         'state':       st.column_config.TextColumn("State"),
         'rs_ratio':    st.column_config.NumberColumn("RS-Ratio", format="%.2f"),
