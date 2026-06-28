@@ -51,6 +51,12 @@ TAIL_POINTS = 8        # max trajectory length retained (the scatter has a lengt
 ROT_LOOKBACK = 2       # buckets (~4 weeks) over which the rotation arrow measures momentum change
 ROT_EPS = 0.1          # |mom_delta| below this shows flat (->), not up/down
 
+# Cache-key token for the RRG functions. st.cache_data only invalidates on the decorated
+# function's own source, NOT its callees — so when _rrg_from_wide's output shape/logic
+# changes, bump this to force a recompute (otherwise a long-running process can serve a
+# stale cached frame that's missing new columns).
+_RRG_VERSION = 2
+
 # Fixed display color per state (used in both the table and the scatter).
 STATE_ORDER = ['Improving', 'Leading', 'Weakening', 'Lagging']
 STATE_COLORS = {
@@ -237,9 +243,10 @@ def _rrg_from_wide(wide):
 
 
 @st.cache_data
-def rrg_frame(mtime, ids):
+def rrg_frame(mtime, ids, version=_RRG_VERSION):
     """Relative-rotation coordinates per sector/industry id, normalised
-    cross-sectionally within the cohort `ids` (a tuple). See `_rrg_from_wide`."""
+    cross-sectionally within the cohort `ids` (a tuple). See `_rrg_from_wide`.
+    `version` only participates in the cache key (see _RRG_VERSION)."""
     h = load_history(mtime)
     ids = [i for i in ids if i in set(h['id'])]
     if not ids:
@@ -251,7 +258,7 @@ def rrg_frame(mtime, ids):
 
 
 @st.cache_data
-def company_rrg_frame(mtime):
+def company_rrg_frame(mtime, version=_RRG_VERSION):
     """Per-company RRG state, z-scored across the WHOLE company universe (every
     company in companies_hist), so a company's state reflects its RS trajectory
     versus the market-wide screened set. Returns a flat DataFrame:
@@ -293,17 +300,23 @@ results['breadth_gap'] = results['rs_score'] - results['rs_median']
 # Relative-rotation state. Normalised per level so sectors are ranked among sectors
 # and industries among industries (a stable signal independent of the table filters).
 _hist_mtime = HISTORY_CSV.stat().st_mtime if HISTORY_CSV.exists() else 0
+_RRG_FIELDS = ('rs_ratio', 'rs_momentum', 'mom_delta', 'state', 'confirmed')
 if not history.empty:
-    _rrg = pd.concat([rrg_frame(_hist_mtime, tuple(results[results['level'] == lv]['id']))
+    _rrg = pd.concat([rrg_frame(_hist_mtime, tuple(results[results['level'] == lv]['id']), _RRG_VERSION)
                       for lv in ('sector', 'industry')])
-    results = results.merge(_rrg[['rs_ratio', 'rs_momentum', 'mom_delta', 'state', 'confirmed']],
-                            left_on='id', right_index=True, how='left')
+    # Defensive: merge only the fields actually present (a stale cache could lack a new one),
+    # then backfill any missing field so downstream code never KeyErrors.
+    _have = [c for c in _RRG_FIELDS if c in _rrg.columns]
+    results = results.merge(_rrg[_have], left_on='id', right_index=True, how='left')
+    for c in _RRG_FIELDS:
+        if c not in results.columns:
+            results[c] = None
     # Tag confirmed turns with a check so the table shows tentative vs confirmed.
     results['state'] = [f"{s} ✓" if (isinstance(s, str) and c) else s
                         for s, c in zip(results['state'], results['confirmed'])]
     results['rot'] = results['mom_delta'].map(_rot_arrow)
 else:
-    for c in ('rs_ratio', 'rs_momentum', 'mom_delta', 'state', 'confirmed', 'rot'):
+    for c in _RRG_FIELDS + ('rot',):
         results[c] = None
 
 # Company drill-down data (optional; produced by screener_strength.py).
@@ -328,9 +341,13 @@ if not companies.empty:
 # Relative-rotation state per company, normalised across the whole company universe
 # (mirrors the per-level sector/industry block above).
 if not companies.empty and not companies_hist.empty:
-    _crrg = company_rrg_frame(COMPANIES_HISTORY_CSV.stat().st_mtime)
-    companies = companies.merge(_crrg[['industry_id', 'symbol', 'rs_momentum', 'mom_delta', 'state', 'confirmed']],
-                                on=['industry_id', 'symbol'], how='left')
+    _crrg = company_rrg_frame(COMPANIES_HISTORY_CSV.stat().st_mtime, _RRG_VERSION)
+    _cfields = ['rs_momentum', 'mom_delta', 'state', 'confirmed']
+    _chave = ['industry_id', 'symbol'] + [c for c in _cfields if c in _crrg.columns]
+    companies = companies.merge(_crrg[_chave], on=['industry_id', 'symbol'], how='left')
+    for c in _cfields:
+        if c not in companies.columns:
+            companies[c] = None
     companies['state'] = [f"{s} ✓" if (isinstance(s, str) and c) else s
                           for s, c in zip(companies['state'], companies['confirmed'])]
     companies['rot'] = companies['mom_delta'].map(_rot_arrow)
@@ -573,7 +590,7 @@ def render_rrg():
         sub = results[(results['level'] == 'industry') & (results['sector'] == sec)]
         title = f"{sec} industries"
 
-    rrg = rrg_frame(_hist_mtime, tuple(sub['id']))
+    rrg = rrg_frame(_hist_mtime, tuple(sub['id']), _RRG_VERSION)
     if rrg.empty:
         st.info("Not enough history to compute rotation for this cohort (need ≥2 members).")
         return
