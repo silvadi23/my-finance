@@ -728,6 +728,13 @@ def render_quickview():
                "(momentum still accelerating, not rolling over).")
 
     pick_sectors = st.sidebar.multiselect("Sector", sorted(results['sector'].dropna().unique()))
+    # Industry options scoped to the picked sector(s) so the list stays short.
+    _ind_pool = results[results['level'] == 'industry']
+    if pick_sectors:
+        _ind_pool = _ind_pool[_ind_pool['sector'].isin(pick_sectors)]
+    pick_industries = st.sidebar.multiselect("Industry", sorted(_ind_pool['name'].dropna().unique()))
+    # Only Leading/Improving appear on this page, so those are the State options.
+    pick_states = st.sidebar.multiselect("State", [s for s in STATE_ORDER if s in ('Leading', 'Improving')])
 
     ind = _leading_up(results[results['level'] == 'industry'])
     comp = _leading_up(companies) if not companies.empty else companies
@@ -735,6 +742,14 @@ def render_quickview():
         ind = ind[ind['sector'].isin(pick_sectors)]
         if not comp.empty:
             comp = comp[comp['sector'].isin(pick_sectors)]
+    if pick_industries:
+        ind = ind[ind['name'].isin(pick_industries)]
+        if not comp.empty:
+            comp = comp[comp['industry'].isin(pick_industries)]
+    if pick_states:
+        ind = ind[ind['state'].fillna('').str.replace(' ✓', '', regex=False).isin(pick_states)]
+        if not comp.empty:
+            comp = comp[comp['state'].fillna('').str.replace(' ✓', '', regex=False).isin(pick_states)]
 
     st.markdown(f"##### Industries ({len(ind)})")
     _industry_quick_table(ind)
