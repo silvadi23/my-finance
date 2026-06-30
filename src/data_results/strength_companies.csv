@@ -1,406 +1,414 @@
 industry_id,rank,symbol,name,weight,rs_score,rs_1m,rs_3m,rs_6m,rs_1y,ret_1y,chg_1w,chg_1m,chg_3m
-specialty-chemicals,1,PRM,"Perimeter Solutions, Inc.",0.008,46.76,11.3,47.2,17.0,126.2,146.1,-8.9,8.7,60.4
-specialty-chemicals,2,ESI,Element Solutions Inc,0.0159,46.68,9.2,21.3,73.1,82.6,102.4,-0.7,6.6,34.6
-specialty-chemicals,3,CLMT,"Calumet, Inc.",0.0044,43.17,5.5,0.6,68.9,106.0,125.9,7.5,2.9,13.9
-specialty-chemicals,4,PPG,"PPG Industries, Inc.",0.0393,6.4,11.8,4.5,15.0,-9.0,10.8,4.2,9.2,17.8
-specialty-chemicals,5,LIN,Linde plc,0.3433,2.31,5.2,-8.1,16.5,-6.3,13.5,1.5,2.6,5.2
-specialty-chemicals,6,IFF,International Flavors & Fragrances Inc.,0.0279,-1.17,2.3,-5.4,9.8,-14.7,5.2,-0.5,-0.3,7.9
-building-materials,1,JHX,James Hardie Industries plc,0.0806,14.39,19.6,29.2,21.3,-23.3,-3.5,7.1,17.0,42.5
-steel,1,NUE,Nucor Corporation,0.4539,34.82,-0.1,31.6,41.0,65.3,85.2,-1.7,-2.7,44.9
-steel,2,STLD,"Steel Dynamics, Inc.",0.2943,31.71,-2.3,27.9,32.8,69.8,89.6,-1.8,-4.9,41.2
-agricultural-inputs,1,CTVA,"Corteva, Inc.",0.6442,0.87,6.3,-13.2,17.1,-7.7,12.1,5.1,3.7,0.1
-internet-content-information,1,NBIS,None,0.0107,125.74,17.9,113.5,160.4,200.0,219.9,-16.2,15.3,126.8
-internet-content-information,2,MTCH,"Match Group, Inc.",0.0015,6.74,5.6,8.1,8.3,3.5,23.3,4.9,3.0,21.4
-internet-content-information,3,PPLI,People Incorporated,0.0006,2.03,3.9,-1.0,5.6,-0.6,19.3,4.8,1.3,12.3
-telecom-services,1,TIGO,Millicom International Cellular S.A.,0.0193,55.27,8.0,11.5,66.1,152.0,171.9,5.7,5.4,24.8
-entertainment,1,LION,Lionsgate Studios Corp.,0.0062,77.09,19.8,61.4,76.1,159.5,179.4,5.9,17.1,74.7
-entertainment,2,ROKU,"Roku, Inc.",0.026,24.71,5.3,38.8,16.2,35.9,55.7,-1.9,2.6,52.1
-entertainment,3,CNK,"Cinemark Holdings, Inc.",0.0051,18.05,26.1,6.1,41.6,-7.3,12.5,-0.9,23.4,19.4
-entertainment,4,SIRI,Sirius XM Holdings Inc.,0.0123,16.08,-1.8,11.5,35.4,12.0,31.8,1.1,-4.4,24.8
-entertainment,5,LYV,"Live Nation Entertainment, Inc.",0.054,9.32,10.4,6.3,18.0,-0.2,19.6,4.8,7.7,19.6
-advertising-agencies,1,MGNI,"Magnite, Inc.",0.0125,17.89,42.9,44.8,7.0,-31.1,-11.2,4.7,40.3,58.1
-internet-retail,1,ETSY,"Etsy, Inc.",0.0026,36.67,24.9,47.5,35.3,34.2,54.1,5.5,22.3,60.8
-restaurants,1,CAKE,The Cheesecake Factory Incorporated,0.0078,33.15,26.4,32.7,52.3,11.8,31.7,4.1,23.8,46.0
-restaurants,2,BROS,Dutch Bros Inc.,0.0193,15.85,31.1,36.3,6.6,-16.2,3.6,1.6,28.5,49.6
-restaurants,3,SBUX,Starbucks Corporation,0.2335,6.89,5.1,2.0,19.7,-3.3,16.6,3.9,2.4,15.3
-restaurants,4,EAT,"Brinker International, Inc.",0.0144,5.84,23.8,11.3,8.7,-24.6,-4.8,4.0,21.2,24.6
-restaurants,5,TXRH,"Texas Roadhouse, Inc.",0.0253,4.85,11.4,5.4,12.1,-13.4,6.5,10.6,8.8,18.7
-restaurants,6,DRI,"Darden Restaurants, Inc.",0.0479,-0.96,6.4,-5.0,9.5,-18.0,1.9,0.1,3.8,8.3
-travel-services,1,VIK,None,0.0993,37.73,14.2,30.9,34.7,76.0,95.9,6.3,11.6,44.2
-travel-services,2,GBTG,"Global Business Travel Group, Inc.",0.0106,27.86,2.5,57.2,16.4,26.3,46.2,0.7,-0.1,70.5
-travel-services,3,RCL,Royal Caribbean Cruises Ltd.,0.1839,2.87,18.8,3.4,3.8,-15.3,4.5,1.8,16.2,16.7
-apparel-retail,1,VSXY,None,0.0224,94.02,57.4,86.3,55.5,200.0,219.9,8.0,54.8,99.6
-auto-parts,1,GTX,Garrett Motion Inc.,0.0229,93.91,7.2,78.6,96.3,200.0,219.9,2.3,4.6,91.9
-auto-parts,2,BWA,BorgWarner Inc.,0.0486,33.83,-1.0,11.4,45.1,85.5,105.4,-5.2,-3.6,24.7
-auto-parts,3,AAP,"Advance Auto Parts, Inc.",0.0131,23.1,9.3,7.2,52.6,16.5,36.4,3.5,6.7,20.5
-auto-parts,4,GNTX,Gentex Corporation,0.019,4.01,8.8,3.7,4.3,-0.8,19.0,-1.2,6.2,17.0
-lodging,1,MAR,"Marriott International, Inc.",0.4829,9.0,0.4,2.8,14.1,19.3,39.2,-4.8,-2.2,16.1
-lodging,2,HLT,Hilton Worldwide Holdings Inc.,0.3678,2.91,1.5,-2.9,7.8,5.8,25.6,-4.6,-1.1,10.4
-lodging,3,WH,"Wyndham Hotels & Resorts, Inc.",0.0317,0.58,7.6,-4.3,8.4,-10.9,9.0,3.8,5.0,9.0
-specialty-retail,1,WSM,"Williams-Sonoma, Inc.",0.1517,22.02,20.3,19.7,21.5,27.9,47.8,5.4,17.7,33.0
-specialty-retail,2,BBY,"Best Buy Co., Inc.",0.0882,10.9,24.6,11.3,8.4,0.4,20.3,4.0,22.0,24.6
-specialty-retail,3,DKS,"DICK'S Sporting Goods, Inc.",0.1153,9.37,12.3,12.6,9.9,0.8,20.7,2.7,9.7,25.9
-specialty-retail,4,BBWI,"Bath & Body Works, Inc.",0.0248,5.41,21.5,16.4,14.6,-40.8,-20.9,11.2,18.9,29.7
-residential-construction,1,TOL,"Toll Brothers, Inc.",0.0855,15.77,19.9,10.1,12.6,24.8,44.7,5.4,17.3,23.4
-residential-construction,2,TMHC,Taylor Morrison Home Corporation,0.0368,11.44,23.7,8.6,15.5,-2.7,17.2,0.3,21.1,21.9
-residential-construction,3,DHI,"D.R. Horton, Inc.",0.2629,10.78,15.1,9.4,9.3,10.9,30.7,5.4,12.5,22.7
-residential-construction,4,PHM,"PulteGroup, Inc.",0.1461,10.69,18.4,4.4,11.2,11.6,31.5,8.4,15.8,17.7
-residential-construction,5,KBH,KB Home,0.0213,8.97,27.8,7.2,4.0,0.3,20.1,14.8,25.2,20.5
-packaging-containers,1,REYN,Reynolds Consumer Products Inc.,0.036,15.47,24.2,16.2,11.7,11.2,31.0,12.4,21.6,29.5
-packaging-containers,2,SW,Smurfit Westrock Plc,0.1568,9.51,20.4,4.2,18.8,-7.4,12.4,6.3,17.8,17.5
-packaging-containers,3,SON,Sonoco Products Company,0.0347,9.35,13.3,-9.3,23.9,11.6,31.5,8.7,10.7,4.0
-packaging-containers,4,BALL,Ball Corporation,0.1047,1.7,12.4,-9.3,12.6,-8.7,11.1,7.1,9.7,4.0
-auto-truck-dealerships,1,VVV,Valvoline Inc.,0.0422,10.09,18.9,2.7,28.1,-14.6,5.2,5.6,16.3,16.0
-auto-truck-dealerships,2,KMX,"CarMax, Inc.",0.0616,9.67,27.5,10.3,30.7,-40.6,-20.8,-1.7,24.8,23.6
-footwear-accessories,1,CROX,"Crocs, Inc.",0.0591,27.53,10.5,46.5,35.5,4.1,24.0,2.2,7.9,59.8
-resorts-casinos,1,PENN,"PENN Entertainment, Inc.",0.0323,27.32,17.2,36.9,42.8,-0.2,19.7,2.7,14.6,50.2
-resorts-casinos,2,MGM,MGM Resorts International,0.139,21.87,19.9,17.6,26.5,23.3,43.1,5.0,17.3,30.9
-resorts-casinos,3,HGV,Hilton Grand Vacations Inc.,0.0474,15.5,9.1,22.2,15.9,11.3,31.2,3.7,6.4,35.5
-resorts-casinos,4,CZR,"Caesars Entertainment, Inc.",0.0679,3.24,7.5,-1.0,17.0,-15.3,4.6,3.3,4.9,12.3
-leisure,1,CALY,Callaway Golf Company,0.0453,54.09,24.7,30.7,54.8,117.5,137.4,5.7,22.1,44.0
-leisure,2,LTH,"Life Time Group Holdings, Inc.",0.1195,34.67,26.5,41.0,45.8,16.6,36.5,11.1,23.9,54.3
-leisure,3,YETI,"YETI Holdings, Inc.",0.0508,22.76,11.6,29.0,7.5,47.5,67.4,4.6,9.0,42.2
-leisure,4,PRKS,United Parks & Resorts Inc.,0.0291,20.21,21.5,38.7,27.8,-20.3,-0.4,1.0,18.9,52.0
-leisure,5,FUN,Six Flags Entertainment Corporation,0.0295,11.49,10.0,11.2,52.9,-48.6,-28.7,-11.7,7.4,24.5
-apparel-manufacturing,1,LEVI,Levi Strauss & Co.,0.1498,14.8,7.6,21.6,12.0,16.1,35.9,3.5,5.0,34.9
-furnishings-fixtures-appliances,1,SN,"SharkNinja, Inc.",0.3072,25.56,26.7,25.8,21.2,30.5,50.4,3.0,24.1,39.1
-gambling,1,RSI,"Rush Street Interactive, Inc.",0.0633,50.14,19.2,33.8,57.4,94.7,114.5,8.5,16.5,47.1
-gambling,2,SGHC,Super Group (SGHC) Limited,0.1364,11.21,9.9,17.8,9.5,5.2,25.1,3.8,7.3,31.1
-luxury-goods,1,TPR,"Tapestry, Inc.",0.7724,10.74,8.1,-9.8,6.9,49.9,69.8,1.7,5.5,3.5
-recreational-vehicles,1,PII,Polaris Inc.,0.1695,20.56,8.4,15.6,3.9,65.2,85.0,1.7,5.8,28.9
-recreational-vehicles,2,HOG,"Harley-Davidson, Inc.",0.1089,9.85,7.7,16.9,17.2,-9.7,10.1,-1.9,5.1,30.2
-department-stores,1,M,"Macy's, Inc.",0.3266,40.52,26.9,28.2,10.6,117.5,137.4,7.5,24.3,41.5
-discount-stores,1,TGT,Target Corporation,0.043,23.9,12.0,7.8,45.3,27.8,47.7,7.4,9.4,21.1
-beverages-non-alcoholic,1,COCO,"The Vita Coco Company, Inc.",0.0058,35.15,-3.6,29.3,30.7,89.3,109.2,-12.3,-6.3,42.6
-beverages-non-alcoholic,2,MNST,Monster Beverage Corporation,0.13,20.83,10.6,20.6,17.6,36.3,56.2,5.5,8.0,33.9
-beverages-non-alcoholic,3,PRMB,Primo Brands Corporation,0.0125,16.72,4.9,26.9,47.6,-33.0,-13.2,2.8,2.3,40.2
-beverages-non-alcoholic,4,KDP,Keurig Dr Pepper Inc.,0.0627,9.52,14.4,15.9,16.1,-14.8,5.1,9.4,11.8,29.2
-beverages-non-alcoholic,5,KO,The Coca-Cola Company,0.4901,4.5,4.5,-2.0,13.3,1.0,20.8,4.1,1.9,11.3
-household-personal-products,1,CL,Colgate-Palmolive Company,0.1283,0.07,3.5,-3.2,10.1,-13.5,6.4,2.9,0.9,10.1
-household-personal-products,2,CHD,"Church & Dwight Co., Inc.",0.0411,-0.37,4.2,-6.1,11.0,-13.4,6.4,4.1,1.6,7.2
-household-personal-products,3,KVUE,Kenvue Inc.,0.064,-1.02,10.8,-3.1,8.5,-24.0,-4.1,5.6,8.1,10.2
-household-personal-products,4,KMB,Kimberly-Clark Corporation,0.0632,-2.04,13.3,-1.1,5.6,-30.2,-10.3,6.6,10.7,12.2
-tobacco,1,MO,"Altria Group, Inc.",0.3012,12.56,6.5,2.6,25.5,14.3,34.1,6.8,3.9,15.9
-tobacco,2,PM,Philip Morris International Inc.,0.6887,-0.67,2.7,-1.1,8.0,-16.4,3.5,2.2,0.1,12.2
-packaged-foods,1,SJM,The J. M. Smucker Company,0.059,11.31,14.9,9.6,14.0,6.1,26.0,4.3,12.3,22.9
-packaged-foods,2,HRL,Hormel Foods Corporation,0.0696,3.38,29.1,4.4,6.5,-28.5,-8.6,9.7,26.5,17.7
-confectioners,1,MDLZ,"Mondelez International, Inc.",0.6657,-5.1,0.3,-6.8,7.7,-27.2,-7.3,1.1,-2.3,6.5
-food-distribution,1,PFGC,Performance Food Group Company,0.1928,14.27,16.9,16.5,15.5,6.4,26.3,6.6,14.3,29.8
-food-distribution,2,USFD,US Foods Holding Corp.,0.2406,10.32,21.9,-6.6,21.4,7.4,27.2,7.0,19.3,6.7
-food-distribution,3,SYY,Sysco Corporation,0.4401,-0.29,12.7,-12.3,7.1,-6.3,13.6,5.2,10.1,1.0
-education-training-services,1,UTI,"Universal Technical Institute, Inc.",0.0609,14.72,8.2,-3.7,46.9,0.6,20.5,3.1,5.6,9.6
-education-training-services,2,LAUR,"Laureate Education, Inc.",0.1382,9.8,14.2,-8.5,4.5,40.8,60.7,1.9,11.6,4.8
-oil-gas-midstream,1,TRGP,Targa Resources Corp.,0.0811,20.78,6.0,-3.9,42.5,40.0,59.9,5.4,3.4,9.4
-oil-gas-midstream,2,KNTK,Kinetik Holdings Inc.,0.0051,10.66,7.6,-9.3,38.7,1.7,21.5,6.9,5.0,4.0
-oil-gas-midstream,3,WMB,"The Williams Companies, Inc.",0.1321,8.86,8.2,-7.3,25.8,8.4,28.3,6.6,5.5,6.0
-oil-gas-midstream,4,AM,Antero Midstream Corporation,0.0153,7.37,11.4,-13.8,24.8,8.9,28.8,6.8,8.8,-0.5
-oil-gas-midstream,5,KMI,"Kinder Morgan, Inc.",0.1024,1.75,5.6,-15.0,17.5,-0.6,19.3,5.1,3.0,-1.7
-oil-gas-midstream,6,OKE,"ONEOK, Inc.",0.0779,0.33,3.8,-16.8,18.1,-4.0,15.9,4.9,1.1,-3.5
-oil-gas-equipment-services,1,NESR,National Energy Services Reunited Corp.,0.0109,72.67,14.5,18.5,80.7,200.0,219.9,15.1,11.9,31.8
-oil-gas-equipment-services,2,KGS,"Kodiak Gas Services, Inc.",0.0295,61.11,10.8,17.4,102.7,114.6,134.4,10.2,8.2,30.7
-oil-gas-equipment-services,3,SEI,"Solaris Energy Infrastructure, Inc.",0.0172,55.39,10.2,14.0,65.3,147.8,167.7,-7.3,7.6,27.3
-oil-gas-equipment-services,4,WTTR,"Select Water Solutions, Inc.",0.0094,51.41,8.0,13.3,79.6,109.7,129.6,11.1,5.4,26.6
-oil-gas-equipment-services,5,AROC,"Archrock, Inc.",0.0282,32.83,18.0,4.9,57.2,53.1,73.0,13.5,15.3,18.2
-oil-gas-equipment-services,6,OII,"Oceaneering International, Inc.",0.0153,31.62,5.8,-3.7,57.1,72.1,92.0,11.0,3.2,9.6
-oil-gas-refining-marketing,1,DK,"Delek US Holdings, Inc.",0.0109,39.18,13.7,-9.7,55.9,112.9,132.7,15.3,11.1,3.6
-oil-gas-refining-marketing,2,VLO,Valero Energy Corporation,0.2852,30.93,10.5,-8.3,52.6,77.6,97.5,9.8,7.9,5.0
-oil-gas-refining-marketing,3,PBF,PBF Energy Inc.,0.0189,28.85,13.7,-27.1,57.9,84.3,104.2,15.6,11.1,-13.8
-oil-gas-refining-marketing,4,DINO,HF Sinclair Corporation,0.0456,22.06,2.9,-4.5,41.3,52.3,72.1,5.9,0.3,8.8
-oil-gas-refining-marketing,5,MPC,Marathon Petroleum Corporation,0.2747,19.14,5.4,-10.6,47.5,34.9,54.7,4.6,2.8,2.7
-banks-diversified,1,TD,The Toronto-Dominion Bank,0.0802,22.88,9.2,16.6,21.6,48.0,67.8,0.3,6.6,29.9
-banks-diversified,2,C,Citigroup Inc.,0.0981,21.56,15.7,13.4,13.4,51.9,71.8,-0.9,13.1,26.7
-banks-diversified,3,RY,Royal Bank of Canada,0.1143,17.91,9.9,14.2,13.0,38.9,58.8,0.6,7.3,27.5
-banks-diversified,4,BNY,The Bank of New York Mellon Corporation,0.04,17.35,5.3,10.3,17.0,40.5,60.4,-0.0,2.7,23.6
-asset-management,1,BEN,"Franklin Resources, Inc.",0.0155,25.87,7.5,29.5,34.7,25.5,45.4,0.5,4.9,42.8
-asset-management,2,STT,State Street Corporation,0.0419,24.0,9.1,21.4,23.8,43.2,63.0,-0.1,6.5,34.7
-asset-management,3,NTRS,Northern Trust Corporation,0.029,15.56,6.6,13.3,18.8,23.1,42.9,1.0,4.0,26.6
-asset-management,4,PFG,"Principal Financial Group, Inc.",0.021,12.95,6.5,8.8,15.9,21.2,41.1,-1.7,3.9,22.1
-asset-management,5,DBRG,"DigitalBridge Group, Inc.",0.0026,8.16,3.3,-10.5,12.5,34.5,54.3,0.2,0.7,2.8
-capital-markets,1,HUT,Hut 8 Corp.,0.0117,118.79,7.2,129.9,127.9,200.0,219.9,-1.1,4.6,143.2
-capital-markets,2,RIOT,"Riot Platforms, Inc.",0.0092,89.87,8.7,90.7,102.5,150.9,170.8,1.7,6.1,104.0
-capital-markets,3,WULF,TeraWulf Inc.,0.0109,86.77,-0.8,55.0,101.4,200.0,219.9,-10.9,-3.4,68.3
-capital-markets,4,MRX,Marex Group plc,0.0039,43.33,22.6,45.6,55.0,43.2,63.1,-1.0,20.0,58.8
-capital-markets,5,VIRT,"Virtu Financial, Inc.",0.0045,40.29,24.9,27.1,77.3,20.0,39.8,-3.7,22.2,40.4
-capital-markets,6,CLSK,"CleanSpark, Inc.",0.0036,34.56,-6.9,62.3,35.3,33.2,53.0,-5.3,-9.5,75.6
-capital-markets,7,IBKR,"Interactive Brokers Group, Inc.",0.0339,27.94,13.7,22.5,29.9,47.4,67.2,-6.4,11.1,35.8
-capital-markets,8,MARA,"MARA Holdings, Inc.",0.0047,25.32,4.1,56.2,40.9,-23.1,-3.3,2.3,1.5,69.5
-capital-markets,9,MS,Morgan Stanley,0.2836,17.51,7.8,17.3,12.9,34.5,54.3,-5.0,5.2,30.6
-capital-markets,10,GS,"The Goldman Sachs Group, Inc.",0.255,12.87,5.4,11.2,7.6,30.7,50.6,-7.0,2.8,24.5
-capital-markets,11,BGC,"BGC Group, Inc.",0.0047,9.42,11.2,8.0,19.7,-5.5,14.3,-5.0,8.6,21.3
-capital-markets,12,ETOR,eToro Group Ltd.,0.0027,-1.29,8.1,22.2,5.9,-56.8,-36.9,4.2,5.5,35.5
-banks-regional,1,VLY,Valley National Bancorp,0.0069,20.6,11.3,8.4,19.1,50.5,70.4,4.5,8.7,21.7
-banks-regional,2,CFG,"Citizens Financial Group, Inc.",0.0253,17.96,14.2,7.8,13.5,43.7,63.6,4.9,11.6,21.1
-banks-regional,3,FITB,Fifth Third Bancorp,0.0434,14.56,15.5,11.8,12.6,20.7,40.5,6.8,12.9,25.1
-banks-regional,4,FULT,Fulton Financial Corporation,0.0039,13.97,14.7,7.9,16.0,19.3,39.1,5.7,12.1,21.2
-banks-regional,5,ASB,Associated Banc-Corp,0.005,13.22,15.2,11.3,14.0,13.0,32.9,7.3,12.6,24.6
-banks-regional,6,EBC,"Eastern Bankshares, Inc.",0.004,13.1,14.1,1.5,13.0,29.6,49.5,7.2,11.5,14.8
-banks-regional,7,ZION,"Zions Bancorporation, National Association",0.0087,12.55,13.6,8.4,11.9,18.8,38.7,4.5,10.9,21.7
-banks-regional,8,AUB,Atlantic Union Bankshares Corporation,0.0051,11.69,13.8,5.7,10.9,19.7,39.5,6.9,11.2,19.0
-banks-regional,9,COLB,"Columbia Banking System, Inc.",0.0079,11.59,11.9,5.3,8.7,25.2,45.1,5.2,9.3,18.6
-banks-regional,10,PNC,"The PNC Financial Services Group, Inc.",0.0837,11.32,13.6,6.9,10.8,16.5,36.3,5.6,11.0,20.2
-banks-regional,11,FLG,"Flagstar Bank, National Association",0.0054,11.06,11.8,2.3,12.1,21.9,41.8,4.3,9.2,15.6
-banks-regional,12,USB,U.S. Bancorp,0.0807,10.62,14.0,6.0,7.5,18.9,38.8,4.8,11.4,19.3
-banks-regional,13,KEY,KeyCorp,0.0214,9.87,11.9,4.9,6.2,20.9,40.8,3.0,9.3,18.2
-banks-regional,14,WBS,Webster Financial Corporation,0.0104,8.6,6.2,-2.2,12.3,21.7,41.6,-0.0,3.6,11.1
-banks-regional,15,FNB,F.N.B. Corporation,0.0058,8.39,13.1,3.9,4.5,16.3,36.1,5.5,10.5,17.2
-banks-regional,16,RF,Regions Financial Corporation,0.0218,8.04,10.6,5.7,4.7,14.0,33.9,5.0,8.0,19.0
-banks-regional,17,MTB,M&T Bank Corporation,0.0296,7.84,13.7,2.8,10.0,6.2,26.1,5.4,11.1,16.1
-banks-regional,18,ONB,Old National Bancorp,0.0085,7.09,10.7,6.5,7.2,4.3,24.1,4.4,8.0,19.8
-banks-regional,19,OZK,Bank OZK,0.0048,3.63,10.8,2.6,5.8,-5.2,14.7,5.8,8.2,15.9
-insurance-property-casualty,1,ALL,The Allstate Corporation,0.0998,8.18,17.9,3.0,9.0,5.0,24.9,8.3,15.3,16.3
-insurance-property-casualty,2,TRV,"The Travelers Companies, Inc.",0.1126,5.5,12.2,-0.4,6.3,6.4,26.3,6.4,9.6,12.9
-insurance-life,1,UNM,Unum Group,0.0644,6.15,10.7,8.5,8.4,-5.2,14.7,0.2,8.0,21.8
-financial-conglomerates,1,VOYA,"Voya Financial, Inc.",0.4114,16.1,15.2,19.9,15.4,12.4,32.2,1.0,12.6,33.2
-drug-manufacturers-general,1,OGN,Organon & Co.,0.0011,62.8,3.5,110.2,84.6,18.3,38.1,0.5,0.9,123.5
-drug-manufacturers-general,2,LLY,Eli Lilly and Company,0.3476,18.7,14.2,21.6,6.6,37.0,56.9,10.0,11.6,34.9
-drug-manufacturers-general,3,BIIB,Biogen Inc.,0.0103,17.8,12.3,-0.2,17.0,51.5,71.3,9.9,9.7,13.1
-drug-manufacturers-general,4,JNJ,Johnson & Johnson,0.1978,16.53,12.7,-6.2,18.6,51.4,71.3,11.5,10.1,7.1
-drug-manufacturers-general,5,MRK,"Merck & Co., Inc.",0.1025,15.75,10.4,-4.3,17.8,48.2,68.1,13.0,7.8,9.0
-drug-manufacturers-general,6,ABBV,AbbVie Inc.,0.1444,12.89,20.2,7.7,6.0,23.6,43.5,17.0,17.6,21.0
-biotechnology,1,DFTX,"Definium Therapeutics, Inc.",0.0057,155.95,93.7,124.0,200.0,200.0,219.9,83.6,91.1,137.3
-biotechnology,2,ORKA,"Oruka Therapeutics, Inc.",0.0052,131.32,58.8,86.0,179.2,200.0,219.9,25.2,56.2,99.3
-biotechnology,3,SYRE,"Spyre Therapeutics, Inc.",0.0073,113.65,23.8,71.7,158.0,200.0,219.9,-0.5,21.2,85.0
-biotechnology,4,RVMD,"Revolution Medicines, Inc.",0.0371,105.03,21.6,82.0,120.3,200.0,219.9,11.7,19.0,95.3
-biotechnology,5,IBRX,"ImmunityBio, Inc.",0.0087,104.02,13.0,4.7,200.0,200.0,219.9,18.3,10.4,18.0
-biotechnology,6,TVTX,"Travere Therapeutics, Inc.",0.0052,92.38,25.8,97.5,59.9,200.0,219.9,6.7,23.2,110.8
-biotechnology,7,APGE,"Apogee Therapeutics, Inc.",0.0096,87.96,73.1,55.7,64.9,185.7,205.6,46.7,70.5,69.0
-biotechnology,8,MRNA,"Moderna, Inc.",0.0256,68.57,43.9,12.3,101.8,127.8,147.7,5.2,41.3,25.6
-biotechnology,9,TGTX,"TG Therapeutics, Inc.",0.0082,56.37,45.0,61.3,75.2,32.2,52.0,4.9,42.4,74.6
-biotechnology,10,ROIV,Roivant Sciences Ltd.,0.0235,56.36,17.8,11.3,45.2,179.3,199.1,8.4,15.2,24.6
-biotechnology,11,CGON,"CG Oncology, Inc.",0.0061,56.02,21.0,-5.4,73.1,157.4,177.3,17.8,18.4,7.9
-biotechnology,12,MIRM,"Mirum Pharmaceuticals, Inc.",0.0072,52.65,29.8,26.0,48.1,122.4,142.3,15.5,27.2,39.3
-biotechnology,13,IMVT,"Immunovant, Inc.",0.0076,51.63,18.9,39.9,38.7,121.4,141.3,9.9,16.3,53.2
-biotechnology,14,ARWR,"Arrowhead Pharmaceuticals, Inc.",0.0107,47.39,2.5,16.5,6.4,200.0,219.9,-3.6,-0.1,29.8
-biotechnology,15,CYTK,"Cytokinetics, Incorporated",0.0107,39.28,9.1,16.2,23.3,128.0,147.9,4.3,6.5,29.5
-biotechnology,16,TECH,Bio-Techne Corporation,0.0106,24.24,50.3,21.7,13.7,17.9,37.8,22.5,47.6,35.0
-biotechnology,17,RPRX,Royalty Pharma plc,0.0239,22.8,6.8,7.0,37.6,40.3,60.1,6.2,4.2,20.3
-biotechnology,18,XENE,Xenon Pharmaceuticals Inc.,0.0055,22.16,13.4,-5.7,27.6,64.5,84.4,12.9,10.8,7.6
-biotechnology,19,INCY,Incyte Corporation,0.0218,18.05,19.5,10.0,6.2,46.5,66.4,15.8,16.9,23.3
-biotechnology,20,NUVL,"Nuvalent, Inc.",0.0094,17.75,17.6,12.7,11.3,35.2,55.0,0.1,15.0,26.0
-biotechnology,21,SRRK,Scholar Rock Holding Corporation,0.0063,15.77,10.7,10.6,12.8,33.1,52.9,15.7,8.1,23.9
-biotechnology,22,PCVX,"Vaxcyte, Inc.",0.0078,13.91,13.4,-10.0,11.7,53.6,73.5,9.9,10.8,3.3
-biotechnology,23,EXEL,"Exelixis, Inc.",0.0132,11.62,12.1,16.0,11.0,5.6,25.4,5.5,9.5,29.3
-healthcare-plans,1,OSCR,"Oscar Health, Inc.",0.0113,82.59,38.1,138.3,94.2,26.1,46.0,4.9,35.5,151.6
-healthcare-plans,2,HUM,Humana Inc.,0.0582,59.43,28.2,107.5,44.4,41.1,61.0,6.7,25.6,120.8
-healthcare-plans,3,CNC,Centene Corporation,0.041,45.85,14.4,82.6,59.5,1.9,21.7,7.7,11.7,95.9
-healthcare-plans,4,CVS,CVS Health Corporation,0.1682,30.01,15.9,34.6,29.5,38.0,57.9,6.1,13.3,47.9
-healthcare-plans,5,ALHC,"Alignment Healthcare, Inc.",0.0061,29.97,48.2,23.8,12.2,47.6,67.4,6.1,45.6,37.1
-healthcare-plans,6,UNH,UnitedHealth Group Incorporated,0.4908,29.66,14.7,47.2,27.0,22.3,42.1,6.7,12.1,60.5
-healthcare-plans,7,MOH,"Molina Healthcare, Inc.",0.0151,23.58,31.8,52.2,33.5,-42.5,-22.7,17.6,29.2,65.5
-healthcare-plans,8,PGNY,"Progyny, Inc.",0.0028,20.53,14.5,47.0,5.0,10.3,30.1,9.3,11.9,60.3
-healthcare-plans,9,ELV,"Elevance Health, Inc.",0.1084,7.38,4.0,21.6,9.8,-14.1,5.8,1.7,1.4,34.8
-medical-devices,1,BFLY,"Butterfly Network, Inc.",0.0031,124.35,92.6,100.9,118.5,200.0,219.9,-0.1,90.0,114.2
-medical-devices,2,AXGN,"Axogen, Inc.",0.0032,59.95,15.3,26.0,30.3,200.0,219.9,0.2,12.7,39.3
-medical-devices,3,BRKR,Bruker Corporation,0.0125,34.86,28.0,59.2,20.6,26.6,46.4,6.5,25.4,72.5
-medical-devices,4,NEOG,Neogen Corporation,0.0028,23.54,6.7,-8.6,27.5,82.7,102.5,2.9,4.1,4.7
-diagnostics-research,1,TWST,Twist Bioscience Corporation,0.0084,129.87,58.2,100.3,188.5,158.0,177.9,14.0,55.6,113.6
-diagnostics-research,2,GH,"Guardant Health, Inc.",0.0269,67.17,19.6,56.1,39.1,173.5,193.4,13.2,17.0,69.4
-diagnostics-research,3,VCYT,"Veracyte, Inc.",0.0066,59.59,38.6,71.1,34.4,101.1,120.9,12.8,36.0,84.4
-diagnostics-research,4,ADPT,Adaptive Biotechnologies Corporation,0.0046,39.03,54.1,36.8,18.6,57.9,77.8,19.6,51.4,50.1
-diagnostics-research,5,ILMN,"Illumina, Inc.",0.0363,32.83,20.2,28.6,23.1,66.4,86.3,9.0,17.6,41.9
-diagnostics-research,6,NTRA,"Natera, Inc.",0.051,21.01,31.6,20.2,4.7,36.1,55.9,13.2,28.9,33.5
-diagnostics-research,7,RVTY,"Revvity, Inc.",0.0171,10.87,19.4,16.5,9.5,-4.0,15.9,13.0,16.8,29.8
-medical-instruments-supplies,1,WRBY,Warby Parker Inc.,0.0091,13.98,16.5,19.7,6.8,13.7,33.6,12.6,13.9,33.0
-medical-instruments-supplies,2,NVST,Envista Holdings Corporation,0.0111,9.43,18.3,-9.0,16.7,17.2,37.1,4.1,15.7,4.3
-medical-instruments-supplies,3,BAX,Baxter International Inc.,0.0288,2.7,16.7,19.0,10.0,-46.7,-26.9,10.8,14.1,32.3
-medical-instruments-supplies,4,ALGN,"Align Technology, Inc.",0.0323,-4.23,12.2,-12.7,7.3,-25.2,-5.4,-2.0,9.5,0.6
-medical-care-facilities,1,LFST,"LifeStance Health Group, Inc.",0.0186,47.32,37.7,40.4,39.1,79.7,99.6,14.5,35.1,53.7
-medical-care-facilities,2,BKD,Brookdale Senior Living Inc.,0.0178,36.62,19.0,1.1,36.4,107.8,127.7,15.1,16.4,14.4
-medical-care-facilities,3,ACHC,"Acadia Healthcare Company, Inc.",0.0119,31.24,16.4,1.7,87.9,5.3,25.2,10.3,13.8,15.0
-medical-care-facilities,4,SEM,Select Medical Holdings Corporation,0.0097,-3.24,2.6,-11.6,5.7,-9.9,10.0,-0.2,-0.1,1.7
-medical-distribution,1,CAH,"Cardinal Health, Inc.",0.2646,12.23,21.7,1.5,8.8,24.1,43.9,7.3,19.1,14.8
-medical-distribution,2,HSIC,"Henry Schein, Inc.",0.046,4.13,14.9,2.0,4.5,-3.9,15.9,6.3,12.3,15.2
-drug-manufacturers-specialty-generic,1,LQDA,Liquidia Corporation,0.0389,110.1,28.6,99.3,115.3,200.0,219.9,10.0,26.0,112.6
-drug-manufacturers-specialty-generic,2,ALKS,Alkermes plc,0.0514,70.99,47.2,70.8,86.8,71.3,91.2,22.4,44.6,84.1
-drug-manufacturers-specialty-generic,3,INDV,"Indivior Pharmaceuticals, Inc.",0.0277,49.54,15.3,26.4,8.5,180.0,199.9,9.2,12.7,39.7
-drug-manufacturers-specialty-generic,4,AMRX,"Amneal Pharmaceuticals, Inc.",0.0308,43.07,37.4,29.6,27.7,92.1,111.9,6.3,34.8,42.9
-drug-manufacturers-specialty-generic,5,VTRS,Viatris Inc.,0.1065,26.65,2.9,9.7,31.5,68.5,88.4,6.2,0.2,23.0
-drug-manufacturers-specialty-generic,6,NBIX,"Neurocrine Biosciences, Inc.",0.0949,11.61,10.8,14.0,7.9,14.5,34.4,6.5,8.1,27.3
-drug-manufacturers-specialty-generic,7,ELAN,Elanco Animal Health Incorporated,0.0687,8.89,6.3,-13.3,4.0,52.1,71.9,1.4,3.7,-0.0
-drug-manufacturers-specialty-generic,8,BCRX,"BioCryst Pharmaceuticals, Inc.",0.0142,4.43,11.6,-9.3,25.5,-13.7,6.2,10.6,9.0,4.0
-health-information-services,1,TXG,"10x Genomics, Inc.",0.0471,102.86,46.7,66.6,116.2,193.4,213.3,5.7,44.1,79.9
-health-information-services,2,BTSG,"BrightSpring Health Services, Inc.",0.1366,75.08,16.5,47.8,76.1,173.2,193.0,4.1,13.9,61.1
-health-information-services,3,HNGE,"Hinge Health, Inc.",0.0616,61.59,50.0,83.2,55.4,49.9,69.8,13.8,47.4,96.5
-health-information-services,4,HTFL,"Heartflow, Inc.",0.031,19.15,24.4,24.5,10.4,,,6.0,21.8,37.8
-aerospace-defense,1,FTAI,FTAI Aviation Ltd.,0.007,33.61,6.5,-4.7,45.0,101.1,121.0,-5.8,3.9,8.6
-aerospace-defense,2,HXL,Hexcel Corporation,0.0019,20.77,12.0,6.8,20.2,51.3,71.2,-1.1,9.4,20.1
-aerospace-defense,3,GE,GE Aerospace,0.1007,17.0,18.9,16.1,10.7,25.9,45.8,3.2,16.3,29.4
-aerospace-defense,4,HWM,Howmet Aerospace Inc.,0.0281,14.13,6.8,3.4,21.9,25.9,45.7,-3.2,4.2,16.7
-specialty-industrial-machinery,1,GEV,GE Vernova Inc.,0.2108,34.62,3.9,6.5,51.8,81.8,101.7,-5.8,1.3,19.8
-specialty-industrial-machinery,2,RRX,Regal Rexnord Corporation,0.011,23.41,9.3,4.2,46.6,31.5,51.4,-3.1,6.7,17.5
-specialty-industrial-machinery,3,GTES,Gates Industrial Corporation plc,0.0055,14.85,14.6,13.5,23.2,4.6,24.5,2.5,12.0,26.8
-specialty-industrial-machinery,4,AME,"AMETEK, Inc.",0.0409,6.11,7.7,-0.8,7.7,12.5,32.4,0.0,5.1,12.5
-farm-heavy-construction-machinery,1,CAT,Caterpillar Inc.,0.6149,59.18,12.2,28.8,65.5,142.2,162.1,1.2,9.6,42.1
-farm-heavy-construction-machinery,2,TEX,Terex Corporation,0.011,21.94,24.5,9.7,25.1,33.1,53.0,7.5,21.9,23.0
-farm-heavy-construction-machinery,3,DE,Deere & Company,0.2216,9.44,18.4,-7.5,25.9,1.2,21.0,4.1,15.8,5.8
-farm-heavy-construction-machinery,4,CNH,CNH Industrial N.V.,0.0183,-5.16,7.5,-11.7,12.5,-34.4,-14.5,5.4,4.8,1.6
-railroads,1,CSX,CSX Corporation,0.24,15.84,4.0,7.6,24.6,27.0,46.9,4.4,1.4,20.9
-railroads,2,UNP,Union Pacific Corporation,0.4318,2.2,-0.8,-0.5,9.3,-1.3,18.6,4.5,-3.5,12.8
-engineering-construction,1,MTZ,"MasTec, Inc.",0.0708,48.72,4.9,15.9,69.6,110.5,130.4,4.4,2.3,29.2
-engineering-construction,2,FLR,Fluor Corporation,0.0169,8.19,16.0,2.4,24.6,-15.5,4.3,-0.0,13.4,15.7
-building-products-equipment,1,AAON,"AAON, Inc.",0.0251,39.67,-6.5,38.8,62.3,53.1,73.0,-7.3,-9.1,52.1
-building-products-equipment,2,MAS,Masco Corporation,0.039,16.73,17.1,20.2,19.4,7.1,27.0,7.5,14.5,33.5
-building-products-equipment,3,CARR,Carrier Global Corporation,0.1478,15.93,16.7,21.8,32.5,-18.5,1.4,2.5,14.1,35.1
-building-products-equipment,4,TREX,"Trex Company, Inc.",0.0125,15.69,22.3,22.3,34.7,-29.3,-9.4,5.5,19.7,35.6
-building-products-equipment,5,OC,Owens Corning,0.0264,6.91,13.4,12.6,14.4,-19.3,0.5,5.7,10.7,25.9
-building-products-equipment,6,TT,Trane Technologies plc,0.2554,5.67,7.3,4.3,15.4,-8.5,11.3,-1.1,4.7,17.6
-electrical-equipment-parts,1,TE,T1 Energy Inc.,0.0071,43.42,-22.5,17.4,8.9,200.0,219.9,-12.2,-25.1,30.7
-electrical-equipment-parts,2,NVT,nVent Electric plc,0.0818,43.29,-0.3,24.5,50.7,104.0,123.9,-8.0,-2.9,37.8
-integrated-freight-logistics,1,PBI,Pitney Bowes Inc.,0.0088,50.1,18.7,53.2,66.6,52.0,71.9,3.5,16.1,66.5
-integrated-freight-logistics,2,FDX,FedEx Corporation,0.272,19.62,-1.0,0.2,28.4,56.2,76.1,-2.0,-3.6,13.5
-integrated-freight-logistics,3,UPS,"United Parcel Service, Inc.",0.3289,1.37,6.1,-0.5,4.8,-5.6,14.2,3.1,3.5,12.8
-industrial-distribution,1,FAST,Fastenal Company,0.1996,0.27,7.7,-8.3,7.6,-5.3,14.6,2.6,5.1,5.0
-conglomerates,1,HON,Honeywell International Inc.,0.3948,108.43,103.2,95.2,136.1,92.1,111.9,1.4,100.6,108.5
-specialty-business-services,1,TH,Target Hospitality Corp.,0.0103,105.02,13.2,95.9,136.8,162.8,182.7,0.5,10.6,109.2
-specialty-business-services,2,ARMK,Aramark,0.0755,24.59,7.7,25.3,41.7,14.8,34.7,5.1,5.1,38.6
-specialty-business-services,3,FA,First Advantage Corporation,0.0156,18.72,18.7,44.5,10.1,-7.1,12.8,10.9,16.1,57.8
-rental-leasing-services,1,CTOS,"Custom Truck One Source, Inc.",0.0146,76.74,24.7,68.2,93.1,117.0,136.9,5.9,22.1,81.5
-rental-leasing-services,2,WSC,WillScot Holdings Corporation,0.028,25.57,15.5,43.6,42.6,-16.9,3.0,0.1,12.9,56.9
-airlines,1,DAL,"Delta Air Lines, Inc.",0.3632,32.27,15.8,25.5,25.5,69.0,88.9,10.0,13.2,38.8
-airlines,2,AAL,American Airlines Group Inc.,0.0706,30.66,22.4,53.6,8.0,38.6,58.4,11.8,19.8,66.9
-airlines,3,UAL,"United Airlines Holdings, Inc.",0.2638,29.17,23.5,33.5,13.4,52.0,71.9,15.0,20.9,46.8
-airlines,4,LUV,Southwest Airlines Co.,0.1515,24.89,22.0,18.6,20.0,44.6,64.4,8.2,19.4,31.9
-trucking,1,RXO,"RXO, Inc.",0.0392,67.76,10.9,77.7,106.2,52.1,72.0,6.8,8.3,91.0
-trucking,2,KNX,Knight-Swift Transportation Holdings Inc.,0.109,30.44,6.2,25.1,37.2,52.6,72.5,3.3,3.5,38.4
-trucking,3,WERN,"Werner Enterprises, Inc.",0.0225,30.23,7.1,35.6,35.0,38.0,57.9,5.1,4.5,48.9
-trucking,4,SNDR,"Schneider National, Inc.",0.0557,24.3,6.6,28.1,28.1,30.6,50.4,1.7,4.0,41.4
-trucking,5,ODFL,"Old Dominion Freight Line, Inc.",0.3985,13.94,2.4,3.3,31.8,14.7,34.5,-1.0,-0.2,16.6
-metal-fabrication,1,ATI,ATI Inc.,0.277,51.43,18.8,23.8,63.3,107.6,127.4,-2.0,16.2,37.1
-tools-accessories,1,SWK,"Stanley Black & Decker, Inc.",0.1535,19.59,19.6,18.0,19.4,22.3,42.2,6.0,17.0,31.3
-security-protection-services,1,GEO,"The GEO Group, Inc.",0.096,51.74,36.6,62.1,80.8,7.8,27.7,3.7,34.0,75.4
-security-protection-services,2,CXW,"CoreCivic, Inc.",0.072,44.53,47.8,42.2,55.5,28.3,48.1,6.5,45.2,55.5
-staffing-employment-services,1,RHI,Robert Half Inc.,0.219,9.84,23.4,20.2,19.4,-33.6,-13.7,3.7,20.8,33.5
-reit-specialty,1,OUT,OUTFRONT Media Inc.,0.0137,34.3,5.5,12.2,35.2,94.9,114.7,6.6,2.9,25.5
-reit-specialty,2,IRM,Iron Mountain Incorporated,0.092,28.21,7.6,19.8,59.8,14.0,33.9,3.6,5.0,33.1
-reit-specialty,3,DLR,"Digital Realty Trust, Inc.",0.1583,5.54,4.0,-2.1,20.6,-4.0,15.9,2.6,1.3,11.2
-reit-industrial,1,COLD,"Americold Realty Trust, Inc.",0.0154,16.29,6.8,32.6,29.4,-18.3,1.5,13.5,4.2,45.9
-reit-industrial,2,LINE,"Lineage, Inc.",0.0338,11.32,4.0,19.6,24.9,-14.2,5.7,6.3,1.4,32.9
-reit-industrial,3,EXR,Extra Space Storage Inc.,0.1065,2.95,7.0,2.3,11.4,-12.8,7.1,2.7,4.4,15.6
-reit-industrial,4,CUBE,CubeSmart,0.0316,2.54,5.8,2.3,13.7,-17.0,2.9,1.6,3.2,15.6
-reit-healthcare-facilities,1,DHC,Diversified Healthcare Trust,0.0083,64.38,10.2,25.0,83.5,148.9,168.8,7.1,7.6,38.3
-reit-healthcare-facilities,2,DOC,"Healthpeak Properties, Inc.",0.0535,20.52,11.6,17.1,34.8,13.1,33.0,10.2,9.0,30.4
-reit-healthcare-facilities,3,WELL,Welltower Inc.,0.5778,13.93,8.8,3.4,16.0,31.9,51.7,10.0,6.1,16.7
-reit-healthcare-facilities,4,HR,Healthcare Realty Trust Incorporated,0.0256,12.14,4.1,7.3,18.9,17.3,37.1,3.6,1.5,20.6
-reit-healthcare-facilities,5,VTR,"Ventas, Inc.",0.1559,6.65,3.7,-4.9,7.5,25.6,45.5,9.1,1.1,8.4
-reit-healthcare-facilities,6,OHI,"Omega Healthcare Investors, Inc.",0.0515,5.39,3.3,-3.9,6.3,20.0,39.8,7.9,0.7,9.4
-reit-healthcare-facilities,7,CTRE,"CareTrust REIT, Inc.",0.0347,5.23,0.6,-2.6,6.9,19.1,39.0,10.2,-2.0,10.7
-reit-retail,1,MAC,The Macerich Company,0.0297,29.3,17.2,22.9,32.9,45.5,65.4,9.3,14.6,36.2
-reit-retail,2,SPG,"Simon Property Group, Inc.",0.2847,17.36,13.5,12.9,17.2,28.2,48.1,7.4,10.9,26.2
-reit-retail,3,KRG,Kite Realty Group Trust,0.023,13.65,8.8,8.5,20.3,16.2,36.1,4.7,6.2,21.8
-reit-retail,4,KIM,Kimco Realty Corporation,0.0676,12.7,9.8,4.3,25.1,9.6,29.5,6.2,7.2,17.6
-reit-retail,5,BRX,Brixmor Property Group Inc.,0.0385,10.15,7.6,1.2,20.7,10.4,30.2,5.0,4.9,14.5
-reit-retail,6,NTST,NETSTREIT Corp.,0.008,10.02,9.5,1.1,17.8,12.3,32.1,10.4,6.8,14.4
-reit-retail,7,PECO,"Phillips Edison & Company, Inc.",0.0206,7.54,6.5,2.4,14.5,5.8,25.7,4.1,3.9,15.7
-reit-retail,8,NNN,"NNN REIT, Inc.",0.0349,7.04,8.5,1.0,18.5,-2.6,17.3,5.5,5.9,14.3
-reit-retail,9,REG,Regency Centers Corporation,0.058,5.17,7.2,-2.3,14.1,0.9,20.7,6.4,4.6,11.0
-reit-retail,10,O,Realty Income Corporation,0.2278,0.96,4.6,-7.2,9.3,-3.0,16.9,4.8,1.9,6.1
-reit-residential,1,INVH,Invitation Homes Inc.,0.0946,2.9,7.2,10.6,9.3,-22.7,-2.8,8.3,4.6,23.9
-reit-residential,2,AMH,American Homes 4 Rent,0.0642,2.03,9.9,10.2,4.1,-21.1,-1.3,7.5,7.3,23.5
-reit-residential,3,UDR,"UDR, Inc.",0.0679,1.94,7.7,5.5,7.1,-17.0,2.9,6.4,5.1,18.8
-reit-residential,4,EQR,Equity Residential,0.134,0.7,5.2,3.0,5.7,-14.8,5.0,6.7,2.6,16.3
-reit-diversified,1,BNL,"Broadstone Net Lease, Inc.",0.0688,12.16,6.5,2.1,20.4,20.5,40.4,3.1,3.9,15.4
-reit-diversified,2,WPC,W. P. Carey Inc.,0.2783,4.05,2.0,-2.6,11.8,4.4,24.2,3.7,-0.7,10.7
-reit-office,1,VNO,Vornado Realty Trust,0.1293,16.22,20.0,39.1,12.0,-15.5,4.4,3.4,17.4,52.4
-reit-office,2,CDP,COPT Defense Properties,0.0724,15.08,15.0,3.9,25.3,16.6,36.5,8.4,12.4,17.2
-reit-office,3,HIW,"Highwoods Properties, Inc.",0.058,14.21,16.4,31.6,15.6,-16.1,3.7,2.1,13.8,44.9
-reit-office,4,CUZ,Cousins Properties Incorporated,0.0867,11.8,14.2,26.2,13.8,-15.3,4.5,5.9,11.6,39.5
-reit-office,5,SLG,SL Green Realty Corp.,0.0652,10.62,18.0,31.5,12.9,-31.5,-11.6,3.2,15.4,44.8
-reit-hotel-motel,1,PEB,Pebblebrook Hotel Trust,0.0485,49.1,25.7,36.9,62.4,70.8,90.7,0.0,23.0,50.2
-reit-hotel-motel,2,APLE,"Apple Hospitality REIT, Inc.",0.0902,33.11,18.0,32.5,42.0,35.8,55.6,2.7,15.4,45.8
-reit-hotel-motel,3,PK,Park Hotels & Resorts Inc.,0.0668,31.64,24.5,27.9,38.4,34.2,54.1,0.4,21.8,41.2
-reit-hotel-motel,4,DRH,DiamondRock Hospitality Company,0.0572,27.56,14.4,18.0,32.6,47.5,67.3,1.3,11.8,31.3
-reit-hotel-motel,5,HST,"Host Hotels & Resorts, Inc.",0.385,26.84,9.3,17.1,34.1,48.0,67.9,0.2,6.7,30.4
-reit-hotel-motel,6,SHO,"Sunstone Hotel Investors, Inc.",0.0498,19.73,12.2,16.9,28.0,19.2,39.0,0.1,9.6,30.2
-semiconductors,1,MU,"Micron Technology, Inc.",0.12,164.92,24.6,200.0,200.0,200.0,219.9,-0.1,22.0,218.7
-semiconductors,2,VSH,"Vishay Intertechnology, Inc.",0.0007,163.61,18.0,200.0,200.0,200.0,219.9,-13.2,15.4,223.1
-semiconductors,3,MXL,"MaxLinear, Inc.",0.0008,159.63,-1.8,200.0,200.0,200.0,219.9,8.8,-4.5,462.9
-semiconductors,4,INTC,Intel Corporation,0.0605,154.9,8.0,177.7,200.0,200.0,219.9,-4.2,5.4,191.0
-semiconductors,5,MRVL,"Marvell Technology, Inc.",0.0219,154.79,36.9,159.9,198.1,200.0,219.9,-14.1,34.3,173.2
-semiconductors,6,ALAB,"Astera Labs, Inc.",0.0063,142.26,23.0,200.0,125.5,200.0,219.9,-6.1,20.4,244.8
-semiconductors,7,AMD,"Advanced Micro Devices, Inc.",0.0798,125.23,7.9,142.7,136.2,200.0,219.9,-2.9,5.3,156.0
-semiconductors,8,SMTC,Semtech Corporation,0.0013,93.39,-2.1,88.6,90.7,200.0,219.9,-5.4,-4.7,101.9
-semiconductors,9,CRDO,Credo Technology Group Holding Ltd,0.0042,85.37,10.2,133.5,54.5,134.7,154.6,-12.4,7.6,146.8
-semiconductors,10,GFS,GLOBALFOUNDRIES Inc.,0.0041,72.64,1.1,66.0,116.7,88.1,108.0,-6.9,-1.5,79.3
-semiconductors,11,MTSI,"MACOM Technology Solutions Holdings, Inc.",0.0026,72.31,-5.2,48.3,102.9,140.0,159.9,-5.7,-7.9,61.6
-semiconductors,12,ALGM,"Allegro MicroSystems, Inc.",0.001,66.98,20.8,72.1,104.4,49.5,69.4,-1.9,18.1,85.4
-semiconductors,13,LSCC,Lattice Semiconductor Corporation,0.0018,62.91,-3.6,32.9,74.8,156.6,176.5,-9.7,-6.2,46.2
-semiconductors,14,POWI,"Power Integrations, Inc.",0.0004,50.28,-5.8,45.7,109.1,25.0,44.9,-8.9,-8.4,59.0
-software-infrastructure,1,FTNT,"Fortinet, Inc.",0.0232,55.95,20.9,73.5,81.1,26.9,46.8,4.6,18.3,86.8
-software-infrastructure,2,PANW,"Palo Alto Networks, Inc.",0.0519,52.3,25.0,81.3,55.2,31.8,51.7,5.7,22.4,94.6
-software-infrastructure,3,CORZ,"Core Scientific, Inc.",0.0018,47.67,2.6,59.0,69.2,43.5,63.4,-6.7,0.0,72.3
-software-infrastructure,4,CRWD,"CrowdStrike Holdings, Inc.",0.0374,37.9,11.2,65.3,39.9,20.5,40.4,2.4,8.6,78.6
-software-infrastructure,5,OKTA,"Okta, Inc.",0.0045,32.46,41.5,43.3,33.0,6.4,26.3,5.5,38.9,56.6
-software-infrastructure,6,TWLO,Twilio Inc.,0.0061,29.26,8.1,38.6,29.4,36.2,56.1,2.9,5.5,51.9
-software-infrastructure,7,NTAP,"NetApp, Inc.",0.0063,27.43,9.4,33.4,33.7,27.1,47.0,-4.5,6.8,46.7
-software-infrastructure,8,VRNS,"Varonis Systems, Inc.",0.001,25.06,35.9,71.3,14.7,-39.7,-19.8,20.7,33.3,84.6
-software-infrastructure,9,RELY,"Remitly Global, Inc.",0.001,24.97,13.8,26.6,48.5,-1.6,18.3,6.0,11.2,39.9
-software-infrastructure,10,TENB,"Tenable Holdings, Inc.",0.0007,20.76,26.2,51.9,18.3,-27.7,-7.9,12.5,23.6,65.2
-software-infrastructure,11,XYZ,"Block, Inc.",0.0097,11.03,11.6,17.8,13.3,-3.1,16.8,4.1,9.0,31.1
-software-infrastructure,12,NET,"Cloudflare, Inc.",0.0176,6.82,16.0,-0.4,10.9,2.4,22.3,5.9,13.4,12.9
-software-application,1,DDOG,"Datadog, Inc.",0.0507,57.33,10.7,79.6,63.2,61.7,81.5,7.5,8.1,92.9
-software-application,2,FROG,JFrog Ltd.,0.0063,50.46,25.3,73.4,24.9,79.6,99.5,5.9,22.7,86.7
-software-application,3,NAVN,"Navan, Inc.",0.0034,41.19,18.1,60.8,37.0,,,4.2,15.5,74.1
-software-application,4,SNOW,Snowflake Inc.,0.0512,20.57,44.7,40.1,4.1,-8.0,11.8,7.2,42.1,53.4
-software-application,5,CDNS,"Cadence Design Systems, Inc.",0.0618,11.54,3.5,21.1,12.5,3.7,23.6,-2.6,0.9,34.4
-semiconductor-equipment-materials,1,ICHR,"Ichor Holdings, Ltd.",0.0021,134.07,30.1,93.5,200.0,200.0,219.9,-4.7,27.5,106.8
-semiconductor-equipment-materials,2,ACMR,"ACM Research, Inc.",0.0047,132.88,20.5,140.4,155.5,200.0,219.9,-4.9,17.9,153.7
-semiconductor-equipment-materials,3,UCTT,"Ultra Clean Holdings, Inc.",0.0035,132.38,32.4,86.4,200.0,200.0,219.9,-2.0,29.7,99.7
-semiconductor-equipment-materials,4,COHU,"Cohu, Inc.",0.002,122.44,19.2,98.7,163.3,200.0,219.9,-7.7,16.6,112.0
-semiconductor-equipment-materials,5,AMAT,"Applied Materials, Inc.",0.3224,110.6,42.5,72.1,135.0,200.0,219.9,1.6,39.8,85.4
-semiconductor-equipment-materials,6,VECO,Veeco Instruments Inc.,0.0028,109.16,20.4,83.6,133.3,200.0,219.9,-10.9,17.8,96.9
-semiconductor-equipment-materials,7,LRCX,Lam Research Corporation,0.3071,97.19,21.6,66.0,110.3,200.0,219.9,-2.6,18.9,79.3
-semiconductor-equipment-materials,8,TER,"Teradyne, Inc.",0.0443,87.99,18.8,33.7,113.7,200.0,219.9,-0.2,16.2,47.0
-semiconductor-equipment-materials,9,AMKR,"Amkor Technology, Inc.",0.0126,86.76,11.8,61.3,86.7,200.0,219.9,-13.0,9.2,74.6
-semiconductor-equipment-materials,10,ONTO,Onto Innovation Inc.,0.0104,86.62,24.0,44.9,94.5,200.0,219.9,-2.9,21.4,58.2
-semiconductor-equipment-materials,11,KLAC,KLA Corporation,0.2104,82.66,29.6,58.3,90.0,161.3,181.2,-4.2,27.0,71.6
-semiconductor-equipment-materials,12,ENTG,"Entegris, Inc.",0.0159,51.97,17.9,26.3,83.8,76.8,96.7,-9.7,15.3,39.6
-semiconductor-equipment-materials,13,Q,"Qnity Electronics, Inc.",0.0215,42.13,2.1,27.0,83.9,,,-6.4,-0.5,40.3
-computer-hardware,1,SNDK,Sandisk Corporation,0.2426,166.82,34.1,200.0,200.0,200.0,219.9,-4.3,31.5,246.6
-computer-hardware,2,DELL,Dell Technologies Inc.,0.2023,141.08,33.5,114.6,200.0,200.0,219.9,-2.4,30.8,127.9
-computer-hardware,3,STX,Seagate Technology Holdings plc,0.1596,138.54,6.0,124.4,200.0,200.0,219.9,-15.9,3.4,137.7
-computer-hardware,4,WDC,Western Digital Corporation,0.1584,133.02,13.2,101.3,200.0,200.0,219.9,-21.4,10.6,114.6
-communication-equipment,1,HPE,Hewlett Packard Enterprise Company,0.07,68.95,20.5,61.6,73.0,122.5,142.4,-7.8,17.8,74.9
-communication-equipment,2,EXTR,"Extreme Networks, Inc.",0.005,68.5,21.6,92.0,82.7,58.7,78.6,1.1,19.0,105.3
-communication-equipment,3,CSCO,"Cisco Systems, Inc.",0.5426,29.51,-2.3,25.9,40.9,49.7,69.5,-4.8,-4.9,39.2
-electronic-components,1,TTMI,"TTM Technologies, Inc.",0.0298,114.79,3.0,86.3,161.0,200.0,219.9,-11.5,0.4,99.6
-electronic-components,2,FLEX,Flex Ltd.,0.0806,106.54,3.2,113.2,123.6,174.2,194.0,-0.6,0.6,126.5
-electronic-components,3,GLW,Corning Incorporated,0.2852,101.33,18.6,50.3,141.7,200.0,219.9,13.4,16.0,63.6
-electronic-components,4,OUST,"Ouster, Inc.",0.004,65.41,-2.4,104.3,79.0,54.5,74.4,-9.8,-5.0,117.6
-electronic-components,5,KN,Knowles Corporation,0.0051,57.5,9.1,41.5,75.4,103.0,122.9,-3.2,6.5,54.8
-electronic-components,6,SANM,Sanmina Corporation,0.019,57.13,-7.0,67.3,46.9,121.3,141.2,-2.0,-9.7,80.6
-electronic-components,7,RAL,Ralliant Corporation,0.0121,35.84,18.2,62.4,33.6,16.9,36.8,5.9,15.6,75.7
-electronic-components,8,JBL,Jabil Inc.,0.0567,29.48,-0.8,22.5,46.1,45.3,65.2,-3.6,-3.4,35.8
-electronic-components,9,APH,Amphenol Corporation,0.3019,23.63,19.5,19.9,13.3,48.9,68.8,0.0,16.9,33.2
-information-technology-services,1,PENG,"Penguin Solutions, Inc.",0.0058,159.95,17.0,200.0,200.0,182.8,202.6,-7.3,14.4,252.7
-information-technology-services,2,CIFR,Cipher Digital Inc.,0.0189,78.34,5.7,67.5,56.5,200.0,219.9,-11.1,3.1,80.8
-scientific-technical-instruments,1,MKSI,MKS Inc.,0.0849,101.8,21.2,59.5,132.4,200.0,219.9,-4.4,18.6,72.8
-scientific-technical-instruments,2,COHR,Coherent Corp.,0.2408,81.02,2.7,43.1,91.8,200.0,219.9,-2.3,0.1,56.4
-scientific-technical-instruments,3,CGNX,Cognex Corporation,0.0358,48.32,2.4,21.8,75.5,93.2,113.0,0.7,-0.2,35.1
-scientific-technical-instruments,4,ST,Sensata Technologies Holding plc,0.022,22.53,-4.6,18.9,33.5,38.7,58.5,-7.5,-7.2,32.2
-scientific-technical-instruments,5,FTV,Fortive Corporation,0.0606,0.94,5.3,-1.0,4.2,-5.4,14.4,0.8,2.7,12.3
-electronics-computer-distribution,1,AVT,"Avnet, Inc.",0.1524,39.85,2.2,28.4,71.0,48.0,67.9,-5.6,-0.4,41.7
-utilities-regulated-electric,1,EIX,Edison International,0.0249,14.46,8.2,-5.1,22.9,37.4,57.3,5.3,5.6,8.2
-utilities-regulated-electric,2,ETR,Entergy Corporation,0.0462,12.32,6.6,0.0,20.5,24.3,44.1,4.3,3.9,13.3
-utilities-regulated-electric,3,AEP,"American Electric Power Company, Inc.",0.0644,9.15,9.6,-4.9,15.7,19.8,39.6,8.6,7.0,8.4
-utilities-regulated-electric,4,D,"Dominion Energy, Inc.",0.0521,8.47,6.9,1.8,15.3,9.8,29.7,1.4,4.3,15.1
-utilities-regulated-electric,5,PNW,Pinnacle West Capital Corporation,0.0112,7.72,7.7,-2.7,18.6,7.0,26.9,5.6,5.1,10.6
-utilities-regulated-electric,6,EVRG,"Evergy, Inc.",0.0172,7.25,6.2,-3.9,15.7,12.4,32.2,5.7,3.6,9.4
-utilities-regulated-electric,7,LNT,Alliant Energy Corporation,0.017,7.25,7.4,-2.5,13.7,12.2,32.0,5.8,4.7,10.8
-utilities-regulated-electric,8,AEE,Ameren Corporation,0.028,6.73,9.8,-3.5,14.2,7.8,27.7,8.9,7.2,9.7
-utilities-regulated-electric,9,DTE,DTE Energy Company,0.0274,5.24,9.8,-5.5,15.5,1.4,21.2,5.5,7.2,7.8
-utilities-regulated-electric,10,CNP,"CenterPoint Energy, Inc.",0.0252,4.92,7.2,-6.3,13.4,6.8,26.6,5.2,4.6,7.0
-utilities-regulated-electric,11,POR,Portland General Electric Company,0.0052,3.46,6.4,-10.6,6.7,16.7,36.6,5.8,3.8,2.7
-utilities-regulated-electric,12,ES,Eversource Energy,0.0236,2.75,8.2,-3.9,6.7,1.4,21.3,5.6,5.5,9.4
-utilities-regulated-electric,13,XEL,Xcel Energy Inc.,0.0438,2.06,4.9,-7.0,7.1,5.2,25.1,6.2,2.3,6.3
-utilities-regulated-electric,14,WEC,"WEC Energy Group, Inc.",0.0331,1.5,7.7,-8.2,8.6,-0.7,19.1,6.0,5.0,5.1
-utilities-regulated-electric,15,OGE,OGE Energy Corp.,0.0087,1.3,5.5,-8.4,11.0,-3.0,16.9,4.8,2.9,4.9
-utilities-regulated-electric,16,CMS,CMS Energy Corporation,0.0208,0.87,8.8,-9.2,7.7,-2.2,17.7,7.4,6.2,4.1
-utilities-regulated-electric,17,PCG,PG&E Corporation,0.0327,-0.11,7.8,-13.0,3.7,5.5,25.4,5.5,5.1,0.3
-utilities-regulated-electric,18,ED,"Consolidated Edison, Inc.",0.0353,-0.13,6.4,-12.0,8.6,-1.9,18.0,5.4,3.7,1.3
-utilities-regulated-electric,19,FE,FirstEnergy Corp.,0.0239,-0.8,6.2,-15.4,4.2,6.5,26.4,4.3,3.6,-2.1
-utilities-regulated-electric,20,SO,The Southern Company,0.0935,-1.51,6.3,-10.6,7.8,-9.5,10.4,4.4,3.6,2.7
-utilities-regulated-electric,21,DUK,Duke Energy Corporation,0.0855,-2.6,5.0,-13.2,5.3,-6.2,13.7,3.7,2.4,0.1
-utilities-regulated-electric,22,EXC,Exelon Corporation,0.0414,-2.82,6.2,-14.4,4.5,-5.4,14.4,3.5,3.6,-1.1
-utilities-regulated-gas,1,BKH,Black Hills Corporation,0.0564,6.6,4.7,-1.2,5.7,21.6,41.4,4.5,2.1,12.1
-utilities-regulated-gas,2,NI,NiSource Inc.,0.2294,4.96,6.0,-4.6,13.0,6.2,26.1,3.9,3.4,8.7
-utilities-regulated-gas,3,MDU,"MDU Resources Group, Inc.",0.0446,3.97,3.1,-6.5,6.9,16.2,36.0,2.8,0.5,6.8
+specialty-chemicals,1,ESI,Element Solutions Inc,0.0164,47.92,12.2,21.9,72.9,85.3,106.5,-5.7,10.7,39.1
+specialty-chemicals,2,CLMT,"Calumet, Inc.",0.0045,42.26,2.5,-5.4,73.9,106.1,127.3,7.8,0.9,11.8
+specialty-chemicals,3,PRM,"Perimeter Solutions, Inc.",0.0077,36.85,2.3,36.2,9.2,113.9,135.1,-12.6,0.8,53.4
+specialty-chemicals,4,PPG,"PPG Industries, Inc.",0.0391,2.42,8.7,0.1,10.3,-12.1,9.1,1.7,7.1,17.2
+specialty-chemicals,5,LIN,Linde plc,0.3428,-1.32,3.7,-12.8,13.2,-10.9,10.4,-1.1,2.1,4.4
+specialty-chemicals,6,IFF,International Flavors & Fragrances Inc.,0.0283,-3.27,0.1,-8.9,7.7,-14.7,6.5,0.7,-1.4,8.3
+building-materials,1,JHX,James Hardie Industries plc,0.0827,13.05,16.6,29.5,18.3,-23.0,-1.7,7.8,15.0,46.6
+agricultural-inputs,1,CTVA,"Corteva, Inc.",0.6476,-0.25,5.2,-15.2,16.5,-8.3,12.9,5.7,3.7,1.9
+internet-content-information,1,NBIS,None,0.0111,139.54,16.9,141.9,178.7,200.0,221.3,-7.9,15.4,159.0
+internet-content-information,2,MTCH,"Match Group, Inc.",0.0015,10.58,8.1,13.9,11.3,7.1,28.4,9.9,6.5,31.0
+internet-content-information,3,PPLI,People Incorporated,0.0006,4.8,4.7,2.2,8.7,2.9,24.2,11.7,3.2,19.4
+telecom-services,1,IRDM,Iridium Communications Inc.,0.0076,98.17,8.4,78.7,200.0,64.4,85.7,26.1,6.8,95.9
+telecom-services,2,TIGO,Millicom International Cellular S.A.,0.0204,55.98,11.6,8.4,69.6,151.3,172.5,8.1,10.1,25.6
+entertainment,1,LION,Lionsgate Studios Corp.,0.0059,67.97,11.2,52.9,67.7,147.8,169.0,2.8,9.6,70.1
+entertainment,2,ROKU,"Roku, Inc.",0.0261,24.44,5.7,39.5,15.5,34.1,55.3,1.0,4.1,56.7
+entertainment,3,SIRI,Sirius XM Holdings Inc.,0.0127,17.03,-0.6,12.1,36.8,12.3,33.5,4.7,-2.1,29.3
+entertainment,4,CNK,"Cinemark Holdings, Inc.",0.0049,13.07,21.6,-0.2,37.1,-11.5,9.8,-2.7,20.0,16.9
+entertainment,5,LYV,"Live Nation Entertainment, Inc.",0.0548,9.81,10.8,8.1,17.7,-0.6,20.7,7.0,9.3,25.3
+advertising-agencies,1,MGNI,"Magnite, Inc.",0.0123,14.72,33.9,46.8,7.7,-42.1,-20.8,9.5,32.4,63.9
+internet-retail,1,ETSY,"Etsy, Inc.",0.0026,37.37,20.8,51.2,34.4,37.6,58.8,9.8,19.3,68.4
+internet-retail,2,EBAY,eBay Inc.,0.0171,15.92,0.6,9.1,23.9,29.5,50.7,5.6,-0.9,26.3
+restaurants,1,CAKE,The Cheesecake Factory Incorporated,0.0078,29.87,25.0,30.3,47.2,7.9,29.2,3.2,23.5,47.5
+restaurants,2,BROS,Dutch Bros Inc.,0.0194,14.48,28.3,36.4,3.9,-16.4,4.9,7.0,26.8,53.5
+restaurants,3,SBUX,Starbucks Corporation,0.2342,6.05,4.8,3.4,16.7,-4.7,16.6,3.9,3.3,20.6
+restaurants,4,EAT,"Brinker International, Inc.",0.0142,2.01,21.3,8.2,3.1,-28.3,-7.0,1.9,19.7,25.4
+restaurants,5,TXRH,"Texas Roadhouse, Inc.",0.0252,1.96,9.5,4.4,6.6,-16.1,5.2,7.8,7.9,21.5
+travel-services,1,VIK,None,0.101,39.8,15.2,35.9,36.2,75.7,96.9,4.9,13.7,53.0
+travel-services,2,GBTG,"Global Business Travel Group, Inc.",0.0106,27.34,0.3,59.0,13.4,27.8,49.0,0.0,-1.3,76.2
+travel-services,3,RCL,Royal Caribbean Cruises Ltd.,0.1859,2.66,16.4,6.3,2.9,-16.9,4.4,3.9,14.9,23.4
+auto-parts,1,GTX,Garrett Motion Inc.,0.0229,94.08,7.2,80.8,94.6,200.0,221.3,1.7,5.6,98.0
+auto-parts,2,BWA,BorgWarner Inc.,0.0472,27.23,-5.8,4.6,37.9,78.2,99.4,-8.9,-7.4,21.8
+auto-parts,3,AAP,"Advance Auto Parts, Inc.",0.013,17.61,4.5,2.9,43.5,13.9,35.2,11.2,3.0,20.0
+apparel-retail,1,VSXY,None,0.0225,90.66,46.6,86.4,51.4,200.0,221.3,7.3,45.1,103.6
+lodging,1,MAR,"Marriott International, Inc.",0.4818,6.97,-1.3,1.1,11.5,17.2,38.4,-2.4,-2.8,18.3
+lodging,2,HLT,Hilton Worldwide Holdings Inc.,0.369,1.25,0.1,-4.0,5.6,3.9,25.1,-3.0,-1.5,13.1
+lodging,3,WH,"Wyndham Hotels & Resorts, Inc.",0.0316,-1.28,7.1,-7.4,6.6,-12.2,9.0,5.7,5.5,9.8
+specialty-retail,1,WSM,"Williams-Sonoma, Inc.",0.1539,21.3,18.4,20.4,19.8,27.9,49.2,6.2,16.8,37.6
+specialty-retail,2,BBWI,"Bath & Body Works, Inc.",0.0258,7.09,18.3,24.3,13.6,-39.7,-18.4,19.7,16.7,41.5
+specialty-retail,3,BBY,"Best Buy Co., Inc.",0.089,5.85,6.8,7.8,6.6,0.8,22.1,2.1,5.3,24.9
+specialty-retail,4,DKS,"DICK'S Sporting Goods, Inc.",0.1132,3.8,4.8,6.2,4.0,-1.1,20.2,-2.6,3.2,23.4
+residential-construction,1,TOL,"Toll Brothers, Inc.",0.0867,14.89,20.9,8.8,10.7,24.3,45.6,8.5,19.4,26.0
+residential-construction,2,TMHC,Taylor Morrison Home Corporation,0.0371,10.12,23.8,8.0,12.8,-4.4,16.9,0.3,22.2,25.2
+residential-construction,3,PHM,"PulteGroup, Inc.",0.1478,9.33,18.7,3.4,8.2,10.6,31.8,9.8,17.1,20.6
+residential-construction,4,KBH,KB Home,0.0216,8.22,29.0,6.5,2.2,-0.9,20.3,19.3,27.4,23.7
+residential-construction,5,DHI,"D.R. Horton, Inc.",0.2619,7.29,13.3,5.6,4.8,7.6,28.9,5.3,11.8,22.8
+packaging-containers,1,REYN,Reynolds Consumer Products Inc.,0.0367,14.54,24.3,14.1,11.2,10.5,31.8,13.9,22.7,31.2
+packaging-containers,2,SON,Sonoco Products Company,0.0353,9.08,14.1,-11.3,23.8,12.5,33.8,10.4,12.5,5.9
+packaging-containers,3,SW,Smurfit Westrock Plc,0.1553,5.72,14.1,1.3,15.6,-11.0,10.3,1.7,12.6,18.5
+packaging-containers,4,BALL,Ball Corporation,0.1059,0.45,12.2,-12.1,11.5,-9.1,12.2,6.6,10.7,5.0
+auto-truck-dealerships,1,KMX,"CarMax, Inc.",0.0618,8.29,22.6,12.9,27.8,-42.2,-20.9,1.4,21.1,30.1
+auto-truck-dealerships,2,VVV,Valvoline Inc.,0.0414,7.53,17.6,1.5,22.9,-16.5,4.7,5.6,16.0,18.7
+footwear-accessories,1,CROX,"Crocs, Inc.",0.0582,23.18,7.2,40.4,30.4,2.5,23.7,1.2,5.7,57.6
+resorts-casinos,1,PENN,"PENN Entertainment, Inc.",0.0329,29.19,15.0,43.0,42.8,2.2,23.4,5.9,13.5,60.2
+resorts-casinos,2,MGM,MGM Resorts International,0.1416,21.82,17.3,19.7,26.1,23.2,44.5,6.7,15.7,36.8
+resorts-casinos,3,HGV,Hilton Grand Vacations Inc.,0.047,13.54,5.0,24.8,11.5,8.2,29.5,3.3,3.5,42.0
+resorts-casinos,4,CZR,"Caesars Entertainment, Inc.",0.0677,1.18,4.1,-1.8,13.8,-16.2,5.0,1.8,2.5,15.4
+leisure,1,CALY,Callaway Golf Company,0.0458,51.9,23.5,25.1,53.9,117.4,138.6,6.6,22.0,42.3
+leisure,2,LTH,"Life Time Group Holdings, Inc.",0.1221,34.66,25.1,42.1,46.8,14.9,36.2,10.6,23.6,59.2
+leisure,3,PRKS,United Parks & Resorts Inc.,0.0292,18.61,20.9,39.8,23.2,-22.3,-1.0,1.4,19.3,57.0
+leisure,4,YETI,"YETI Holdings, Inc.",0.0505,17.69,9.1,24.1,3.4,38.1,59.4,4.8,7.5,41.2
+apparel-manufacturing,1,LEVI,Levi Strauss & Co.,0.1534,11.93,4.8,17.7,9.1,14.6,35.9,3.7,3.2,34.9
+furnishings-fixtures-appliances,1,SN,"SharkNinja, Inc.",0.3093,24.53,24.1,26.2,21.8,26.6,47.9,5.6,22.5,43.4
+gambling,1,RSI,"Rush Street Interactive, Inc.",0.0628,48.01,20.3,32.1,55.1,88.9,110.2,2.6,18.8,49.3
+gambling,2,SGHC,Super Group (SGHC) Limited,0.1363,10.48,9.9,15.4,9.3,5.4,26.7,0.4,8.4,32.6
+luxury-goods,1,TPR,"Tapestry, Inc.",0.774,8.28,2.6,-11.3,5.3,47.8,69.1,-1.8,1.1,5.9
+department-stores,1,M,"Macy's, Inc.",0.3238,28.76,11.3,20.2,3.8,96.5,117.7,-0.8,9.8,37.4
+discount-stores,1,TGT,Target Corporation,0.0414,13.98,5.6,-4.4,33.6,20.4,41.7,3.2,4.1,12.8
+beverages-non-alcoholic,1,COCO,"The Vita Coco Company, Inc.",0.0057,34.53,-4.7,37.3,27.9,79.7,100.9,-12.5,-6.3,54.4
+beverages-non-alcoholic,2,MNST,Monster Beverage Corporation,0.1321,20.52,12.5,18.8,18.2,34.6,55.9,5.0,11.0,35.9
+beverages-non-alcoholic,3,PRMB,Primo Brands Corporation,0.0124,12.02,1.6,19.2,43.7,-35.9,-14.6,5.2,0.1,36.3
+beverages-non-alcoholic,4,KDP,Keurig Dr Pepper Inc.,0.063,7.31,13.9,11.5,14.7,-16.5,4.7,9.3,12.3,28.6
+beverages-non-alcoholic,5,KO,The Coca-Cola Company,0.4918,2.05,5.0,-7.3,11.6,-1.1,20.1,3.9,3.4,9.9
+household-personal-products,1,CL,Colgate-Palmolive Company,0.1291,-2.4,2.4,-6.9,8.7,-17.0,4.2,4.2,0.8,10.3
+household-personal-products,2,KVUE,Kenvue Inc.,0.0639,-3.69,9.7,-7.0,5.5,-25.9,-4.6,6.8,8.1,10.2
+household-personal-products,3,KMB,Kimberly-Clark Corporation,0.0637,-3.97,12.8,-4.2,3.7,-31.8,-10.6,9.4,11.3,12.9
+household-personal-products,4,CHD,"Church & Dwight Co., Inc.",0.0405,-5.06,1.8,-13.4,7.4,-18.1,3.2,4.4,0.3,3.7
+tobacco,1,MO,"Altria Group, Inc.",0.2996,9.89,6.0,-4.1,24.0,13.6,34.9,6.5,4.4,13.1
+tobacco,2,PM,Philip Morris International Inc.,0.6905,-1.55,4.8,-4.4,7.5,-17.2,4.0,6.5,3.3,12.7
+packaged-foods,1,SJM,The J. M. Smucker Company,0.0588,8.05,12.7,5.9,11.4,1.7,22.9,8.1,11.1,23.0
+packaged-foods,2,HRL,Hormel Foods Corporation,0.0688,-2.89,13.1,-1.5,3.1,-29.9,-8.7,9.1,11.5,15.7
+food-distribution,1,PFGC,Performance Food Group Company,0.194,15.05,17.4,18.5,15.0,7.5,28.8,9.8,15.9,35.7
+food-distribution,2,USFD,US Foods Holding Corp.,0.2473,14.45,27.8,-4.4,26.2,11.8,33.0,10.4,26.2,12.7
+food-distribution,3,SYY,Sysco Corporation,0.4372,-1.82,11.4,-14.4,6.1,-8.0,13.3,7.0,9.9,2.7
+education-training-services,1,UTI,"Universal Technical Institute, Inc.",0.0615,12.99,7.5,-6.0,43.8,0.8,22.0,3.3,5.9,11.2
+oil-gas-midstream,1,TRGP,Targa Resources Corp.,0.0814,18.58,5.1,-8.2,41.3,38.2,59.4,2.6,3.5,9.0
+oil-gas-midstream,2,KNTK,Kinetik Holdings Inc.,0.0051,8.01,7.5,-13.7,35.6,-0.4,20.9,5.1,6.0,3.5
+oil-gas-midstream,3,PAGP,"Plains GP Holdings, L.P.",0.0067,4.72,-0.9,-16.9,24.6,12.9,34.2,3.2,-2.4,0.2
+oil-gas-midstream,4,AM,Antero Midstream Corporation,0.0151,4.26,9.3,-17.8,22.5,5.0,26.2,4.3,7.8,-0.7
+oil-gas-midstream,5,WMB,"The Williams Companies, Inc.",0.1284,3.13,4.9,-14.4,20.2,2.0,23.3,0.1,3.4,2.8
+oil-gas-midstream,6,OKE,"ONEOK, Inc.",0.0782,-2.18,3.5,-21.6,16.4,-6.6,14.7,2.8,2.0,-4.4
+oil-gas-midstream,7,KMI,"Kinder Morgan, Inc.",0.1004,-3.38,2.7,-21.5,13.0,-6.9,14.3,0.1,1.1,-4.3
+oil-gas-refining-marketing,1,DK,"Delek US Holdings, Inc.",0.0114,47.54,17.7,-7.8,67.8,129.9,151.1,20.3,16.2,9.3
+oil-gas-refining-marketing,2,PBF,PBF Energy Inc.,0.0199,36.86,18.1,-25.9,69.7,100.4,121.7,18.2,16.6,-8.8
+oil-gas-refining-marketing,3,VLO,Valero Energy Corporation,0.2862,31.6,10.3,-11.9,55.8,81.9,103.2,9.2,8.8,5.2
+oil-gas-refining-marketing,4,DINO,HF Sinclair Corporation,0.0462,25.22,5.3,-5.3,47.5,57.6,78.8,7.5,3.7,11.9
+oil-gas-refining-marketing,5,MPC,Marathon Petroleum Corporation,0.2739,19.31,4.7,-13.9,49.9,37.8,59.1,4.8,3.1,3.3
+oil-gas-refining-marketing,6,PSX,Phillips 66,0.2526,7.64,0.0,-24.0,29.7,29.6,50.9,3.3,-1.5,-6.9
+oil-gas-equipment-services,1,NESR,National Energy Services Reunited Corp.,0.0111,72.71,18.9,15.3,81.1,200.0,221.3,13.7,17.3,32.5
+oil-gas-equipment-services,2,SEI,"Solaris Energy Infrastructure, Inc.",0.0179,62.45,17.2,20.2,68.7,161.8,183.0,-3.5,15.6,37.3
+oil-gas-equipment-services,3,KGS,"Kodiak Gas Services, Inc.",0.029,55.83,9.7,11.0,98.2,105.8,127.0,5.2,8.1,28.2
+oil-gas-equipment-services,4,WTTR,"Select Water Solutions, Inc.",0.0094,50.24,9.8,9.1,77.6,111.4,132.7,6.2,8.2,26.3
+oil-gas-equipment-services,5,OII,"Oceaneering International, Inc.",0.0152,28.79,4.8,-8.4,54.8,69.5,90.8,9.2,3.2,8.8
+oil-gas-equipment-services,6,AROC,"Archrock, Inc.",0.0273,27.52,18.5,-2.6,50.9,46.7,67.9,6.2,16.9,14.6
+banks-diversified,1,TD,The Toronto-Dominion Bank,0.0805,21.46,7.7,15.6,20.4,45.6,66.8,0.6,6.2,32.7
+banks-diversified,2,C,Citigroup Inc.,0.0984,21.15,15.8,16.2,10.5,49.9,71.2,-2.2,14.3,33.3
+banks-diversified,3,RY,Royal Bank of Canada,0.1152,17.07,10.0,13.2,12.5,36.8,58.1,1.0,8.4,30.3
+banks-diversified,4,BNY,The Bank of New York Mellon Corporation,0.04,15.73,3.9,8.8,14.8,39.5,60.8,-1.8,2.3,25.9
+asset-management,1,BEN,"Franklin Resources, Inc.",0.0156,26.88,8.9,32.3,34.6,25.2,46.5,-1.3,7.3,49.4
+asset-management,2,STT,State Street Corporation,0.0425,24.11,9.5,22.7,22.5,43.3,64.5,-2.0,8.0,39.8
+asset-management,3,NTRS,Northern Trust Corporation,0.0292,14.36,5.9,13.0,17.7,19.8,41.1,-0.4,4.4,30.2
+asset-management,4,PFG,"Principal Financial Group, Inc.",0.0212,12.7,7.4,8.5,15.3,20.4,41.6,-2.4,5.9,25.7
+asset-management,5,TROW,"T. Rowe Price Group, Inc.",0.0221,8.77,13.3,13.7,4.3,3.5,24.7,5.9,11.8,30.9
+asset-management,6,DBRG,"DigitalBridge Group, Inc.",0.0026,4.95,2.2,-14.4,8.3,31.7,53.0,0.5,0.6,2.8
+capital-markets,1,HUT,Hut 8 Corp.,0.0113,113.88,-3.3,132.3,116.1,200.0,221.3,-2.3,-4.8,149.5
+capital-markets,2,WULF,TeraWulf Inc.,0.0108,86.05,-1.6,54.6,99.9,200.0,221.3,-9.6,-3.1,71.8
+capital-markets,3,RIOT,"Riot Platforms, Inc.",0.0089,82.51,1.6,99.6,91.5,124.3,145.6,-3.1,0.0,116.8
+capital-markets,4,VIRT,"Virtu Financial, Inc.",0.0043,32.47,21.3,20.3,66.1,11.6,32.8,-6.4,19.7,37.4
+capital-markets,5,MRX,Marex Group plc,0.0036,27.69,15.3,20.4,41.4,30.4,51.7,-9.7,13.8,37.6
+capital-markets,6,CLSK,"CleanSpark, Inc.",0.0034,27.05,-13.7,60.3,26.9,18.1,39.3,-11.9,-15.3,77.5
+capital-markets,7,IBKR,"Interactive Brokers Group, Inc.",0.0334,23.21,7.8,20.4,26.1,38.6,59.9,-8.9,6.2,37.5
+capital-markets,8,MARA,"MARA Holdings, Inc.",0.0046,21.2,1.3,57.8,33.2,-31.8,-10.5,-5.5,-0.3,74.9
+capital-markets,9,MS,Morgan Stanley,0.2841,15.77,5.4,17.2,9.9,32.7,53.9,-6.8,3.9,34.4
+capital-markets,10,GS,"The Goldman Sachs Group, Inc.",0.2561,10.49,3.2,10.5,5.2,25.8,47.1,-7.8,1.6,27.6
+capital-markets,11,ETOR,eToro Group Ltd.,0.0028,-2.81,3.5,23.0,5.4,-60.1,-38.8,6.2,2.0,40.2
+banks-regional,1,VLY,Valley National Bancorp,0.0069,18.61,9.1,6.4,17.0,48.9,70.1,2.9,7.6,23.5
+banks-regional,2,CFG,"Citizens Financial Group, Inc.",0.0254,16.24,14.4,5.6,11.4,41.2,62.5,3.6,12.9,22.8
+banks-regional,3,FITB,Fifth Third Bancorp,0.0438,14.19,15.4,11.5,11.9,20.5,41.7,5.9,13.8,28.6
+banks-regional,4,FULT,Fulton Financial Corporation,0.0039,12.5,13.5,6.7,14.0,17.9,39.2,4.8,12.0,23.9
+banks-regional,5,ZION,"Zions Bancorporation, National Association",0.0087,11.99,13.2,9.3,10.6,16.9,38.2,3.6,11.7,26.4
+banks-regional,6,EBC,"Eastern Bankshares, Inc.",0.004,11.6,13.7,-0.2,11.4,27.5,48.8,6.4,12.2,17.0
+banks-regional,7,AUB,Atlantic Union Bankshares Corporation,0.0051,11.25,13.6,5.5,9.9,19.6,40.8,6.7,12.0,22.7
+banks-regional,8,ASB,Associated Banc-Corp,0.005,10.73,13.9,8.6,11.0,10.4,31.7,5.5,12.4,25.7
+banks-regional,9,PNC,"The PNC Financial Services Group, Inc.",0.0843,10.41,13.8,5.7,9.5,15.5,36.8,5.1,12.3,22.8
+banks-regional,10,COLB,"Columbia Banking System, Inc.",0.0079,9.97,10.8,4.2,6.7,22.8,44.0,3.6,9.3,21.3
+banks-regional,11,USB,U.S. Bancorp,0.0812,9.63,14.1,4.6,5.9,18.4,39.6,4.4,12.5,21.8
+banks-regional,12,KEY,KeyCorp,0.0213,7.72,11.1,3.0,3.8,17.3,38.5,1.4,9.6,20.2
+banks-regional,13,MTB,M&T Bank Corporation,0.0298,7.49,13.9,2.7,9.1,5.7,27.0,5.0,12.4,19.9
+banks-regional,14,WBS,Webster Financial Corporation,0.0105,7.44,6.2,-4.9,11.2,21.5,42.8,-0.1,4.6,12.3
+banks-regional,15,FLG,"Flagstar Bank, National Association",0.0053,7.37,7.2,-2.4,8.7,20.3,41.6,-0.5,5.7,14.7
+banks-regional,16,RF,Regions Financial Corporation,0.022,7.09,11.4,4.3,3.4,12.6,33.9,5.3,9.8,21.5
+banks-regional,17,FNB,F.N.B. Corporation,0.0058,6.55,11.5,2.2,2.6,14.1,35.4,4.4,10.0,19.4
+banks-regional,18,GBCI,"Glacier Bancorp, Inc.",0.0058,5.45,10.3,3.1,6.3,2.8,24.1,6.1,8.7,20.3
+banks-regional,19,ONB,Old National Bancorp,0.0085,5.27,9.7,4.0,5.4,2.6,23.9,3.2,8.2,21.1
+banks-regional,20,OZK,Bank OZK,0.0048,1.26,8.3,-0.0,3.7,-7.4,13.9,3.6,6.7,17.1
+banks-regional,21,CBSH,"Commerce Bancshares, Inc.",0.0072,0.67,13.8,4.3,2.8,-21.2,0.1,5.5,12.3,21.5
+insurance-property-casualty,1,ALL,The Allstate Corporation,0.1003,7.32,18.6,2.5,8.8,1.1,22.3,8.5,17.1,19.7
+insurance-property-casualty,2,TRV,"The Travelers Companies, Inc.",0.1139,5.59,14.8,-0.3,5.9,4.8,26.0,6.8,13.2,16.8
+insurance-property-casualty,3,CB,Chubb Limited,0.2149,-0.39,10.4,-9.2,2.3,-2.1,19.2,5.6,8.9,7.9
+insurance-life,1,UNM,Unum Group,0.064,4.59,10.3,6.6,6.9,-7.6,13.7,-1.0,8.8,23.7
+financial-conglomerates,1,VOYA,"Voya Financial, Inc.",0.4111,15.42,15.0,20.9,13.9,10.0,31.2,-1.6,13.5,38.0
+drug-manufacturers-general,1,OGN,Organon & Co.,0.0011,64.35,3.0,115.2,84.0,20.0,41.2,1.1,1.5,132.4
+drug-manufacturers-general,2,LLY,Eli Lilly and Company,0.35,18.61,10.7,23.1,6.7,37.6,58.9,11.6,9.2,40.3
+drug-manufacturers-general,3,BIIB,Biogen Inc.,0.0102,17.3,11.9,0.7,15.0,51.2,72.5,8.5,10.3,17.8
+drug-manufacturers-general,4,JNJ,Johnson & Johnson,0.1986,15.81,13.6,-9.0,17.9,52.2,73.5,11.8,12.0,8.1
+drug-manufacturers-general,5,MRK,"Merck & Co., Inc.",0.102,13.73,10.2,-8.2,15.4,47.6,68.9,12.0,8.7,8.9
+drug-manufacturers-general,6,ABBV,AbbVie Inc.,0.1434,10.56,17.9,5.3,4.5,20.2,41.5,10.6,16.3,22.5
+biotechnology,1,DFTX,"Definium Therapeutics, Inc.",0.0058,162.92,99.8,143.2,200.0,200.0,221.3,26.9,98.3,160.3
+biotechnology,2,ORKA,"Oruka Therapeutics, Inc.",0.0053,133.46,61.1,90.8,180.0,200.0,221.3,8.3,59.5,107.9
+biotechnology,3,TNGX,"Tango Therapeutics, Inc.",0.005,128.44,64.3,51.9,200.0,200.0,221.3,14.2,62.8,69.1
+biotechnology,4,SYRE,"Spyre Therapeutics, Inc.",0.0074,116.81,26.6,73.4,164.9,200.0,221.3,-10.1,25.0,90.6
+biotechnology,5,ERAS,"Erasca, Inc.",0.0054,111.8,51.5,5.0,200.0,200.0,221.3,21.3,49.9,22.2
+biotechnology,6,RVMD,"Revolution Medicines, Inc.",0.0386,111.34,26.1,91.1,129.3,200.0,221.3,16.2,24.6,108.2
+biotechnology,7,IBRX,"ImmunityBio, Inc.",0.0087,103.53,15.2,1.7,200.0,200.0,221.3,21.5,13.6,18.8
+biotechnology,8,APGE,"Apogee Therapeutics, Inc.",0.0094,85.75,72.0,53.2,61.9,184.1,205.3,0.0,70.4,70.4
+biotechnology,9,TVTX,"Travere Therapeutics, Inc.",0.0051,84.81,23.6,96.8,36.8,200.0,221.3,5.8,22.1,113.9
+biotechnology,10,MRNA,"Moderna, Inc.",0.0261,74.41,48.1,23.5,104.9,131.4,152.6,17.4,46.5,40.6
+biotechnology,11,ROIV,Roivant Sciences Ltd.,0.0235,59.01,17.8,13.8,46.5,186.9,208.2,11.1,16.2,31.0
+biotechnology,12,CGON,"CG Oncology, Inc.",0.0061,58.87,23.0,-3.1,75.8,162.3,183.6,11.3,21.4,14.1
+biotechnology,13,TGTX,"TG Therapeutics, Inc.",0.008,54.66,45.1,58.3,71.4,33.6,54.8,2.4,43.5,75.5
+biotechnology,14,IMVT,"Immunovant, Inc.",0.0075,50.82,16.5,43.4,35.4,119.4,140.7,1.1,15.0,60.6
+biotechnology,15,ARWR,"Arrowhead Pharmaceuticals, Inc.",0.0107,49.4,3.4,22.2,6.9,200.0,221.3,-1.8,1.8,39.3
+biotechnology,16,MIRM,"Mirum Pharmaceuticals, Inc.",0.0071,49.0,25.0,21.9,44.4,120.4,141.7,14.1,23.5,39.1
+biotechnology,17,CYTK,"Cytokinetics, Incorporated",0.0112,46.75,15.2,22.5,28.1,142.8,164.1,10.2,13.6,39.6
+biotechnology,18,RPRX,Royalty Pharma plc,0.0239,23.04,6.3,6.6,39.0,40.6,61.9,6.6,4.8,23.7
+biotechnology,19,XENE,Xenon Pharmaceuticals Inc.,0.0055,22.1,11.3,-6.8,25.7,70.8,92.1,9.7,9.7,10.4
+biotechnology,20,TECH,Bio-Techne Corporation,0.0104,22.03,41.0,22.3,12.3,17.4,38.6,27.5,39.5,39.4
+biotechnology,21,INCY,Incyte Corporation,0.0216,18.07,19.1,9.8,6.3,47.1,68.4,10.6,17.6,27.0
+biotechnology,22,NUVL,"Nuvalent, Inc.",0.0092,16.89,14.6,10.6,8.9,40.6,61.9,0.1,13.0,27.8
+biotechnology,23,SRRK,Scholar Rock Holding Corporation,0.0062,16.29,11.9,11.9,11.9,33.9,55.2,11.7,10.3,29.0
+biotechnology,24,PCVX,"Vaxcyte, Inc.",0.0079,15.57,14.6,-8.6,13.2,56.3,77.5,10.8,13.0,8.6
+biotechnology,25,HALO,"Halozyme Therapeutics, Inc.",0.0086,12.27,14.7,8.1,4.9,27.1,48.4,11.9,13.2,25.2
+healthcare-plans,1,OSCR,"Oscar Health, Inc.",0.0114,80.87,33.4,147.2,89.4,16.1,37.4,3.2,31.9,164.4
+healthcare-plans,2,HUM,Humana Inc.,0.0598,60.72,27.8,113.4,43.7,40.1,61.4,8.1,26.3,130.5
+healthcare-plans,3,CNC,Centene Corporation,0.0408,43.27,11.1,84.5,53.9,-2.4,18.9,1.4,9.6,101.7
+healthcare-plans,4,ALHC,"Alignment Healthcare, Inc.",0.0062,29.51,48.2,22.8,13.6,44.9,66.1,9.3,46.6,40.0
+healthcare-plans,5,CVS,CVS Health Corporation,0.1693,26.63,13.0,31.9,25.2,34.4,55.7,2.3,11.4,49.1
+healthcare-plans,6,UNH,UnitedHealth Group Incorporated,0.4884,26.12,11.9,45.8,22.0,16.9,38.2,3.2,10.4,63.0
+healthcare-plans,7,MOH,"Molina Healthcare, Inc.",0.0153,23.24,30.5,54.1,32.5,-44.2,-22.9,16.3,28.9,71.3
+healthcare-plans,8,PGNY,"Progyny, Inc.",0.0029,21.32,13.9,49.9,5.2,9.9,31.2,9.8,12.3,67.1
+healthcare-plans,9,ELV,"Elevance Health, Inc.",0.1079,3.82,0.7,18.9,6.3,-19.4,1.9,-1.7,-0.8,36.0
+diagnostics-research,1,TWST,Twist Bioscience Corporation,0.0084,124.65,44.0,103.7,185.0,146.1,167.4,15.5,42.5,120.9
+diagnostics-research,2,GH,"Guardant Health, Inc.",0.0278,70.27,17.0,64.5,42.3,174.2,195.4,19.3,15.4,81.7
+diagnostics-research,3,VCYT,"Veracyte, Inc.",0.0065,60.55,27.0,83.4,32.8,101.4,122.7,13.2,25.4,100.6
+diagnostics-research,4,ADPT,Adaptive Biotechnologies Corporation,0.0047,43.67,42.4,55.3,20.4,62.4,83.7,23.2,40.9,72.4
+diagnostics-research,5,ILMN,"Illumina, Inc.",0.0374,35.64,15.7,36.7,25.9,68.6,89.8,12.2,14.1,53.9
+diagnostics-research,6,NTRA,"Natera, Inc.",0.0532,25.64,28.8,31.9,7.7,39.9,61.2,19.0,27.3,49.1
+diagnostics-research,7,RVTY,"Revvity, Inc.",0.0169,7.89,11.4,15.5,7.2,-5.9,15.3,12.3,9.9,32.7
+medical-devices,1,BFLY,"Butterfly Network, Inc.",0.0032,127.31,94.8,110.1,117.7,200.0,221.3,22.6,93.3,127.3
+medical-devices,2,AXGN,"Axogen, Inc.",0.0032,58.91,12.2,25.8,29.1,200.0,221.3,-0.5,10.6,43.0
+medical-devices,3,BRKR,Bruker Corporation,0.0124,30.13,11.4,60.1,16.5,24.4,45.6,5.6,9.9,77.2
+medical-instruments-supplies,1,WRBY,Warby Parker Inc.,0.0094,18.15,18.6,30.9,6.5,16.0,37.3,11.6,17.1,48.1
+medical-instruments-supplies,2,NVST,Envista Holdings Corporation,0.0111,8.82,15.7,-7.3,14.9,17.0,38.3,5.9,14.2,9.8
+medical-instruments-supplies,3,BAX,Baxter International Inc.,0.0288,2.09,16.0,20.8,7.4,-47.9,-26.7,12.0,14.4,38.0
+medical-care-facilities,1,LFST,"LifeStance Health Group, Inc.",0.0187,47.85,33.9,46.4,37.9,78.7,100.0,12.3,32.4,63.6
+medical-care-facilities,2,BKD,Brookdale Senior Living Inc.,0.018,36.58,23.3,-2.4,37.7,106.6,127.9,13.4,21.7,14.8
+medical-care-facilities,3,ACHC,"Acadia Healthcare Company, Inc.",0.0121,30.6,18.1,3.7,85.7,0.8,22.0,9.8,16.5,20.9
+medical-care-facilities,4,SEM,Select Medical Holdings Corporation,0.0097,-5.02,1.7,-15.3,4.4,-10.4,10.9,-0.1,0.1,1.9
+medical-distribution,1,CAH,"Cardinal Health, Inc.",0.2668,9.32,19.7,-2.5,6.5,20.9,42.2,6.1,18.2,14.6
+medical-distribution,2,HSIC,"Henry Schein, Inc.",0.0463,1.97,12.0,-0.3,2.7,-5.9,15.4,7.1,10.4,16.9
+drug-manufacturers-specialty-generic,1,LQDA,Liquidia Corporation,0.0378,104.31,22.7,97.3,102.0,200.0,221.3,-0.5,21.1,114.4
+drug-manufacturers-specialty-generic,2,ALKS,Alkermes plc,0.0496,60.44,33.1,61.6,76.3,62.3,83.6,14.1,31.5,78.7
+drug-manufacturers-specialty-generic,3,AMLX,"Amylyx Pharmaceuticals, Inc.",0.0118,59.5,33.1,20.8,41.8,170.5,191.7,14.9,31.5,38.0
+drug-manufacturers-specialty-generic,4,INDV,"Indivior Pharmaceuticals, Inc.",0.0276,44.02,14.3,25.3,6.2,158.7,179.9,7.7,12.7,42.4
+drug-manufacturers-specialty-generic,5,AMRX,"Amneal Pharmaceuticals, Inc.",0.0312,42.06,35.1,28.7,26.4,92.5,113.7,7.3,33.5,45.9
+drug-manufacturers-specialty-generic,6,VTRS,Viatris Inc.,0.1071,24.47,2.3,8.1,26.8,67.6,88.9,5.5,0.7,25.3
+drug-manufacturers-specialty-generic,7,NBIX,"Neurocrine Biosciences, Inc.",0.0968,11.78,10.3,15.3,7.8,14.0,35.3,5.2,8.7,32.5
+drug-manufacturers-specialty-generic,8,ELAN,Elanco Animal Health Incorporated,0.07,9.07,4.7,-10.2,2.6,52.0,73.2,3.5,3.2,7.0
+drug-manufacturers-specialty-generic,9,BCRX,"BioCryst Pharmaceuticals, Inc.",0.0137,-1.24,6.5,-14.8,16.1,-14.7,6.6,4.5,4.9,2.4
+health-information-services,1,TXG,"10x Genomics, Inc.",0.0468,103.24,34.3,73.5,114.7,199.6,220.8,12.8,32.7,90.7
+health-information-services,2,BTSG,"BrightSpring Health Services, Inc.",0.1344,73.44,14.9,45.8,74.9,171.2,192.4,2.6,13.4,63.0
+health-information-services,3,HNGE,"Hinge Health, Inc.",0.0626,67.83,49.8,107.6,61.1,36.2,57.4,18.3,48.3,124.8
+health-information-services,4,HTFL,"Heartflow, Inc.",0.0298,14.31,11.4,24.0,6.6,,,3.0,9.8,41.2
+aerospace-defense,1,FTAI,FTAI Aviation Ltd.,0.0068,33.73,1.9,-6.7,44.8,109.7,130.9,-3.1,0.3,10.5
+aerospace-defense,2,HXL,Hexcel Corporation,0.0019,22.02,10.1,7.7,22.0,55.4,76.7,-0.3,8.6,24.8
+aerospace-defense,3,GE,GE Aerospace,0.0979,16.16,18.0,15.0,10.4,24.7,46.0,5.2,16.5,32.1
+aerospace-defense,4,HWM,Howmet Aerospace Inc.,0.0269,11.51,4.9,0.7,18.8,23.4,44.6,-4.2,3.3,17.9
+specialty-industrial-machinery,1,GEV,GE Vernova Inc.,0.2195,40.92,12.3,12.1,57.6,87.7,108.9,-2.2,10.8,29.3
+specialty-industrial-machinery,2,RRX,Regal Rexnord Corporation,0.0108,22.46,9.9,3.0,44.3,31.5,52.7,-4.9,8.4,20.1
+specialty-industrial-machinery,3,GTES,Gates Industrial Corporation plc,0.0053,11.63,12.0,10.2,19.9,1.0,22.2,-1.2,10.5,27.3
+specialty-industrial-machinery,4,AME,"AMETEK, Inc.",0.0404,4.58,7.1,-3.4,6.6,10.9,32.2,-1.6,5.6,13.8
+specialty-industrial-machinery,5,ETN,Eaton Corporation plc,0.1175,4.42,3.1,-2.6,19.0,-5.6,15.7,-6.3,1.6,14.6
+farm-heavy-construction-machinery,1,CAT,Caterpillar Inc.,0.6201,63.6,17.9,31.7,69.8,147.8,169.0,1.1,16.4,48.9
+farm-heavy-construction-machinery,2,TEX,Terex Corporation,0.0109,25.23,26.2,13.6,27.5,38.3,59.6,6.7,24.7,30.7
+farm-heavy-construction-machinery,3,DE,Deere & Company,0.2204,10.43,17.8,-6.3,27.0,3.2,24.5,4.7,16.3,10.9
+farm-heavy-construction-machinery,4,CNH,CNH Industrial N.V.,0.0184,-3.01,10.4,-9.9,14.6,-32.5,-11.3,9.7,8.9,7.3
+railroads,1,CSX,CSX Corporation,0.2394,15.23,6.7,4.2,23.5,28.0,49.2,3.9,5.1,21.4
+railroads,2,UNP,Union Pacific Corporation,0.4344,2.92,4.2,-2.4,9.3,-0.0,21.2,4.9,2.7,14.8
+engineering-construction,1,MTZ,"MasTec, Inc.",0.0749,59.61,13.5,18.6,84.1,130.5,151.8,5.6,11.9,35.8
+engineering-construction,2,PWR,"Quanta Services, Inc.",0.2368,34.38,-0.6,12.8,57.0,67.9,89.2,-3.5,-2.1,29.9
+engineering-construction,3,FLR,Fluor Corporation,0.0166,6.99,15.9,0.3,23.3,-16.5,4.8,-1.3,14.4,17.5
+building-products-equipment,1,AAON,"AAON, Inc.",0.0247,36.63,-10.0,37.2,58.3,49.9,71.2,-7.7,-11.6,54.4
+building-products-equipment,2,OC,Owens Corning,0.0301,23.51,27.2,32.1,31.5,-5.0,16.3,25.2,25.6,49.2
+building-products-equipment,3,MAS,Masco Corporation,0.0389,15.22,15.4,18.8,17.6,6.2,27.4,9.4,13.9,35.9
+building-products-equipment,4,TREX,"Trex Company, Inc.",0.0124,14.24,18.8,22.7,32.2,-29.9,-8.6,7.1,17.2,39.8
+building-products-equipment,5,CARR,Carrier Global Corporation,0.1461,14.17,16.6,18.7,30.4,-19.5,1.8,2.2,15.1,35.8
+building-products-equipment,6,TT,Trane Technologies plc,0.2544,3.98,8.0,0.2,14.8,-10.7,10.6,-2.3,6.5,17.4
+electrical-equipment-parts,1,FCEL,"FuelCell Energy, Inc.",0.0061,164.75,23.7,200.0,200.0,200.0,221.3,22.2,22.2,356.4
+electrical-equipment-parts,2,BE,Bloom Energy Corporation,0.2365,123.47,-3.6,89.2,191.4,200.0,221.3,-20.5,-5.2,106.4
+electrical-equipment-parts,3,TE,T1 Energy Inc.,0.0075,53.24,-16.4,37.0,18.1,200.0,221.3,-14.6,-17.9,54.2
+electrical-equipment-parts,4,NVT,nVent Electric plc,0.0799,42.56,0.6,22.7,49.7,103.5,124.8,-11.4,-0.9,39.8
+integrated-freight-logistics,1,PBI,Pitney Bowes Inc.,0.0086,46.17,15.0,48.7,63.0,48.2,69.5,4.6,13.4,65.9
+integrated-freight-logistics,2,FDX,FedEx Corporation,0.2754,21.08,0.1,0.7,29.6,59.9,81.1,-1.0,-1.5,17.8
+integrated-freight-logistics,3,CHRW,"C.H. Robinson Worldwide, Inc.",0.0773,17.05,7.2,-2.4,4.9,74.3,95.6,-1.2,5.7,14.7
+integrated-freight-logistics,4,UPS,"United Parcel Service, Inc.",0.3257,-0.39,2.8,-1.3,2.7,-6.9,14.4,0.7,1.3,15.9
+industrial-distribution,1,FAST,Fastenal Company,0.2014,-1.07,7.4,-11.1,6.6,-6.0,15.2,2.8,5.9,6.0
+specialty-business-services,1,TH,Target Hospitality Corp.,0.0106,106.33,20.2,95.5,134.9,165.8,187.1,1.5,18.7,112.7
+specialty-business-services,2,ARMK,Aramark,0.0768,24.17,7.0,24.3,41.9,14.6,35.8,5.0,5.5,41.5
+specialty-business-services,3,FA,First Advantage Corporation,0.0161,17.39,15.5,45.3,10.4,-12.2,9.1,12.3,14.0,62.5
+rental-leasing-services,1,CTOS,"Custom Truck One Source, Inc.",0.0147,76.7,23.7,67.8,91.6,120.6,141.9,4.8,22.2,85.0
+rental-leasing-services,2,WSC,WillScot Holdings Corporation,0.0281,27.08,13.1,51.3,40.2,-15.0,6.3,-1.0,11.6,68.5
+airlines,1,DAL,"Delta Air Lines, Inc.",0.3669,32.3,14.5,26.9,24.1,70.5,91.7,8.4,12.9,44.1
+airlines,2,AAL,American Airlines Group Inc.,0.071,31.43,23.9,56.8,6.4,38.5,59.7,11.4,22.3,74.0
+airlines,3,UAL,"United Airlines Holdings, Inc.",0.263,27.18,19.0,35.7,9.8,48.5,69.8,13.9,17.5,52.9
+airlines,4,LUV,Southwest Airlines Co.,0.1512,24.3,21.2,21.6,18.1,40.8,62.1,6.2,19.7,38.7
+trucking,1,RXO,"RXO, Inc.",0.039,67.1,6.6,78.9,105.8,51.8,73.1,5.4,5.1,96.0
+trucking,2,KNX,Knight-Swift Transportation Holdings Inc.,0.1103,31.63,6.0,23.9,38.9,57.9,79.2,3.7,4.5,41.1
+trucking,3,WERN,"Werner Enterprises, Inc.",0.0228,31.53,6.9,36.4,36.4,41.6,62.9,7.0,5.3,53.6
+trucking,4,SNDR,"Schneider National, Inc.",0.056,24.81,5.7,28.0,28.5,33.5,54.7,3.9,4.2,45.2
+trucking,5,ODFL,"Old Dominion Freight Line, Inc.",0.3966,12.21,1.1,-0.4,30.3,15.0,36.2,0.1,-0.4,16.8
+metal-fabrication,1,ATI,ATI Inc.,0.2792,50.61,17.5,23.6,61.6,107.7,129.0,-3.1,15.9,40.8
+tools-accessories,1,SWK,"Stanley Black & Decker, Inc.",0.1555,20.93,21.0,20.4,19.9,23.3,44.5,8.5,19.4,37.5
+security-protection-services,1,GEO,"The GEO Group, Inc.",0.0934,44.99,29.0,59.1,70.3,1.7,23.0,-0.7,27.5,76.3
+security-protection-services,2,CXW,"CoreCivic, Inc.",0.071,39.44,40.7,38.7,50.7,22.5,43.8,2.2,39.1,55.8
+marine-shipping,1,ZIM,ZIM Integrated Shipping Services Ltd.,0.093,11.07,8.7,-18.2,19.2,45.2,66.5,2.5,7.1,-1.1
+staffing-employment-services,1,RHI,Robert Half Inc.,0.2173,5.47,15.6,16.1,15.4,-35.4,-14.1,11.2,14.0,33.2
+reit-specialty,1,OUT,OUTFRONT Media Inc.,0.0139,32.78,4.3,13.0,32.3,91.6,112.8,5.8,2.8,30.2
+reit-specialty,2,IRM,Iron Mountain Incorporated,0.092,23.9,4.7,16.0,54.0,9.8,31.0,-1.4,3.2,33.1
+reit-industrial,1,COLD,"Americold Realty Trust, Inc.",0.0156,14.42,3.4,33.1,25.2,-18.8,2.5,15.3,1.9,50.3
+reit-industrial,2,LINE,"Lineage, Inc.",0.0348,13.86,4.2,27.1,24.8,-12.8,8.5,11.7,2.7,44.2
+reit-industrial,3,EXR,Extra Space Storage Inc.,0.1063,-0.07,4.3,-0.9,8.5,-16.0,5.2,1.5,2.8,16.2
+reit-industrial,4,CUBE,CubeSmart,0.0313,-1.62,1.9,-2.3,9.0,-20.1,1.1,0.5,0.4,14.8
+reit-healthcare-facilities,1,DHC,Diversified Healthcare Trust,0.0084,67.1,13.2,26.0,89.2,149.4,170.7,7.5,11.6,43.2
+reit-healthcare-facilities,2,DOC,"Healthpeak Properties, Inc.",0.0541,20.37,14.2,16.8,33.3,12.5,33.8,9.5,12.7,34.0
+reit-healthcare-facilities,3,WELL,Welltower Inc.,0.577,11.95,9.8,-0.4,14.3,29.2,50.4,7.7,8.3,16.7
+reit-healthcare-facilities,4,HR,Healthcare Realty Trust Incorporated,0.0257,11.29,4.2,6.8,17.4,15.9,37.2,2.4,2.6,24.0
+reit-healthcare-facilities,5,VTR,"Ventas, Inc.",0.1558,5.18,5.6,-7.4,5.7,22.9,44.2,7.5,4.1,9.7
+reit-healthcare-facilities,6,OHI,"Omega Healthcare Investors, Inc.",0.0514,3.38,3.8,-7.6,4.0,18.4,39.7,6.7,2.3,9.6
+reit-healthcare-facilities,7,CTRE,"CareTrust REIT, Inc.",0.0343,1.98,-0.3,-7.0,3.8,15.0,36.2,7.9,-1.9,10.2
+reit-retail,1,MAC,The Macerich Company,0.0297,27.76,15.1,24.2,29.4,43.4,64.6,7.1,13.5,41.4
+reit-retail,2,SPG,"Simon Property Group, Inc.",0.286,15.83,12.8,10.5,15.7,27.0,48.3,6.1,11.3,27.7
+reit-retail,3,KRG,Kite Realty Group Trust,0.0227,9.98,6.7,3.9,16.0,13.4,34.7,3.4,5.1,21.1
+reit-retail,4,KIM,Kimco Realty Corporation,0.0675,9.93,9.6,0.4,21.4,7.4,28.7,4.6,8.0,17.5
+reit-retail,5,NTST,NETSTREIT Corp.,0.0081,8.7,8.4,-1.2,17.3,11.0,32.2,10.1,6.8,16.0
+reit-retail,6,BRX,Brixmor Property Group Inc.,0.0383,7.21,6.2,-2.5,17.1,8.0,29.3,3.3,4.6,14.7
+reit-retail,7,PECO,"Phillips Edison & Company, Inc.",0.0206,5.04,5.6,-1.5,12.1,3.6,24.9,2.8,4.1,15.7
+reit-retail,8,NNN,"NNN REIT, Inc.",0.0349,4.16,7.1,-2.7,15.3,-5.2,16.1,4.8,5.5,14.4
+reit-retail,9,REG,Regency Centers Corporation,0.0577,2.09,6.1,-6.7,11.2,-2.4,18.8,5.1,4.5,10.5
+reit-retail,10,O,Realty Income Corporation,0.2278,-1.99,4.2,-11.9,6.3,-5.7,15.5,4.1,2.6,5.2
+reit-residential,1,INVH,Invitation Homes Inc.,0.0947,1.29,6.7,9.1,6.6,-23.9,-2.6,8.7,5.2,26.3
+reit-residential,2,UDR,"UDR, Inc.",0.068,0.48,7.5,3.8,5.0,-18.3,3.0,6.3,5.9,21.0
+reit-residential,3,EQR,Equity Residential,0.1335,0.03,5.8,1.8,4.7,-15.4,5.8,6.7,4.2,19.0
+real-estate-services,1,COMP,"Compass, Inc.",0.0963,40.02,45.1,52.3,4.5,69.8,91.1,22.7,43.5,69.5
+reit-diversified,1,BNL,"Broadstone Net Lease, Inc.",0.0685,9.47,5.6,-0.7,17.1,17.2,38.5,2.0,4.0,16.5
+reit-office,1,VNO,Vornado Realty Trust,0.1301,16.2,18.3,42.7,9.5,-15.7,5.6,5.1,16.7,59.9
+reit-office,2,CDP,COPT Defense Properties,0.0727,14.38,14.3,3.8,24.0,15.9,37.1,8.8,12.7,21.0
+reit-office,3,HIW,"Highwoods Properties, Inc.",0.0583,14.36,17.3,32.4,14.9,-16.5,4.8,2.7,15.8,49.6
+reit-office,4,CUZ,Cousins Properties Incorporated,0.0868,11.33,14.0,26.2,12.8,-15.8,5.4,5.9,12.5,43.3
+reit-office,5,SLG,SL Green Realty Corp.,0.0659,10.95,18.3,35.3,10.5,-32.2,-10.9,6.8,16.7,52.4
+reit-office,6,ARE,"Alexandria Real Estate Equities, Inc.",0.1696,-1.17,12.6,5.5,9.6,-41.1,-19.9,9.6,11.0,22.7
+reit-hotel-motel,1,PEB,Pebblebrook Hotel Trust,0.0495,49.87,25.9,40.7,59.7,72.8,94.1,3.3,24.4,57.9
+reit-hotel-motel,2,APLE,"Apple Hospitality REIT, Inc.",0.0901,30.76,14.9,32.5,37.2,34.2,55.4,1.7,13.4,49.7
+reit-hotel-motel,3,PK,Park Hotels & Resorts Inc.,0.0661,27.71,20.9,25.5,32.2,31.0,52.2,-0.3,19.4,42.7
+reit-hotel-motel,4,HST,"Host Hotels & Resorts, Inc.",0.3856,25.47,8.6,16.5,30.7,47.8,69.1,-0.8,7.0,33.7
+reit-hotel-motel,5,DRH,DiamondRock Hospitality Company,0.0566,24.18,11.3,15.7,28.0,44.1,65.4,0.1,9.8,32.8
+reit-hotel-motel,6,SHO,"Sunstone Hotel Investors, Inc.",0.0491,16.32,8.4,14.4,23.0,17.1,38.3,-1.7,6.9,31.6
+semiconductors,1,MU,"Micron Technology, Inc.",0.1192,165.11,25.6,200.0,200.0,200.0,221.3,-5.5,24.0,220.7
+semiconductors,2,MXL,"MaxLinear, Inc.",0.0009,162.5,12.5,200.0,200.0,200.0,221.3,12.5,11.0,538.1
+semiconductors,3,VSH,"Vishay Intertechnology, Inc.",0.0007,161.89,9.5,200.0,200.0,200.0,221.3,-12.4,7.9,231.2
+semiconductors,4,MRVL,"Marvell Technology, Inc.",0.0224,160.15,37.1,175.7,200.0,200.0,221.3,-9.8,35.6,192.9
+semiconductors,5,INTC,Intel Corporation,0.061,158.57,10.5,188.2,200.0,200.0,221.3,-6.5,9.0,205.4
+semiconductors,6,ALAB,"Astera Labs, Inc.",0.0072,154.53,32.1,200.0,160.4,200.0,221.3,3.7,30.6,305.4
+semiconductors,7,AMD,"Advanced Micro Devices, Inc.",0.081,129.01,5.7,149.9,143.0,200.0,221.3,-2.2,4.1,167.1
+semiconductors,8,SMTC,Semtech Corporation,0.0013,98.48,-4.6,99.2,98.8,200.0,221.3,-10.6,-6.1,116.4
+semiconductors,9,ALGM,"Allegro MicroSystems, Inc.",0.0011,93.33,31.4,103.2,138.4,72.9,94.1,7.8,29.9,120.4
+semiconductors,10,CRDO,Credo Technology Group Holding Ltd,0.0042,90.17,12.0,140.8,55.7,144.1,165.3,-18.8,10.5,158.0
+semiconductors,11,GFS,GLOBALFOUNDRIES Inc.,0.0041,75.87,2.2,71.7,119.0,91.1,112.3,-9.5,0.6,88.9
+semiconductors,12,LSCC,Lattice Semiconductor Corporation,0.0019,74.61,1.2,45.2,83.8,178.4,199.6,-5.5,-0.4,62.4
+semiconductors,13,MTSI,"MACOM Technology Solutions Holdings, Inc.",0.0026,72.76,-3.2,48.1,104.0,138.8,160.0,-6.0,-4.7,65.3
+semiconductors,14,POWI,"Power Integrations, Inc.",0.0004,47.64,-7.5,42.7,106.1,22.5,43.8,-9.6,-9.1,59.9
+software-infrastructure,1,DOCN,"DigitalOcean Holdings, Inc.",0.0033,119.17,0.2,66.9,196.9,200.0,221.3,-9.9,-1.3,84.1
+software-infrastructure,2,PANW,"Palo Alto Networks, Inc.",0.0564,67.69,30.3,108.7,69.4,41.0,62.2,15.9,28.8,125.8
+software-infrastructure,3,FTNT,"Fortinet, Inc.",0.0237,58.97,21.4,81.6,83.5,25.8,47.0,6.9,19.8,98.7
+software-infrastructure,4,CRWD,"CrowdStrike Holdings, Inc.",0.0394,46.87,12.3,83.9,47.8,24.6,45.9,10.0,10.7,101.0
+software-infrastructure,5,OKTA,"Okta, Inc.",0.0048,40.9,40.2,62.2,40.7,10.1,31.3,13.3,38.6,79.3
+software-infrastructure,6,CORZ,"Core Scientific, Inc.",0.0017,39.24,-5.0,55.0,58.7,30.7,52.0,-10.8,-6.6,72.1
+software-infrastructure,7,TENB,"Tenable Holdings, Inc.",0.0008,36.49,30.6,85.3,30.7,-22.1,-0.9,27.1,29.1,102.5
+software-infrastructure,8,TWLO,Twilio Inc.,0.0063,34.24,9.2,48.5,33.8,38.6,59.8,8.2,7.7,65.7
+software-infrastructure,9,RELY,"Remitly Global, Inc.",0.001,28.97,15.5,34.7,51.5,0.2,21.4,10.3,14.0,51.8
+software-infrastructure,10,NTAP,"NetApp, Inc.",0.0063,28.36,10.4,35.1,34.4,27.1,48.3,-2.1,8.9,52.3
+software-infrastructure,11,VRNS,"Varonis Systems, Inc.",0.001,22.61,28.0,72.4,12.3,-42.0,-20.8,22.9,26.4,89.6
+software-infrastructure,12,TDC,Teradata Corporation,0.0007,15.37,10.1,18.4,4.4,32.6,53.8,15.7,8.5,35.6
+software-infrastructure,13,XYZ,"Block, Inc.",0.0097,9.74,6.5,22.2,10.2,-6.4,14.9,6.8,4.9,39.4
+software-infrastructure,14,NET,"Cloudflare, Inc.",0.018,6.91,8.4,2.9,12.4,3.2,24.5,11.6,6.9,20.1
+software-infrastructure,15,S,"SentinelOne, Inc.",0.0012,-0.89,-5.6,15.8,4.8,-29.7,-8.5,13.5,-7.2,33.0
+software-application,1,DDOG,"Datadog, Inc.",0.0525,66.78,11.9,100.0,72.2,63.8,85.0,12.3,10.4,117.1
+software-application,2,FROG,JFrog Ltd.,0.0065,57.18,25.4,90.7,26.9,84.0,105.3,12.8,23.8,107.9
+software-application,3,NAVN,"Navan, Inc.",0.0036,49.1,18.2,77.0,41.8,,,9.5,16.6,94.2
+software-application,4,YOU,"Clear Secure, Inc.",0.0033,31.88,0.6,1.3,48.5,84.1,105.4,7.8,-0.9,18.4
+software-application,5,SNOW,Snowflake Inc.,0.0518,15.5,6.8,47.5,5.5,-8.8,12.5,11.1,5.2,64.7
+software-application,6,CDNS,"Cadence Design Systems, Inc.",0.061,9.0,1.2,20.0,9.4,-0.3,21.0,-4.2,-0.3,37.1
+semiconductor-equipment-materials,1,ACMR,"ACM Research, Inc.",0.0049,156.34,29.6,179.5,188.6,200.0,221.3,15.2,28.0,196.7
+semiconductor-equipment-materials,2,ICHR,"Ichor Holdings, Ltd.",0.0022,145.18,51.9,116.0,200.0,200.0,221.3,5.9,50.3,133.2
+semiconductor-equipment-materials,3,UCTT,"Ultra Clean Holdings, Inc.",0.0035,141.71,51.3,104.9,200.0,200.0,221.3,6.1,49.7,122.0
+semiconductor-equipment-materials,4,COHU,"Cohu, Inc.",0.0019,132.94,27.6,110.1,181.4,200.0,221.3,-2.8,26.0,127.2
+semiconductor-equipment-materials,5,AMAT,"Applied Materials, Inc.",0.3265,125.68,56.0,89.1,159.1,200.0,221.3,8.5,54.5,106.3
+semiconductor-equipment-materials,6,LRCX,Lam Research Corporation,0.3042,106.65,30.9,77.3,124.3,200.0,221.3,0.3,29.3,94.5
+semiconductor-equipment-materials,7,VECO,Veeco Instruments Inc.,0.0025,106.51,19.0,79.8,129.2,200.0,221.3,-10.3,17.5,97.0
+semiconductor-equipment-materials,8,KLAC,KLA Corporation,0.2153,103.49,46.0,76.0,110.7,191.5,212.8,3.4,44.4,93.1
+semiconductor-equipment-materials,9,ONTO,Onto Innovation Inc.,0.0103,96.71,37.3,54.9,109.2,200.0,221.3,1.0,35.8,72.1
+semiconductor-equipment-materials,10,TER,"Teradyne, Inc.",0.0429,94.08,22.6,39.6,125.6,200.0,221.3,1.4,21.1,56.8
+semiconductor-equipment-materials,11,FORM,"FormFactor, Inc.",0.0067,93.45,12.3,30.1,139.9,200.0,221.3,-8.0,10.7,47.2
+semiconductor-equipment-materials,12,AMKR,"Amkor Technology, Inc.",0.0121,92.57,18.3,68.3,94.7,200.0,221.3,-12.0,16.8,85.5
+semiconductor-equipment-materials,13,ENTG,"Entegris, Inc.",0.0154,61.14,25.1,33.5,92.5,91.6,112.9,-7.0,23.5,50.7
+semiconductor-equipment-materials,14,Q,"Qnity Electronics, Inc.",0.0196,40.26,1.1,24.5,82.1,,,-9.9,-0.4,41.7
+computer-hardware,1,SNDK,Sandisk Corporation,0.2286,165.29,26.4,200.0,200.0,200.0,221.3,-9.8,24.9,232.9
+computer-hardware,2,DELL,Dell Technologies Inc.,0.2017,143.94,32.3,124.9,200.0,200.0,221.3,-1.0,30.8,142.1
+computer-hardware,3,STX,Seagate Technology Holdings plc,0.165,143.67,11.6,137.8,200.0,200.0,221.3,-11.4,10.0,155.0
+computer-hardware,4,WDC,Western Digital Corporation,0.1692,140.76,24.3,119.7,200.0,200.0,221.3,-11.0,22.8,136.8
+computer-hardware,5,ANET,"Arista Networks, Inc.",0.1556,20.16,7.2,18.7,17.6,39.1,60.4,-6.0,5.7,35.9
+communication-equipment,1,VSAT,"Viasat, Inc.",0.0122,85.33,-10.0,47.5,110.3,200.0,221.3,19.4,-11.5,64.6
+communication-equipment,2,EXTR,"Extreme Networks, Inc.",0.0049,68.59,23.6,92.4,82.6,56.9,78.2,0.4,22.0,109.6
+communication-equipment,3,HPE,Hewlett Packard Enterprise Company,0.0686,67.03,18.1,68.9,75.5,100.4,121.7,-8.2,16.6,86.0
+communication-equipment,4,CSCO,"Cisco Systems, Inc.",0.5415,33.26,0.8,30.9,44.6,52.3,73.6,-3.2,-0.8,48.1
+communication-equipment,5,ASTS,"AST SpaceMobile, Inc.",0.0303,5.16,-33.3,-6.9,3.3,64.4,85.7,18.6,-34.8,10.3
+electronic-components,1,FLEX,Flex Ltd.,0.0824,123.69,11.7,129.1,143.2,198.4,219.6,2.4,10.2,146.2
+electronic-components,2,OUST,"Ouster, Inc.",0.0049,123.08,29.3,189.0,133.9,101.7,123.0,13.4,27.7,206.2
+electronic-components,3,GLW,Corning Incorporated,0.3102,122.78,41.5,70.0,178.2,200.0,221.3,21.9,40.0,87.2
+electronic-components,4,TTMI,"TTM Technologies, Inc.",0.0273,108.59,1.0,78.5,149.4,200.0,221.3,-15.7,-0.5,95.7
+electronic-components,5,KN,Knowles Corporation,0.0049,60.25,9.2,43.5,77.3,110.7,132.0,-4.5,7.7,60.7
+electronic-components,6,SANM,Sanmina Corporation,0.0182,57.88,-7.1,66.5,48.2,124.5,145.7,-5.1,-8.7,83.7
+electronic-components,7,RAL,Ralliant Corporation,0.0114,38.38,17.8,64.4,32.6,28.7,49.9,6.9,16.2,81.5
+electronic-components,8,JBL,Jabil Inc.,0.0556,34.14,4.3,26.0,51.5,50.3,71.5,-1.0,2.7,43.1
+electronic-components,9,APH,Amphenol Corporation,0.2886,21.81,14.4,17.7,13.2,48.4,69.7,0.4,12.9,34.8
+information-technology-services,1,PENG,"Penguin Solutions, Inc.",0.0063,165.44,27.2,200.0,200.0,200.0,221.3,0.0,25.7,307.1
+information-technology-services,2,CIFR,Cipher Digital Inc.,0.018,73.1,2.5,63.5,45.2,200.0,221.3,-11.8,1.0,80.6
+scientific-technical-instruments,1,MKSI,MKS Inc.,0.0888,111.01,30.3,69.4,147.1,200.0,221.3,-1.1,28.7,86.5
+scientific-technical-instruments,2,COHR,Coherent Corp.,0.2419,83.08,5.3,43.5,96.5,200.0,221.3,-8.1,3.8,60.7
+scientific-technical-instruments,3,CGNX,Cognex Corporation,0.036,51.99,5.1,26.7,79.4,95.7,117.0,1.1,3.6,43.8
+solar,1,SEDG,"SolarEdge Technologies, Inc.",0.0575,44.05,-22.8,-10.2,72.2,150.1,171.4,-3.8,-24.4,7.0
+solar,2,ENPH,"Enphase Energy, Inc.",0.1088,9.3,-28.9,10.6,39.3,0.7,21.9,-7.8,-30.4,27.7
+electronics-computer-distribution,1,AVT,"Avnet, Inc.",0.1531,40.61,2.5,30.1,71.8,47.7,69.0,-5.2,1.0,47.3
+utilities-regulated-electric,1,EIX,Edison International,0.0249,12.27,8.9,-8.5,21.0,33.7,54.9,4.5,7.4,8.6
+utilities-regulated-electric,2,ETR,Entergy Corporation,0.0465,8.52,7.7,-10.7,19.1,22.3,43.5,3.7,6.1,6.4
+utilities-regulated-electric,3,AEP,"American Electric Power Company, Inc.",0.0643,6.06,9.5,-10.3,13.6,15.9,37.2,5.9,8.0,6.8
+utilities-regulated-electric,4,LNT,Alliant Energy Corporation,0.0171,5.26,8.5,-6.9,11.9,10.4,31.6,5.4,6.9,10.3
+utilities-regulated-electric,5,D,"Dominion Energy, Inc.",0.0521,5.17,5.2,-2.4,11.8,6.5,27.8,1.7,3.7,14.8
+utilities-regulated-electric,6,PNW,Pinnacle West Capital Corporation,0.0112,5.05,8.5,-8.0,16.5,4.1,25.3,5.3,7.0,9.2
+utilities-regulated-electric,7,EVRG,"Evergy, Inc.",0.0172,4.61,6.6,-8.6,13.3,9.5,30.8,4.5,5.0,8.5
+utilities-regulated-electric,8,DTE,DTE Energy Company,0.0275,2.91,9.8,-9.7,13.6,-1.1,20.1,4.9,8.3,7.5
+utilities-regulated-electric,9,CNP,"CenterPoint Energy, Inc.",0.0251,2.13,7.6,-10.9,10.6,3.4,24.7,3.9,6.1,6.3
+utilities-regulated-electric,10,AEE,Ameren Corporation,0.0272,1.02,7.5,-11.0,8.5,1.5,22.7,4.5,5.9,6.1
+utilities-regulated-electric,11,ES,Eversource Energy,0.0238,0.97,8.3,-6.7,4.4,0.0,21.3,5.2,6.8,10.4
+utilities-regulated-electric,12,POR,Portland General Electric Company,0.0052,0.35,5.7,-15.1,3.9,13.0,34.3,5.1,4.1,2.0
+utilities-regulated-electric,13,XEL,Xcel Energy Inc.,0.0439,-0.12,5.8,-11.4,5.3,2.8,24.1,4.0,4.2,5.8
+utilities-regulated-electric,14,WEC,"WEC Energy Group, Inc.",0.0331,-1.18,7.6,-12.7,6.2,-3.8,17.5,4.8,6.1,4.5
+utilities-regulated-electric,15,OGE,OGE Energy Corp.,0.0087,-1.33,5.4,-12.7,8.8,-6.1,15.1,3.2,3.9,4.4
+utilities-regulated-electric,16,CMS,CMS Energy Corporation,0.0206,-2.21,8.1,-14.1,5.0,-5.3,15.9,5.6,6.5,3.1
+utilities-regulated-electric,17,ED,"Consolidated Edison, Inc.",0.0355,-2.4,7.2,-15.8,6.8,-5.6,15.6,5.0,5.6,1.4
+utilities-regulated-electric,18,SO,The Southern Company,0.0935,-4.32,6.1,-15.1,4.9,-12.5,8.8,3.6,4.6,2.1
+utilities-regulated-electric,19,DUK,Duke Energy Corporation,0.0857,-5.0,5.2,-17.6,3.2,-8.7,12.6,3.9,3.7,-0.4
+utilities-regulated-electric,20,EXC,Exelon Corporation,0.0413,-5.44,6.0,-18.7,2.4,-8.8,12.5,2.6,4.4,-1.5
+utilities-regulated-gas,1,BKH,Black Hills Corporation,0.0565,3.35,4.5,-6.6,2.5,18.3,39.6,3.2,3.0,10.6
+utilities-regulated-gas,2,NI,NiSource Inc.,0.2277,0.2,4.5,-11.8,8.6,1.3,22.5,1.1,3.0,5.4
